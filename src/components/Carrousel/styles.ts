@@ -83,14 +83,13 @@ interface TextOverlayProps {
 
 export const TextOverlay = styled.div<TextOverlayProps>`
   position: absolute;
-  bottom: 1.5rem;
-  right: 1.5rem;
+  bottom: 10rem;
+  right: 0rem;
   background: rgba(0, 0, 0, 0.7);
   color: white;
   padding: 0.8rem 1.2rem;
-  border-radius: 8px;
-  font-size: ${({ position }) => position === "center" ? "1.1rem" : "0.9rem"};
-  font-weight: ${({ position }) => position === "center" ? "600" : "400"};
+  font-size: 1rem;
+  font-weight: "200";
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.1);
 `;

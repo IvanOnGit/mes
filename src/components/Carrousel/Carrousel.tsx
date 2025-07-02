@@ -72,9 +72,11 @@ const Carousel: React.FC = () => {
           return (
             <Slide key={index} position={position}>
               <Image src={slide.src} alt={`slide-${index}`} />
-              <TextOverlay position={position}>
-                {slide.text}
-              </TextOverlay>
+              {position === "center" && (
+                <TextOverlay position={position}>
+                  {slide.text}
+                </TextOverlay>
+              )}
             </Slide>
           );
         })}
