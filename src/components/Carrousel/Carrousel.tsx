@@ -5,7 +5,6 @@ import {
   Image,
   ArrowButton,
   SlidesWrapper,
-  TextOverlay,
   ArrowsContainer
 } from "./styles";
 
@@ -16,19 +15,19 @@ interface SlideData {
 
 const slides: SlideData[] = [
   {
-    src: "/images/Imagen 1.svg",
+    src: "/images/Imagen 1.jpg",
     text: "Quien se atreve a mirar la oscuridad"
   },
   {
-    src: "/images/Imagen 2.svg",
+    src: "/images/Imagen 2.jpeg",
     text: "Tiene el poder de transformarla"
   },
   {
-    src: "/images/Imagen 3.svg",
+    src: "/images/Imagen 3.jpeg",
     text: "En nuevos recursos, nuevas posibilidades, nuevos escenarios"
   },
   {
-    src: "/images/Imagen 4.svg",
+    src: "/images/Imagen 4.jpg",
     text: "Es otro nivel, lo que requiere este contexto, de adentro hacia afuera"
   }
 ];
@@ -115,11 +114,6 @@ const Carousel: React.FC = () => {
           return (
             <Slide key={index} position={position}>
               <Image src={slide.src} alt={`slide-${index}`} />
-              {position === "center" && (
-                <TextOverlay position={position}>
-                  {slide.text}
-                </TextOverlay>
-              )}
             </Slide>
           );
         })}

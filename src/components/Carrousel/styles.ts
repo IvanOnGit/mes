@@ -34,7 +34,7 @@ export const Slide = styled.div<SlideProps>`
     switch (position) {
       case "center":
         return `
-          width: 50%;
+          width: 55%;
           height: 100%;
           z-index: 3;
           transform: translateX(0);
@@ -74,23 +74,6 @@ export const Image = styled.img`
   width: 100%;
   height: 100%;
   object-fit: cover;
-`;
-
-interface TextOverlayProps {
-  position: "left" | "center" | "right";
-}
-
-export const TextOverlay = styled.div<TextOverlayProps>`
-  position: absolute;
-  bottom: 15rem;
-  right: 0rem;
-  background: rgba(0, 0, 0, 0.3);
-  color: white;
-  padding: 1rem;
-  font-size: 1rem;
-  font-weight: 200;
-  backdrop-filter: blur(10px);
-  width: 200px;
 `;
 
 export const ArrowsContainer = styled.div`
