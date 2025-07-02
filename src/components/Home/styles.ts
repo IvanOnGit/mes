@@ -6,7 +6,7 @@ background-color: black;
 display: flex;
 flex-direction: column;
 align-items: center;
-height: 46rem;
+height: auto;
 
 overflow: auto;
 

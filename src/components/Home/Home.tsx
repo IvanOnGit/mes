@@ -1,4 +1,5 @@
 import Carrousel from '../Carrousel/Carrousel';
+import MoreInfo from '../MoreInfo/MoreInfo';
 import Navbar from '../Navbar/Navbar';
 import { Container } from './styles';
 
@@ -8,6 +9,7 @@ function Home() {
       <Container>
         <Navbar />
         <Carrousel />
+        <MoreInfo />
       </Container>
     </>
   );
