@@ -27,7 +27,6 @@ interface SlideProps {
 export const Slide = styled.div<SlideProps>`
   position: absolute;
   transition: all 0.4s ease-in-out;
-  border-radius: 12px;
   overflow: hidden;
   
   ${({ position }) => {
@@ -74,7 +73,6 @@ export const Image = styled.img`
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 12px;
 `;
 
 interface TextOverlayProps {
@@ -85,24 +83,23 @@ export const TextOverlay = styled.div<TextOverlayProps>`
   position: absolute;
   bottom: 10rem;
   right: 0rem;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.3);
   color: white;
-  padding: 0.8rem 1.2rem;
+  padding: 1rem;
   font-size: 1rem;
-  font-weight: "200";
+  font-weight: 200;
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  width: 200px;
 `;
 
 export const ArrowButton = styled.button`
   position: absolute;
-  background: rgba(255, 255, 255, 0.1);
+  background: transparent;
   color: white;
   font-size: 2rem;
   border: none;
   cursor: pointer;
   z-index: 10;
-  padding: 1rem;
   border-radius: 50%;
   width: 60px;
   height: 60px;
@@ -111,7 +108,6 @@ export const ArrowButton = styled.button`
   justify-content: center;
   transition: all 0.3s ease;
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
 
   &:first-child {
     left: 2rem;
