@@ -82,7 +82,7 @@ interface TextOverlayProps {
 
 export const TextOverlay = styled.div<TextOverlayProps>`
   position: absolute;
-  bottom: 10rem;
+  bottom: 15rem;
   right: 0rem;
   background: rgba(0, 0, 0, 0.3);
   color: white;

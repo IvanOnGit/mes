@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import {
   CarouselContainer,
   Slide,
@@ -35,6 +35,8 @@ const slides: SlideData[] = [
 
 const Carousel: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+  const intervalRef = useRef<number | null>(null);
 
   const nextSlide = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % slides.length);
@@ -42,6 +44,47 @@ const Carousel: React.FC = () => {
 
   const prevSlide = () => {
     setCurrentIndex((prevIndex) => (prevIndex - 1 + slides.length) % slides.length);
+  };
+
+  const handleManualNavigation = (navigationFn: () => void) => {
+    // Pausar autoplay temporalmente cuando el usuario navega manualmente
+    setIsAutoPlaying(false);
+    navigationFn();
+    
+    // Reanudar autoplay después de 5 segundos
+    setTimeout(() => {
+      setIsAutoPlaying(true);
+    }, 4000);
+  };
+
+  // Efecto para el autoplay
+  useEffect(() => {
+    if (isAutoPlaying) {
+      intervalRef.current = setInterval(() => {
+        nextSlide();
+      }, 3000);
+    } else {
+      if (intervalRef.current) {
+        clearInterval(intervalRef.current);
+        intervalRef.current = null;
+      }
+    }
+
+    // Cleanup function
+    return () => {
+      if (intervalRef.current) {
+        clearInterval(intervalRef.current);
+      }
+    };
+  }, [isAutoPlaying]);
+
+  // Pausar autoplay cuando el usuario hace hover sobre el carousel
+  const handleMouseEnter = () => {
+    setIsAutoPlaying(false);
+  };
+
+  const handleMouseLeave = () => {
+    setIsAutoPlaying(true);
   };
 
   const getSlidePosition = (index: number) => {
@@ -60,7 +103,10 @@ const Carousel: React.FC = () => {
   };
 
   return (
-    <CarouselContainer>
+    <CarouselContainer 
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
       <SlidesWrapper>
         {slides.map((slide, index) => {
           const position = getSlidePosition(index);
@@ -80,10 +126,10 @@ const Carousel: React.FC = () => {
       </SlidesWrapper>
       
       <ArrowsContainer>
-        <ArrowButton onClick={prevSlide}>
+        <ArrowButton onClick={() => handleManualNavigation(prevSlide)}>
           ←
         </ArrowButton>
-        <ArrowButton onClick={nextSlide}>
+        <ArrowButton onClick={() => handleManualNavigation(nextSlide)}>
           →
         </ArrowButton>
       </ArrowsContainer>
