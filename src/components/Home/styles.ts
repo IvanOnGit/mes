@@ -2,11 +2,10 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
 margin: 0;
-padding: 1rem;
 background-color: black;
 display: flex;
 align-items: center;
-height: 44rem;
+height: 46rem;
 
 overflow: auto;
 

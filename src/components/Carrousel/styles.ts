@@ -5,6 +5,7 @@ export const CarouselContainer = styled.div`
   height: 600px;
   position: relative;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   background-color: #000;
@@ -16,7 +17,7 @@ export const SlidesWrapper = styled.div`
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 100%;
+  height: 80%;
   position: relative;
 `;
 
@@ -26,7 +27,7 @@ interface SlideProps {
 
 export const Slide = styled.div<SlideProps>`
   position: absolute;
-  transition: all 0.4s ease-in-out;
+  transition: all 0.6s ease-in-out;
   overflow: hidden;
   
   ${({ position }) => {
@@ -34,7 +35,7 @@ export const Slide = styled.div<SlideProps>`
       case "center":
         return `
           width: 50%;
-          height: 80%;
+          height: 100%;
           z-index: 3;
           transform: translateX(0);
           opacity: 1;
@@ -42,26 +43,26 @@ export const Slide = styled.div<SlideProps>`
         `;
       case "left":
         return `
-          width: 30%;
-          height: 60%;
+          width: 25%;
+          height: 85%;
           z-index: 2;
-          transform: translateX(-80%);
+          transform: translateX(-180%);
           opacity: 0.7;
           filter: brightness(0.6);
         `;
       case "right":
         return `
-          width: 30%;
-          height: 60%;
+          width: 25%;
+          height: 85%;
           z-index: 2;
-          transform: translateX(80%);
+          transform: translateX(180%);
           opacity: 0.7;
           filter: brightness(0.6);
         `;
       default:
         return `
-          width: 30%;
-          height: 60%;
+          width: 25%;
+          height: 70%;
           z-index: 1;
           opacity: 0;
         `;
@@ -92,14 +93,21 @@ export const TextOverlay = styled.div<TextOverlayProps>`
   width: 200px;
 `;
 
+export const ArrowsContainer = styled.div`
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+  z-index: 10;
+  justify-content: center;
+  align-items: center;
+`;
+
 export const ArrowButton = styled.button`
-  position: absolute;
   background: transparent;
-  color: white;
+  color: #575757;
   font-size: 2rem;
   border: none;
   cursor: pointer;
-  z-index: 10;
   border-radius: 50%;
   width: 60px;
   height: 60px;
@@ -108,14 +116,6 @@ export const ArrowButton = styled.button`
   justify-content: center;
   transition: all 0.3s ease;
   backdrop-filter: blur(10px);
-
-  &:first-child {
-    left: 2rem;
-  }
-
-  &:last-child {
-    right: 2rem;
-  }
 
   &:hover {
     background: rgba(255, 255, 255, 0.2);

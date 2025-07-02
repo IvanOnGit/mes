@@ -5,7 +5,8 @@ import {
   Image,
   ArrowButton,
   SlidesWrapper,
-  TextOverlay
+  TextOverlay,
+  ArrowsContainer
 } from "./styles";
 
 interface SlideData {
@@ -60,10 +61,6 @@ const Carousel: React.FC = () => {
 
   return (
     <CarouselContainer>
-      <ArrowButton onClick={prevSlide}>
-        ←
-      </ArrowButton>
-      
       <SlidesWrapper>
         {slides.map((slide, index) => {
           const position = getSlidePosition(index);
@@ -82,9 +79,14 @@ const Carousel: React.FC = () => {
         })}
       </SlidesWrapper>
       
-      <ArrowButton onClick={nextSlide}>
-        →
-      </ArrowButton>
+      <ArrowsContainer>
+        <ArrowButton onClick={prevSlide}>
+          ←
+        </ArrowButton>
+        <ArrowButton onClick={nextSlide}>
+          →
+        </ArrowButton>
+      </ArrowsContainer>
     </CarouselContainer>
   );
 };
