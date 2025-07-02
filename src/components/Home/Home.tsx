@@ -1,6 +1,7 @@
 import Carrousel from '../Carrousel/Carrousel';
 import MoreInfo from '../MoreInfo/MoreInfo';
 import Navbar from '../Navbar/Navbar';
+import Services from '../Services/Services';
 import { Container } from './styles';
 
 function Home() {
@@ -10,6 +11,7 @@ function Home() {
         <Navbar />
         <Carrousel />
         <MoreInfo />
+        <Services />
       </Container>
     </>
   );
