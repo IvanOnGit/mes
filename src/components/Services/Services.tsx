@@ -20,29 +20,29 @@ const services = [
   {
     id: 1,
     title: "CONSULTORÍA SISTÉMICA",
-    description: "Metodología integral que aborda los desafíos organizacionales desde una perspectiva holística, considerando todas las interacciones y dinámicas del sistema.",
-    subtitle: "Transformación organizacional integral",
+    description: "Cada persona está interconectada con los demás miembros de los sistemas a los que pertenece, y estas relaciones operan mas allá de su voluntad o conocimiento, influyendo profundamente en su comportamiento y experiencia.",
+    subtitle: "Fluir y avanzar",
     image: "/images/CONSULTORÍA SISTÉMICA.jpg"
   },
   {
     id: 2,
     title: "CONSULTORÍA ASTROLÓGICA",
-    description: "Herramientas de autoconocimiento y desarrollo personal basadas en el análisis astrológico para la toma de decisiones estratégicas.",
-    subtitle: "Orientación cósmica para el liderazgo",
+    description: "La carta astral es el mapa energético que sirve como guía y es una potente fuente de información disponible.",
+    subtitle: "Que lo desconocido no controle tu vida. Descubre, elige y diseña tu camino.",
     image: "/images/ASTROLOGÍA.jpg"
   },
   {
     id: 3,
     title: "TALENT ACTIVATION SYSTEM",
-    description: "Sistema innovador para identificar, desarrollar y activar el potencial único de cada individuo en el contexto profesional y personal.",
-    subtitle: "Desbloquea tu máximo potencial",
+    description: "Es una experiencia holística integral, que permite incorporar recursos, desplegar habilidades, sentir mayor confianza y transformar los obstáculos para alcanzar un nivel superior.",
+    subtitle: "A creative and systemic way to fast transformation",
     image: "/images/TAS.jpg"
   },
   {
     id: 4,
     title: "PROFESSIONAL TRAINING",
     description: "Programas de formación especializados para el desarrollo de competencias técnicas y habilidades blandas en entornos profesionales.",
-    subtitle: "Excelencia en el desarrollo profesional",
+    subtitle: "Entrenamientos que impactan. De la teoría a la acción!",
     image: "/images/PROFESSIONAL TRAINING.jpg"
   }
 ];
@@ -54,29 +54,27 @@ function InteractiveServices() {
 
   const handleServiceClick = (index: number) => {
     if (activeService === index && isExpanded) {
-      // Secuencia de cierre
+      // Animación de salida simple: fade out rápido
       setShowContent(false);
+      setIsExpanded(false);
       setTimeout(() => {
-        setIsExpanded(false);
         setActiveService(-1);
-      }, 300); // Esperar que desaparezca el contenido
+      }, 500);
     } else {
       setActiveService(index);
       setIsExpanded(true);
-      // Esperar que se complete la expansión antes de mostrar el contenido
       setTimeout(() => {
         setShowContent(true);
-      }, 800); // Tiempo para que se complete la expansión
+      }, 800);
     }
   };
 
   const handleClose = () => {
-    // Secuencia de cierre
     setShowContent(false);
+    setIsExpanded(false);
     setTimeout(() => {
-      setIsExpanded(false);
       setActiveService(-1);
-    }, 300);
+    }, 500);
   };
 
   return (

@@ -19,7 +19,7 @@ const slides: SlideData[] = [
     text: "Quien se atreve a mirar la oscuridad"
   },
   {
-    src: "/images/Imagen 2.jpeg",
+    src: "/images/Imagen 2.jpg",
     text: "Tiene el poder de transformarla"
   },
   {

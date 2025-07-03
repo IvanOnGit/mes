@@ -16,7 +16,7 @@ export const Container = styled.div`
 
   h1 {
     color: white;
-    font-size: 5rem;
+    font-size: 3rem;
     font-weight: 400;
     margin-bottom: 2rem;
   }
@@ -29,6 +29,7 @@ export const InnerContainer = styled.div`
   z-index: 1;
   max-width: 1200px;
   width: 100%;
+  justify-content: center;
   
   &.expanded {
     gap: 0;
@@ -63,9 +64,22 @@ export const TitleItem = styled.div`
     margin: 0;
   }
 
+  /* Nueva clase para ocultar títulos durante las transiciones */
+  &.hide-titles {
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: all 0.3s ease;
+  }
+
   &:hover {
     background-color: rgba(255, 255, 255, 0.05);
     transform: translateX(10px);
+  }
+
+  /* Prevenir hover effects cuando se están ocultando */
+  &.hide-titles:hover {
+    background-color: transparent;
+    transform: translateY(-20px);
   }
 
   &.active {
@@ -77,6 +91,7 @@ export const TitleItem = styled.div`
     background-color: transparent;
     transform: translateX(0);
     padding: 0;
+    transition: all 0.5s ease;
   }
 
   h2 {
@@ -104,6 +119,7 @@ export const TitleItem = styled.div`
     opacity: 0;
     transform: translateY(-20px);
     margin-bottom: 0;
+    transition: all 0.3s ease;
   }
 
   &:hover h2 {
@@ -115,6 +131,12 @@ export const TitleItem = styled.div`
     color: white;
     border-bottom-color: white;
     font-weight: 300;
+  }
+
+  /* Ocultar títulos durante transiciones */
+  &.hide-titles h2 {
+    opacity: 0;
+    transform: translateY(-20px);
   }
 `;
 
@@ -187,18 +209,20 @@ export const Images = styled.div`
   display: flex;
   gap: 1.5rem;
   transition: all 0.8s ease;
-  
+  margin-top: 1rem;
+ 
   &.expanded {
     flex: 1;
     gap: 0;
+    margin-top: 0;
   }
 `;
 
 export const ImageItem = styled.div`
   position: relative;
   cursor: pointer;
-  transition: all 0.8s ease;
-  border-radius: 10rem 0 0;
+  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  border-radius: 5rem 0 0;
   overflow: hidden;
   width: 7rem;
   height: 22rem;
@@ -224,10 +248,10 @@ export const ImageItem = styled.div`
   &.active.expanded {
     transform: scale(1);
     box-shadow: none;
-    border-radius: 0;
     flex: 1;
     height: 400px;
     width: auto;
+    transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
 
   img {
@@ -235,13 +259,14 @@ export const ImageItem = styled.div`
     height: 100%;
     object-fit: cover;
     object-position: center;
-    border-top-left-radius: 10rem;
-    transition: all 0.8s ease;
+    border-top-left-radius: 5rem;
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
   
   &.active.expanded img {
     border-radius: 0;
     filter: brightness(1.1);
+    transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
 
   &:hover img {
@@ -272,6 +297,7 @@ export const ImageItem = styled.div`
   
   &.active.expanded .plus-icon {
     transform: scale(0);
+    transition: all 0.3s ease;
   }
 
   &:hover .plus-icon {
@@ -304,6 +330,7 @@ export const ImageItem = styled.div`
   
   &.active.expanded .close-icon {
     transform: scale(1);
+    transition: all 0.3s ease;
   }
   
   &.active.expanded .close-icon:hover {
