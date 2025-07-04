@@ -1,4 +1,5 @@
 import Carrousel from '../Carrousel/Carrousel';
+import Contact from '../Contact/Contact';
 import MoreInfo from '../MoreInfo/MoreInfo';
 import Navbar from '../Navbar/Navbar';
 import Services from '../Services/Services';
@@ -12,6 +13,7 @@ function Home() {
         <Carrousel />
         <MoreInfo />
         <Services />
+        <Contact />
       </Container>
     </>
   );
