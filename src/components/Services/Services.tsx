@@ -8,6 +8,7 @@ import {
   Images, 
   ImageItem
 } from "./styles";
+import { Link } from 'react-router-dom';
 
 const services = [
   {
@@ -102,7 +103,9 @@ function InteractiveServices() {
                   </p>
                   <h3>{service.subtitle}</h3>
                   <div className="action-buttons">
+                    <Link to="/biotrascendencia">
                     <button className="btn-primary">Ver más</button>
+                    </Link>
                     <button className="btn-secondary">Contactar</button>
                   </div>
                 </ExpandedDescription>
