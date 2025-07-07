@@ -16,6 +16,6 @@ export const Container = styled.div`
 `;
 
 export const Image = styled.img`
-  width: 10rem;
-  height: 10rem;
+  width: 38rem;
+  height: 20rem;
 `;
