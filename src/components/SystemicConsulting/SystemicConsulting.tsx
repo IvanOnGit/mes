@@ -26,7 +26,7 @@ function SystemicConsulting() {
                 <Paragraph>Es una <strong>poderosa herramienta</strong> de impacto para la <strong>transformación, reparación y alivio</strong> de cualquier dificultad o síntoma en lo personal y en lo profesional. También es un valioso aporte para ampliar la mirada, la <strong>toma de decisiones y la evaluación de escenarios futuros.</strong></Paragraph>
                 <button>Solicitá Información</button>
               </div>
-            </TextContainer>
+      </TextContainer>
     </Container>
   );
 }
