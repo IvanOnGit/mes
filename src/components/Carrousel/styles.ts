@@ -10,6 +10,7 @@ export const CarouselContainer = styled.div`
   justify-content: center;
   background-color: #000;
   overflow: hidden;
+  margin-top: 2rem;
 `;
 
 export const SlidesWrapper = styled.div`

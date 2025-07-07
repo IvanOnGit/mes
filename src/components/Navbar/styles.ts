@@ -8,7 +8,7 @@ export const Container = styled.div`
   position: relative;
   gap: 40rem;
   margin-top: 2rem;
-  margin-bottom: 5rem;
+  margin-bottom: 2rem;
 `;
 
 export const Logo = styled.img`
