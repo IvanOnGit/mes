@@ -1,3 +1,4 @@
+import FloatingDescription from "../FloatingDescription/FloatingDescription";
 import FloatingTitle from "../FloatingTitle/FloatingTitle";
 import Hero from "../Hero/Hero";
 import Navbar from "../Navbar/Navbar";
@@ -7,7 +8,8 @@ function AstroConsulting() {
   return (
     <Container>
       <Navbar />
-      <FloatingTitle title="CONSULTORÍA ASTROLÓGICA"/>
+      <FloatingTitle title="CONSULTORÍA ASTROLÓGICA" />
+      <FloatingDescription description="Que lo desconocido no controle tu Vida Descubre, elige y diseña tu Camino" />
       <Hero 
         image="/images/ASTROLOGÍA.jpg" 
       />
