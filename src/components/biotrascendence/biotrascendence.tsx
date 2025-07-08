@@ -1,4 +1,5 @@
 import FloatingTitle from "../FloatingTitle/FloatingTitle";
+import FloatingDescription from "../FloatingDescription/FloatingDescription";
 import Hero from "../Hero/Hero";
 import Navbar from "../Navbar/Navbar";
 import { Container, TextContainer } from "./styles";
@@ -8,6 +9,7 @@ function Biotrascendence() {
     <Container>
       <Navbar />
       <FloatingTitle title="CONSULTORÍA EN BIOTRASCENDENCIA®" />
+      <FloatingDescription description="Lideres que elijen una Vida Plena con Impacto" />
       <Hero 
         image="/images/BIOTRASCENDENCIA.jpg" 
       />
