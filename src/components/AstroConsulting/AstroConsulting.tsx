@@ -1,4 +1,5 @@
 import FloatingDescription from "../FloatingDescription/FloatingDescription";
+import FloatingSubtitle from "../FloatingSubtitle/FloatingSubtitle";
 import FloatingTitle from "../FloatingTitle/FloatingTitle";
 import Hero from "../Hero/Hero";
 import Navbar from "../Navbar/Navbar";
@@ -10,6 +11,7 @@ function AstroConsulting() {
       <Navbar />
       <FloatingTitle title="CONSULTORÍA ASTROLÓGICA" />
       <FloatingDescription description="Que lo desconocido no controle tu Vida Descubre, elige y diseña tu Camino" />
+      <FloatingSubtitle subtitle="· TU MAPA ENERGÉTICO ·" />
       <Hero 
         image="/images/ASTROLOGÍA.jpg" 
       />

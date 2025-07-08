@@ -3,6 +3,7 @@ import FloatingDescription from "../FloatingDescription/FloatingDescription";
 import Hero from "../Hero/Hero";
 import Navbar from "../Navbar/Navbar";
 import { Container, TextContainer } from "./styles";
+import FloatingSubtitle from "../FloatingSubtitle/FloatingSubtitle";
 
 function Biotrascendence() {
   return (
@@ -10,6 +11,7 @@ function Biotrascendence() {
       <Navbar />
       <FloatingTitle title="CONSULTORÍA EN BIOTRASCENDENCIA®" />
       <FloatingDescription description="Lideres que elijen una Vida Plena con Impacto" />
+      <FloatingSubtitle subtitle="PRESENCIA · CONSCIENCIA · SENTIDO " />
       <Hero 
         image="/images/BIOTRASCENDENCIA.jpg" 
       />

@@ -1,4 +1,5 @@
 import FloatingDescription from "../FloatingDescription/FloatingDescription";
+import FloatingSubtitle from "../FloatingSubtitle/FloatingSubtitle";
 import FloatingTitle from "../FloatingTitle/FloatingTitle";
 import Hero from "../Hero/Hero";
 import Navbar from "../Navbar/Navbar";
@@ -10,6 +11,7 @@ function SystemicConsulting() {
       <Navbar />
       <FloatingTitle title="CONSULTORÍA SISTÉMICA" />
       <FloatingDescription description="El Poder de ocupar tu lugar para avanzar en la vida" />
+      <FloatingSubtitle subtitle="· RESIGNIFICAR Y AVANZAR ·" />
       <Hero 
         image="/images/CONSULTORÍA SISTÉMICA.jpg" 
       />

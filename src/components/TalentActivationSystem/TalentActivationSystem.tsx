@@ -1,4 +1,5 @@
 import FloatingDescription from "../FloatingDescription/FloatingDescription";
+import FloatingSubtitle from "../FloatingSubtitle/FloatingSubtitle";
 import FloatingTitle from "../FloatingTitle/FloatingTitle";
 import Hero from "../Hero/Hero";
 import Navbar from "../Navbar/Navbar";
@@ -11,6 +12,7 @@ function TalentActivationSystem() {
       <Navbar />
       <FloatingTitle title="TALENT ACTIVATION SYSTEM®" />
       <FloatingDescription description="Activa todos tus talentos y vive tu meta" />
+      <FloatingSubtitle subtitle="· A CREATIVE AND SYSTEMIC WAY TO FAST TRANSFORMATION ·" />
       <Hero
         image="/images/TAS.jpg" />
     </Container>

@@ -11,6 +11,9 @@ export const TextContainer = styled.div`
  display: flex;
  width: 100%;
  height: 20rem;
+ background-color: transparent;
+ position: relative;
+ overflow: hidden;
 
  img {
   width: 20rem;
