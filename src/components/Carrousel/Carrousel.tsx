@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useCallback } from "react";
 import {
   CarouselContainer,
   Slide,
@@ -37,24 +37,26 @@ const Carousel: React.FC = () => {
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
   const intervalRef = useRef<number | null>(null);
 
-  const nextSlide = () => {
+  const nextSlide = useCallback(() => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % slides.length);
-  };
+  },[]);
 
-  const prevSlide = () => {
+  const prevSlide = useCallback(() => {
     setCurrentIndex((prevIndex) => (prevIndex - 1 + slides.length) % slides.length);
-  };
+  },[]);
 
-  const handleManualNavigation = (navigationFn: () => void) => {
-    // Pausar autoplay temporalmente cuando el usuario navega manualmente
-    setIsAutoPlaying(false);
-    navigationFn();
-    
-    // Reanudar autoplay después de 5 segundos
-    setTimeout(() => {
-      setIsAutoPlaying(true);
-    }, 4000);
-  };
+  const handleManualNavigation = useCallback((navigationFn: () => void) => {
+    return ()=>{
+      // Pausar autoplay temporalmente cuando el usuario navega manualmente
+      setIsAutoPlaying(false);
+      navigationFn();
+      
+      // Reanudar autoplay después de 5 segundos
+      setTimeout(() => {
+        setIsAutoPlaying(true);
+      }, 4000);
+    }
+  },[]);
 
   // Efecto para el autoplay
   useEffect(() => {
@@ -75,18 +77,18 @@ const Carousel: React.FC = () => {
         clearInterval(intervalRef.current);
       }
     };
-  }, [isAutoPlaying]);
+  }, [isAutoPlaying, nextSlide]);
 
   // Pausar autoplay cuando el usuario hace hover sobre el carousel
-  const handleMouseEnter = () => {
-    setIsAutoPlaying(false);
-  };
+  // const handleMouseEnter = useCallback(() => {
+  //   setIsAutoPlaying(false);
+  // },[]);
 
-  const handleMouseLeave = () => {
-    setIsAutoPlaying(true);
-  };
+  // const handleMouseLeave = useCallback(() => {
+  //   setIsAutoPlaying(true);
+  // },[]);
 
-  const getSlidePosition = (index: number) => {
+  const getSlidePosition = useCallback((index: number) => {
     const totalSlides = slides.length;
     let diff = (index - currentIndex + totalSlides) % totalSlides;
     
@@ -99,12 +101,12 @@ const Carousel: React.FC = () => {
     if (diff === -1) return "left";
     if (diff === 1) return "right";
     return "hidden";
-  };
+  },[currentIndex]);
 
   return (
     <CarouselContainer 
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
+      // onMouseEnter={handleMouseEnter}
+      // onMouseLeave={handleMouseLeave}
     >
       <SlidesWrapper>
         {slides.map((slide, index) => {
@@ -112,18 +114,18 @@ const Carousel: React.FC = () => {
           if (position === "hidden") return null;
           
           return (
-            <Slide key={index} position={position}>
-              <Image src={slide.src} alt={`slide-${index}`} />
+            <Slide key={slide.src} position={position}>
+              <Image src={slide.src} alt={slide.text} />
             </Slide>
           );
         })}
       </SlidesWrapper>
       
       <ArrowsContainer>
-        <ArrowButton onClick={() => handleManualNavigation(prevSlide)}>
+        <ArrowButton onClick={handleManualNavigation(prevSlide)}>
           ←
         </ArrowButton>
-        <ArrowButton onClick={() => handleManualNavigation(nextSlide)}>
+        <ArrowButton onClick={handleManualNavigation(nextSlide)}>
           →
         </ArrowButton>
       </ArrowsContainer>

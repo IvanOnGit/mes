@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useCallback, useState } from 'react';
 import { 
   Container, 
   InnerContainer, 
@@ -58,8 +58,10 @@ function InteractiveServices() {
   const [isExpanded, setIsExpanded] = useState(false);
   const [showContent, setShowContent] = useState(false);
 
-  const handleServiceClick = (index: number) => {
-    if (activeService === index && isExpanded) {
+  const handleServiceClick = useCallback((index: number) => {
+    return (event: React.MouseEvent) =>{
+      event.stopPropagation();
+      if (activeService === index && isExpanded) {
       // Animación de salida simple: fade out rápido
       setShowContent(false);
       setIsExpanded(false);
@@ -73,14 +75,16 @@ function InteractiveServices() {
         setShowContent(true);
       }, 800);
     }
-  };
+    }
+  },[activeService, isExpanded]);
 
-  const handleClose = () => {
+  const handleClose = (e: React.MouseEvent) => {
+    e.stopPropagation();
     setShowContent(false);
-    setIsExpanded(false);
     setTimeout(() => {
+      setIsExpanded(false);
       setActiveService(-1);
-    }, 500);
+    }, 700);
   };
 
   return (
@@ -98,7 +102,7 @@ function InteractiveServices() {
                 ${isExpanded && activeService === index ? 'expanded' : ''}
                 ${showContent && activeService === index ? 'show-content' : ''}
               `}
-              onClick={() => handleServiceClick(index)}
+              onClick={handleServiceClick(index)}
             >
               <h2>+ {service.title}</h2>
               {isExpanded && activeService === index && (
@@ -120,7 +124,8 @@ function InteractiveServices() {
         </Titles>
 
         <Images className={isExpanded ? 'expanded' : ''}>
-          {services.map((service, index) => (
+          {services.map((service, index) => {
+            return (
             <ImageItem 
               key={service.id}
               className={`
@@ -129,7 +134,7 @@ function InteractiveServices() {
                 ${isExpanded && activeService === index ? 'expanded' : ''}
                 ${showContent && activeService === index ? 'show-content' : ''}
               `}
-              onClick={() => handleServiceClick(index)}
+              onClick={handleServiceClick(index)}
             >
               <img src={service.image} alt={service.title} />
               <div className="plus-icon">+</div>
@@ -137,7 +142,8 @@ function InteractiveServices() {
                 <div className="close-icon" onClick={handleClose}>×</div>
               )}
             </ImageItem>
-          ))}
+          )
+          })}
         </Images>
       </InnerContainer>
     </Container>
