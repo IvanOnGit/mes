@@ -9,16 +9,11 @@ export const Container = styled.div`
 
 export const TextContainer = styled.div`
  display: flex;
- justify-content: center;
- align-items: center;
  width: 100%;
- background-color: white;
  height: 20rem;
- gap: 2rem;
- padding: 1rem;
 
  img {
-  width: 26rem;
+  width: 20rem;
   height: 15rem;
  }
 
@@ -27,12 +22,50 @@ export const TextContainer = styled.div`
   padding-bottom: 0.5rem;
   margin-top: 1rem;
   font-size: 1rem;
-  border-bottom: 3px solid black;
+ }
+
+ span {
+  display: block;
+  width: 3rem;
+  height: 5px;
+  background-color: black;
+  margin-bottom: 1rem;
  }
 
  p {
   margin-bottom: 1rem;
   font-size: 0.8rem;
-  width: 20rem;
+  width: 15rem;
  }
+
+ button {
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-size: 0.8rem;
+ }
+`;
+
+export const FirstContainer = styled.div`
+  background-color: #D2D2D2;
+  display: flex;
+  gap: 2rem;
+  height: 100%;
+  width: 50%;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+`;
+
+export const SecondContainer = styled.div`
+  background-color: white;
+  display: flex;
+  gap: 2rem;
+  height: 100%;
+  width: 50%;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
 `;
