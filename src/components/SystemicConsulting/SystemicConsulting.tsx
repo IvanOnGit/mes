@@ -3,7 +3,7 @@ import FloatingSubtitle from "../FloatingSubtitle/FloatingSubtitle";
 import FloatingTitle from "../FloatingTitle/FloatingTitle";
 import Hero from "../Hero/Hero";
 import Navbar from "../Navbar/Navbar";
-import { Container, Paragraph, TextContainer } from "./styles";
+import { Container, IconsContainer, ModalityContainer, Paragraph, TextContainer } from "./styles";
 
 function SystemicConsulting() {
   return (
@@ -31,6 +31,32 @@ function SystemicConsulting() {
                 <button>Solicitá Información</button>
               </div>
       </TextContainer>
+      <ModalityContainer>
+        <h2>MODALIDADES</h2>
+        <IconsContainer>
+          <div>
+            <img src="/images/Icono 1.svg" alt="" />
+          </div>
+          <div>
+            <img src="/images/Icono 2.svg" alt="" />
+          </div>
+          <div>
+            <img src="/images/Icono 3.svg" alt="" />
+          </div>
+          <div>
+            <img src="/images/Icono 4.svg" alt="" />
+          </div>
+          <div>
+            <img src="/images/Icono 5.svg" alt="" />
+          </div>
+          <div>
+            <img src="/images/Icono 6.svg" alt="" />
+          </div>
+          <div>
+            <img src="/images/Icono 7.svg" alt="" />
+          </div>
+        </IconsContainer>
+      </ModalityContainer>
     </Container>
   );
 }
