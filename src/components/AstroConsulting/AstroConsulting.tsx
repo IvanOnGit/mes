@@ -3,7 +3,7 @@ import FloatingSubtitle from "../FloatingSubtitle/FloatingSubtitle";
 import FloatingTitle from "../FloatingTitle/FloatingTitle";
 import Hero from "../Hero/Hero";
 import Navbar from "../Navbar/Navbar";
-import { Capsule, CapsulesContainer, Container, FirstContainer, ModalityContainer, SecondContainer, TextContainer } from "./styles";
+import { Capsule, CapsulesContainer, Container, FirstContainer, TypesOfLecturesContainer, SecondContainer, TextContainer } from "./styles";
 
 function AstroConsulting() {
   return (
@@ -38,7 +38,7 @@ function AstroConsulting() {
           </div>
         </SecondContainer>
       </TextContainer>
-      <ModalityContainer>
+      <TypesOfLecturesContainer>
               <h2>TIPOS DE LECTURA</h2>
               <CapsulesContainer>
                 <Capsule>
@@ -63,7 +63,7 @@ function AstroConsulting() {
                 <Capsule className="last">
                   <h3>Carta Astral - Eventos, Proyectos, Empresas, Momento</h3>
                 </Capsule>
-      </ModalityContainer>
+      </TypesOfLecturesContainer>
     </Container>
   );
 }

@@ -73,7 +73,7 @@ export const SecondContainer = styled.div`
   padding: 1rem;
 `;
 
-export const ModalityContainer = styled.div`
+export const TypesOfLecturesContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
