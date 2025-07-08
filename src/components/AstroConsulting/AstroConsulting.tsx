@@ -3,7 +3,7 @@ import FloatingSubtitle from "../FloatingSubtitle/FloatingSubtitle";
 import FloatingTitle from "../FloatingTitle/FloatingTitle";
 import Hero from "../Hero/Hero";
 import Navbar from "../Navbar/Navbar";
-import { Container, FirstContainer, SecondContainer, TextContainer } from "./styles";
+import { Capsule, CapsulesContainer, Container, FirstContainer, ModalityContainer, SecondContainer, TextContainer } from "./styles";
 
 function AstroConsulting() {
   return (
@@ -38,6 +38,32 @@ function AstroConsulting() {
           </div>
         </SecondContainer>
       </TextContainer>
+      <ModalityContainer>
+              <h2>TIPOS DE LECTURA</h2>
+              <CapsulesContainer>
+                <Capsule>
+                  <h3>Carta Natal</h3>
+                </Capsule>
+                <Capsule>
+                  <h3>Carta Dacrónica</h3>
+                </Capsule>
+                <Capsule>
+                  <h3>Sinastría</h3>
+                </Capsule>
+                <Capsule>
+                  <h3>Revolución Solar</h3>
+                </Capsule>
+                <Capsule>
+                  <h3>Predicciones</h3>
+                </Capsule>
+                <Capsule>
+                  <h3>Carta Vocacional</h3>
+                </Capsule>
+        </CapsulesContainer>
+                <Capsule className="last">
+                  <h3>Carta Astral - Eventos, Proyectos, Empresas, Momento</h3>
+                </Capsule>
+      </ModalityContainer>
     </Container>
   );
 }

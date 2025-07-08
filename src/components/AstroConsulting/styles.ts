@@ -72,3 +72,56 @@ export const SecondContainer = styled.div`
   justify-content: center;
   padding: 1rem;
 `;
+
+export const ModalityContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  background-color: #1A1A1A;
+  gap: 2rem;
+  padding: 2rem 0; /* Agregué padding para dar espacio arriba y abajo */
+
+  h2 {
+    color: white;
+    font-size: 3rem;
+    font-weight: 100;
+    margin: 0;
+    padding: 0;
+  }
+`;
+
+export const CapsulesContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 1rem;
+  flex-wrap: wrap; /* Esta es la clave - permite que las cápsulas rompan línea */
+`;
+
+export const Capsule = styled.div`
+  background-color: transparent;
+  border: 1px solid white;
+  border-radius: 2rem;
+  width: 12rem;
+  padding: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+
+  h3 {
+    color: white;
+    margin: 0;
+    padding: 0;
+    font-weight: 100;
+    font-size: 1rem;
+  }
+
+  &.last {
+    width: 30rem;
+  }
+`;
