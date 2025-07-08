@@ -3,7 +3,7 @@ import FloatingSubtitle from "../FloatingSubtitle/FloatingSubtitle";
 import FloatingTitle from "../FloatingTitle/FloatingTitle";
 import Hero from "../Hero/Hero";
 import Navbar from "../Navbar/Navbar";
-import { Container, TextContainer } from "./styles";
+import { Capsule, CapsulesContainer, Container, StagesContainer, TextContainer } from "./styles";
 
 function TalentActivationSystem() {
   return (
@@ -30,6 +30,30 @@ function TalentActivationSystem() {
           <p>Para enriquecer los resultados, se recomienda complementar con un abordaje a <strong>nivel individual, grupal e institucional,</strong> especialmente en el caso de deportistas que forman parte de equipos.</p>
         </div>
       </TextContainer>
+      <StagesContainer>
+              <h2>ETAPAS</h2>
+              <CapsulesContainer>
+                <Capsule>
+                  <h3>Autoconocimiento</h3>
+                  <p>ETAPA 1</p>
+                </Capsule>
+                <span></span>
+                <Capsule>
+                  <h3>Intervenciones De Transformación</h3>
+                  <p>ETAPA 2</p>
+                </Capsule>
+                <span></span>
+                <Capsule>
+                  <h3>Integración</h3>
+                  <p>ETAPA 3</p>
+                </Capsule>
+                <span></span>
+                <Capsule>
+                  <h3>Evolución Aplicada</h3>
+                  <p>META</p>
+                </Capsule>
+              </CapsulesContainer>
+      </StagesContainer>
     </>
   );
 }
