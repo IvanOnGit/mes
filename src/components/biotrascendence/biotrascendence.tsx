@@ -2,7 +2,7 @@ import FloatingTitle from "../FloatingTitle/FloatingTitle";
 import FloatingDescription from "../FloatingDescription/FloatingDescription";
 import Hero from "../Hero/Hero";
 import Navbar from "../Navbar/Navbar";
-import { Container, TextContainer } from "./styles";
+import { Capsule, CapsulesContainer, Container, ModalityContainer, TextContainer } from "./styles";
 import FloatingSubtitle from "../FloatingSubtitle/FloatingSubtitle";
 
 function Biotrascendence() {
@@ -28,6 +28,24 @@ function Biotrascendence() {
         </div>
         <img src="/images/Fiveimpacts.png" alt="" />
       </TextContainer>
+      <ModalityContainer>
+        <h2>MODALIDADES</h2>
+        <CapsulesContainer>
+          <Capsule>
+            <h3>Procesos Cortos</h3>
+            <p>(3 Meses)</p>
+          </Capsule>
+          <span></span>
+          <Capsule>
+            <h3>Procesos Mediano Plazo</h3>
+            <p>(Por Requerimiento)</p>
+          </Capsule>
+          <span></span>
+          <Capsule>
+            <h3>Procesos De Transformación Conductual</h3>
+          </Capsule>
+        </CapsulesContainer>
+      </ModalityContainer>
     </Container>
   );
 }
