@@ -3,7 +3,8 @@ import FloatingSubtitle from "../FloatingSubtitle/FloatingSubtitle";
 import FloatingTitle from "../FloatingTitle/FloatingTitle";
 import Hero from "../Hero/Hero";
 import Navbar from "../Navbar/Navbar";
-import { Capsule, CapsulesContainer, Container, FirstContainer, TypesOfLecturesContainer, SecondContainer, TextContainer } from "./styles";
+import RequestInformation from "../RequestInformation/RequestInformation";
+import { Capsule, CapsulesContainer, Container, FirstContainer, TypesOfLecturesContainer, SecondContainer, TextContainer, ModalityContainer, IconsContainer } from "./styles";
 
 function AstroConsulting() {
   return (
@@ -64,6 +65,24 @@ function AstroConsulting() {
                   <h3>Carta Astral - Eventos, Proyectos, Empresas, Momento</h3>
                 </Capsule>
       </TypesOfLecturesContainer>
+      <ModalityContainer>
+              <h2>MODALIDADES</h2>
+              <IconsContainer>
+                <div>
+                  <img src="/images/Icono 9.svg" alt="" />
+                </div>
+                <div>
+                  <img src="/images/Icono 10.svg" alt="" />
+                </div>
+                <div>
+                  <img src="/images/Icono 8.svg" alt="" />
+                </div>
+                <div>
+                  <img src="/images/Icono 11.svg" alt="" />
+                </div>
+              </IconsContainer>
+      </ModalityContainer>
+      <RequestInformation title="¡Deja el Piloto Automático y Comanda tu Vida!"/>
     </Container>
   );
 }

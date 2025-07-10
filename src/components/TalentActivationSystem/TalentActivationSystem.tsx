@@ -3,6 +3,7 @@ import FloatingSubtitle from "../FloatingSubtitle/FloatingSubtitle";
 import FloatingTitle from "../FloatingTitle/FloatingTitle";
 import Hero from "../Hero/Hero";
 import Navbar from "../Navbar/Navbar";
+import RequestInformation from "../RequestInformation/RequestInformation";
 import { Capsule, CapsulesContainer, Container, StagesContainer, TextContainer } from "./styles";
 
 function TalentActivationSystem() {
@@ -54,6 +55,7 @@ function TalentActivationSystem() {
                 </Capsule>
               </CapsulesContainer>
       </StagesContainer>
+      <RequestInformation title="¿Estás listo para llevarte a un Nivel Superior?"  subtitle="¡Lográ una Activación Consciente!"/>
     </>
   );
 }

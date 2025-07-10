@@ -4,6 +4,7 @@ import Hero from "../Hero/Hero";
 import Navbar from "../Navbar/Navbar";
 import { Capsule, CapsulesContainer, Container, ModalityContainer, TextContainer } from "./styles";
 import FloatingSubtitle from "../FloatingSubtitle/FloatingSubtitle";
+import RequestInformation from "../RequestInformation/RequestInformation";
 
 function Biotrascendence() {
   return (
@@ -46,6 +47,7 @@ function Biotrascendence() {
           </Capsule>
         </CapsulesContainer>
       </ModalityContainer>
+      <RequestInformation title="¡Lográ tu meta en 3 meses!" />
     </Container>
   );
 }

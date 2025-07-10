@@ -3,6 +3,7 @@ import FloatingSubtitle from "../FloatingSubtitle/FloatingSubtitle";
 import FloatingTitle from "../FloatingTitle/FloatingTitle";
 import Hero from "../Hero/Hero";
 import Navbar from "../Navbar/Navbar";
+import RequestInformation from "../RequestInformation/RequestInformation";
 import { Container, IconsContainer, ModalityContainer, Paragraph, TextContainer } from "./styles";
 
 function SystemicConsulting() {
@@ -57,6 +58,7 @@ function SystemicConsulting() {
           </div>
         </IconsContainer>
       </ModalityContainer>
+      <RequestInformation title="¡El Cambio Empieza en Vos!"/>
     </Container>
   );
 }

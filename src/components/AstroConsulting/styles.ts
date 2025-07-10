@@ -126,3 +126,28 @@ export const Capsule = styled.div`
     width: 30rem;
   }
 `;
+
+export const ModalityContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 2rem;
+  height: 20rem;
+  width: 100%;
+  background-color: #1A1A1A;
+
+  h2 {
+    color: white;
+    margin: 0;
+    font-size: 2.5rem;
+    font-weight: 100;
+  }
+`;
+
+export const IconsContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+`;
