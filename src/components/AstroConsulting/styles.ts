@@ -80,7 +80,7 @@ export const TypesOfLecturesContainer = styled.div`
   align-items: center;
   flex-direction: column;
   width: 100%;
-  background-color: #1A1A1A;
+  background-color: black;
   gap: 2rem;
   padding: 2rem 0; /* Agregué padding para dar espacio arriba y abajo */
 
@@ -99,7 +99,7 @@ export const CapsulesContainer = styled.div`
   align-items: center;
   width: 100%;
   gap: 1rem;
-  flex-wrap: wrap; /* Esta es la clave - permite que las cápsulas rompan línea */
+  flex-wrap: wrap;
 `;
 
 export const Capsule = styled.div`
