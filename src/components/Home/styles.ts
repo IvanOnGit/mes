@@ -8,7 +8,7 @@ flex-direction: column;
 align-items: center;
 height: auto;
 
-overflow: auto;
+overflow: hidden;
 
   /* Oculta scrollbar en Webkit (Chrome, Safari) */
 &::-webkit-scrollbar {

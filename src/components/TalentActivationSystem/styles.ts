@@ -5,6 +5,7 @@ export const Container = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
+  overflow: hidden;
 `;
 
 export const TextContainer = styled.div`
@@ -16,6 +17,7 @@ export const TextContainer = styled.div`
  height: 20rem;
  gap: 2rem;
  padding: 1rem;
+ overflow: hidden;
 
  img {
   width: 26rem;
@@ -46,7 +48,7 @@ export const StagesContainer = styled.div`
   background-color: #1A1A1A;
   height: 20rem;
   gap: 2rem;
-
+  overflow: hidden;
   h2 {
     color: white;
     font-size: 3rem;
@@ -60,6 +62,7 @@ export const CapsulesContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 
   span {
     width: 2rem;

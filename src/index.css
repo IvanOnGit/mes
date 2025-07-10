@@ -5,9 +5,7 @@
     overflow-x: hidden;
 }
 
-html, body {
-    overflow-x: hidden;
-}
+
 
 body {
     overflow: auto;
@@ -20,4 +18,8 @@ html {
 
 body::-webkit-scrollbar {
     display: none;
+}
+
+html, body {
+    overflow-x: hidden;
 }
