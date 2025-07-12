@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import Contact from "../Contact/Contact";
 import FloatingDescription from "../FloatingDescription/FloatingDescription";
 import FloatingSubtitle from "../FloatingSubtitle/FloatingSubtitle";
@@ -6,7 +7,22 @@ import Hero from "../Hero/Hero";
 import DynamicImages from "../ImagesContainer/ImagesContainer";
 import Navbar from "../Navbar/Navbar";
 import RequestInformation from "../RequestInformation/RequestInformation";
-import { Capsule, CapsulesContainer, Container, FirstContainer, TypesOfLecturesContainer, SecondContainer, TextContainer, ModalityContainer, IconsContainer } from "./styles";
+import { 
+  Capsule, 
+  CapsulesContainer, 
+  Container, 
+  FirstContainer, 
+  TypesOfLecturesContainer, 
+  SecondContainer, 
+  TextContainer, 
+  ModalityContainer, 
+  IconsContainer,
+  ExpandedContainer,
+  ExpandedContent,
+  CloseButton,
+  InPeopleExpanded,
+  InCompanyExpanded
+} from "./styles";
 
 const myImages = [
     "/images/Astro 1.svg",
@@ -15,6 +31,19 @@ const myImages = [
   ];
 
 function AstroConsulting() {
+  const [expandedPersonas, setExpandedPersonas] = useState(false);
+  const [expandedEmpresas, setExpandedEmpresas] = useState(false);
+
+  const togglePersonas = () => {
+    setExpandedPersonas(!expandedPersonas);
+    if (expandedEmpresas) setExpandedEmpresas(false);
+  };
+
+  const toggleEmpresas = () => {
+    setExpandedEmpresas(!expandedEmpresas);
+    if (expandedPersonas) setExpandedPersonas(false);
+  };
+
   return (
     <Container>
       <Navbar />
@@ -24,29 +53,91 @@ function AstroConsulting() {
       <Hero 
         image="/images/ASTROLOGÍA.jpg" 
       />
-      <TextContainer>
-        <FirstContainer>
-          <img src="/images/InPeople.svg" alt="" />
-          <div>
-            <h2>EN LAS PERSONAS</h2>
-            <span></span>
-            <p>
-              La carta astral es el mapa energético que sirve como guía y es la fuente de información disponible para autoconocerse
-              ampliar la comprensión y tomar mejores decisiones.
-            </p>
-            <button>Ver más</button>
-          </div>
-        </FirstContainer>
-        <SecondContainer>
-          <img src="/images/InBusiness.svg" alt="" />
-          <div>
-            <h2>EN LAS EMPRESAS</h2>
-            <span></span>
-            <p>La Astrología en las organizaciones es una herramienta potente que brinda soluciones inmediatas, especialmente en las relaciones y en el desarrollo de talentos.</p>
-            <button>Ver más</button>
-          </div>
-        </SecondContainer>
-      </TextContainer>
+      
+      {/* Contenedor que se expande/contrae */}
+      <ExpandedContainer $isExpanded={expandedPersonas || expandedEmpresas}>
+        {!expandedPersonas && !expandedEmpresas && (
+          <TextContainer>
+            <FirstContainer>
+              <img src="/images/InPeople.svg" alt="" />
+              <div>
+                <h2>EN LAS PERSONAS</h2>
+                <span></span>
+                <p>
+                  La carta astral es el mapa energético que sirve como guía y es la fuente de información disponible para autoconocerse
+                  ampliar la comprensión y tomar mejores decisiones.
+                </p>
+                <button onClick={togglePersonas}>Ver más</button>
+              </div>
+            </FirstContainer>
+            <SecondContainer>
+              <img src="/images/InBusiness.svg" alt="" />
+              <div>
+                <h2>EN LAS EMPRESAS</h2>
+                <span></span>
+                <p>La Astrología en las organizaciones es una herramienta potente que brinda soluciones inmediatas, especialmente en las relaciones y en el desarrollo de talentos.</p>
+                <button onClick={toggleEmpresas}>Ver más</button>
+              </div>
+            </SecondContainer>
+          </TextContainer>
+        )}
+
+        {/* Contenido expandido para Personas */}
+        {expandedPersonas && (
+          <ExpandedContent $bgColor="#D2D2D2" $fromLeft={true}>
+            <CloseButton onClick={togglePersonas}>Ver menos</CloseButton>
+            <InPeopleExpanded>
+              <img src="/images/InPeople.svg" alt="" />
+              <div className='text'>
+                <h2>EN LAS PERSONAS</h2>
+                <span />
+                <div >
+                <p>
+                 La carta natal opera en su completitud, seamos conocedores o no de la misma. El sistema de creencias de cada persona no limita ni evita que la energía opere y se manifieste a través de los sentimientos, comportamientos, sucesos, vínculos y entorno.
+                </p>
+                <p>
+                  Es decir que tomar conocimiento sobre uno mismo, tener contacto con el potencial de posibilidades que traemos y abordarlo con conciencia, permite salir de lo automático, lo reactivo y de la reactivo y de la identidad identidad fija auto-percibida.
+                </p>
+              </div>
+              </div>
+              <div className='text'>
+                <p className='not'>
+                  La propuesta es dejar de ver que lo de afuera no nos pertenece para sí lograr un mayor despliegue y expansión, habitando nuevos lugares, siendo creador y diseñador del propio destino.
+                </p>
+                <p>
+                  Lo importante es asumir el poder de crear, resignificar y potenciar todos los dones y talentos que traemos, aprendiendo a transformar lo incómodo en oportunidad y encauzarlo a favor del propósito de vida.
+                </p>
+              </div>
+            </InPeopleExpanded>
+          </ExpandedContent>
+        )}
+
+        {/* Contenido expandido para Empresas */}
+        {expandedEmpresas && (
+          <ExpandedContent $bgColor="white" $fromLeft={false}>
+            <CloseButton onClick={toggleEmpresas}>Ver menos</CloseButton>
+            <InCompanyExpanded>
+                <img src="/images/InBusiness.svg" alt="" />
+                <div className='text'>
+                  <h2>EN LAS EMPRESAS</h2>
+                  <span />
+                  <p>
+                    La Astrología en las organizaciones es una herramienta potente que 
+                    brinda soluciones inmediatas, especialmente en las relaciones 
+                    y en el desarrollo de talentos.
+                  </p>
+                  <p>
+                    Cuando una persona está en el lugar adecuado impacta en el entorno. 
+                    Cuando los equipos son formados y reestructurados, en función a sus energías, 
+                    sus características y propósito personal, los resultados se manifiestan 
+                    y el clima laboral es virtuoso, colaborativo y constructivo.
+                  </p>
+                </div>
+            </InCompanyExpanded>
+          </ExpandedContent>
+        )}
+      </ExpandedContainer>
+
       <TypesOfLecturesContainer>
               <h2>TIPOS DE LECTURA</h2>
               <CapsulesContainer>
