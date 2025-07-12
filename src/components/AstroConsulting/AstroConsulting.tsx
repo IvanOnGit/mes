@@ -21,7 +21,8 @@ import {
   ExpandedContent,
   CloseButton,
   InPeopleExpanded,
-  InCompanyExpanded
+  InCompanyExpanded,
+  DropdownsContainer
 } from "./styles";
 
 const myImages = [
@@ -133,6 +134,12 @@ function AstroConsulting() {
                     y el clima laboral es virtuoso, colaborativo y constructivo.
                   </p>
                 </div>
+                <DropdownsContainer>
+                  <button>RRHH</button>
+                  <button>MARKETING</button>
+                  <button>DIRECCIÓN GENERAL</button>
+                  <button>TODAS LAS ÁREAS</button>
+                </DropdownsContainer>
             </InCompanyExpanded>
           </ExpandedContent>
         )}

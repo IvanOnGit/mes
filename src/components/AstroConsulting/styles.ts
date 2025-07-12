@@ -152,7 +152,6 @@ export const InPeopleExpanded = styled.div`
   }
 
   & .text {
-    background-color: red;
     width: 30rem;
     gap: 1rem;
 
@@ -191,7 +190,6 @@ export const InCompanyExpanded = styled.div`
   }
 
   & .text {
-    background-color: red;
     width: 30rem;
     gap: 1rem;
 
@@ -216,6 +214,24 @@ export const InCompanyExpanded = styled.div`
         margin-top: 0;
       }
     }
+  }
+`;
+
+export const DropdownsContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1.4rem;
+  height: 100%;
+
+  button {
+    width: 20rem;
+    padding: 0.5rem;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid black;
+    text-align: left;
   }
 `;
 
