@@ -6,6 +6,7 @@ import { Capsule, CapsulesContainer, Container, ModalityContainer, TextContainer
 import FloatingSubtitle from "../FloatingSubtitle/FloatingSubtitle";
 import RequestInformation from "../RequestInformation/RequestInformation";
 import DynamicImages from "../ImagesContainer/ImagesContainer";
+import Contact from "../Contact/Contact";
 
   const myImages = [
     "/images/Bio 1.svg",
@@ -56,6 +57,7 @@ function Biotrascendence() {
       </ModalityContainer>
       <RequestInformation title="¡Lográ tu meta en 3 meses!" />
       <DynamicImages images={myImages} />
+      <Contact />
     </Container>
   );
 }

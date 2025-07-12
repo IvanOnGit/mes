@@ -1,3 +1,4 @@
+import Contact from "../Contact/Contact";
 import FloatingDescription from "../FloatingDescription/FloatingDescription";
 import FloatingSubtitle from "../FloatingSubtitle/FloatingSubtitle";
 import FloatingTitle from "../FloatingTitle/FloatingTitle";
@@ -23,7 +24,6 @@ function TalentActivationSystem() {
       <FloatingSubtitle subtitle="· A CREATIVE AND SYSTEMIC WAY TO FAST TRANSFORMATION ·" />
       <Hero
         image="/images/TAS.jpg" />
-    </Container>
       <TextContainer>
         <img src="/images/Cyclist.svg" alt="" />
         <div>
@@ -38,7 +38,7 @@ function TalentActivationSystem() {
           <p>Para enriquecer los resultados, se recomienda complementar con un abordaje a <strong>nivel individual, grupal e institucional,</strong> especialmente en el caso de deportistas que forman parte de equipos.</p>
         </div>
       </TextContainer>
-      <StagesContainer>
+          <StagesContainer>
               <h2>ETAPAS</h2>
               <CapsulesContainer>
                 <Capsule>
@@ -61,9 +61,11 @@ function TalentActivationSystem() {
                   <p>META</p>
                 </Capsule>
               </CapsulesContainer>
-      </StagesContainer>
-      <RequestInformation title="¿Estás listo para llevarte a un Nivel Superior?" subtitle="¡Lográ una Activación Consciente!" />
-      <DynamicImages images={myImages} />
+          </StagesContainer>
+          <RequestInformation title="¿Estás listo para llevarte a un Nivel Superior?" subtitle="¡Lográ una Activación Consciente!" />
+          <DynamicImages images={myImages} />
+            <Contact />
+        </Container>
     </>
   );
 }

@@ -1,3 +1,4 @@
+import Contact from "../Contact/Contact";
 import FloatingDescription from "../FloatingDescription/FloatingDescription";
 import FloatingSubtitle from "../FloatingSubtitle/FloatingSubtitle";
 import FloatingTitle from "../FloatingTitle/FloatingTitle";
@@ -68,6 +69,7 @@ function SystemicConsulting() {
       </ModalityContainer>
       <RequestInformation title="¡El Cambio Empieza en Vos!" />
       <DynamicImages images={myImages} />
+      <Contact />
     </Container>
   );
 }

@@ -1,3 +1,4 @@
+import Contact from "../Contact/Contact";
 import FloatingDescription from "../FloatingDescription/FloatingDescription";
 import FloatingSubtitle from "../FloatingSubtitle/FloatingSubtitle";
 import FloatingTitle from "../FloatingTitle/FloatingTitle";
@@ -50,6 +51,7 @@ function ProfessionalTraining() {
               </CapsulesContainer>
       </ModalityContainer>
       <DynamicImages images={myImages} />
+      <Contact />
     </Container>
   );
 }

@@ -1,3 +1,4 @@
+import Contact from "../Contact/Contact";
 import FloatingDescription from "../FloatingDescription/FloatingDescription";
 import FloatingSubtitle from "../FloatingSubtitle/FloatingSubtitle";
 import FloatingTitle from "../FloatingTitle/FloatingTitle";
@@ -91,6 +92,7 @@ function AstroConsulting() {
       </ModalityContainer>
       <RequestInformation title="¡Deja el Piloto Automático y Comanda tu Vida!" />
       <DynamicImages images={myImages} />
+      <Contact />
     </Container>
   );
 }
