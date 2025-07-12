@@ -5,10 +5,12 @@ import SystemicConsulting from './components/SystemicConsulting/SystemicConsulti
 import AstroConsulting from './components/AstroConsulting/AstroConsulting';
 import TalentActivationSystem from './components/TalentActivationSystem/TalentActivationSystem';
 import ProfessionalTraining from './components/ProfessionalTraining/ProfessionalTraining';
+import ScrollToTop from './components/ScrollToTop/ScrollToTop';
 
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/biotrascendencia" element={<Biotrascendence />} />
