@@ -2,9 +2,17 @@ import FloatingDescription from "../FloatingDescription/FloatingDescription";
 import FloatingSubtitle from "../FloatingSubtitle/FloatingSubtitle";
 import FloatingTitle from "../FloatingTitle/FloatingTitle";
 import Hero from "../Hero/Hero";
+import DynamicImages from "../ImagesContainer/ImagesContainer";
 import Navbar from "../Navbar/Navbar";
 import RequestInformation from "../RequestInformation/RequestInformation";
 import { Container, IconsContainer, ModalityContainer, Paragraph, TextContainer } from "./styles";
+
+const myImages = [
+    "/images/Systemic 1.svg",
+    "/images/Systemic 2.svg",
+    "/images/Systemic 3.svg",
+    "/images/Systemic 4.svg",
+  ];
 
 function SystemicConsulting() {
   return (
@@ -58,7 +66,8 @@ function SystemicConsulting() {
           </div>
         </IconsContainer>
       </ModalityContainer>
-      <RequestInformation title="¡El Cambio Empieza en Vos!"/>
+      <RequestInformation title="¡El Cambio Empieza en Vos!" />
+      <DynamicImages images={myImages} />
     </Container>
   );
 }

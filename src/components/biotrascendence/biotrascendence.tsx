@@ -5,6 +5,13 @@ import Navbar from "../Navbar/Navbar";
 import { Capsule, CapsulesContainer, Container, ModalityContainer, TextContainer } from "./styles";
 import FloatingSubtitle from "../FloatingSubtitle/FloatingSubtitle";
 import RequestInformation from "../RequestInformation/RequestInformation";
+import DynamicImages from "../ImagesContainer/ImagesContainer";
+
+  const myImages = [
+    "/images/Bio 1.svg",
+    "/images/Bio 2.svg",
+    "/images/Bio 3.svg",
+  ];
 
 function Biotrascendence() {
   return (
@@ -48,6 +55,7 @@ function Biotrascendence() {
         </CapsulesContainer>
       </ModalityContainer>
       <RequestInformation title="¡Lográ tu meta en 3 meses!" />
+      <DynamicImages images={myImages} />
     </Container>
   );
 }

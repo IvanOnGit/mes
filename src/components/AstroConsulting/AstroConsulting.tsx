@@ -2,9 +2,16 @@ import FloatingDescription from "../FloatingDescription/FloatingDescription";
 import FloatingSubtitle from "../FloatingSubtitle/FloatingSubtitle";
 import FloatingTitle from "../FloatingTitle/FloatingTitle";
 import Hero from "../Hero/Hero";
+import DynamicImages from "../ImagesContainer/ImagesContainer";
 import Navbar from "../Navbar/Navbar";
 import RequestInformation from "../RequestInformation/RequestInformation";
 import { Capsule, CapsulesContainer, Container, FirstContainer, TypesOfLecturesContainer, SecondContainer, TextContainer, ModalityContainer, IconsContainer } from "./styles";
+
+const myImages = [
+    "/images/Astro 1.svg",
+    "/images/Astro 2.svg",
+    "/images/Astro 3.svg",
+  ];
 
 function AstroConsulting() {
   return (
@@ -82,7 +89,8 @@ function AstroConsulting() {
                 </div>
               </IconsContainer>
       </ModalityContainer>
-      <RequestInformation title="¡Deja el Piloto Automático y Comanda tu Vida!"/>
+      <RequestInformation title="¡Deja el Piloto Automático y Comanda tu Vida!" />
+      <DynamicImages images={myImages} />
     </Container>
   );
 }
