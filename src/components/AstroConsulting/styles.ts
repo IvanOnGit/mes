@@ -1,7 +1,7 @@
 import styled, { keyframes } from "styled-components";
 
 // Animación para expandir desde la izquierda (parte gris)
-const expandFromLeft = keyframes`
+export const expandFromLeft = keyframes`
   0% {
     width: 50%;
     transform: translateX(0);
@@ -13,7 +13,7 @@ const expandFromLeft = keyframes`
 `;
 
 // Animación para expandir desde la derecha (parte blanca)
-const expandFromRight = keyframes`
+export const expandFromRight = keyframes`
   0% {
     width: 50%;
     transform: translateX(0);
@@ -41,24 +41,25 @@ export const Container = styled.div`
   overflow: hidden;
 `;
 
-// Contenedor principal que mantiene altura fija
+// Contenedor principal que ahora tiene altura dinámica
 export const ExpandedContainer = styled.div<{ $isExpanded: boolean; $hasOpenDropdown?: boolean }>`
   width: 100%;
-  height: 20rem; // Altura fija siempre
+  height: auto;
+  min-height: 20rem;
   position: relative;
   overflow: visible;
   z-index: 1;
+  display: flex;
+  flex-direction: column;
 `;
 
-// Contenedor original
+// Contenedor original - solo se muestra cuando no está expandido
 export const TextContainer = styled.div`
  display: flex;
  width: 100%;
  height: 20rem;
  background-color: transparent;
- position: absolute;
- top: 0;
- left: 0;
+ position: relative;
  overflow: hidden;
  animation: ${fadeInContent} 0.4s ease-in-out;
  justify-content: center;
@@ -127,16 +128,13 @@ export const SecondContainer = styled.div`
   padding: 1rem;
 `;
 
-// Contenedor expandido unificado con z-index mayor
+// Contenedor expandido unificado que ahora ocupa espacio real
 export const ExpandedContent = styled.div<{ $bgColor: string; $fromLeft?: boolean }>`
   background-color: ${props => props.$bgColor};
-  width: 50%;
+  width: 100%;
   height: auto;
   min-height: 20rem;
-  position: absolute;
-  top: 0;
-  left: ${props => props.$fromLeft ? '0' : '50%'};
-  animation: ${props => props.$fromLeft ? expandFromLeft : expandFromRight} 0.6s ease-in-out both;
+  position: relative;
   z-index: 10;
   display: flex;
   justify-content: center;
@@ -144,8 +142,18 @@ export const ExpandedContent = styled.div<{ $bgColor: string; $fromLeft?: boolea
   padding: 2rem 0 3rem 0;
   overflow: visible;
   box-sizing: border-box;
-  max-height: 90vh; // Limitar altura máxima
-  overflow-y: auto; // Permitir scroll interno si es necesario
+  max-height: 90vh;
+  overflow-y: auto;
+  
+  /* Animación de expansión */
+  animation: ${fadeInContent} 0.6s ease-in-out;
+  
+  /* Simular el efecto de expansión desde un lado */
+  ${props => props.$fromLeft ? `
+    background: linear-gradient(90deg, ${props.$bgColor} 0%, ${props.$bgColor} 100%);
+  ` : `
+    background: linear-gradient(90deg, ${props.$bgColor} 0%, ${props.$bgColor} 100%);
+  `}
 `;
 
 export const InPeopleExpanded = styled.div`
@@ -207,8 +215,8 @@ export const InCompanyExpanded = styled.div`
   img {
     height: 13rem;
     flex-shrink: 0;
-    align-self: flex-start; // Cambiar a flex-start
-    position: sticky; // Mantener la imagen fija
+    align-self: flex-start;
+    position: sticky;
     margin-top: 1.7rem;
   }
 
@@ -270,14 +278,14 @@ export const DropdownsContainer = styled.div`
 export const CloseButton = styled.button`
   position: absolute;
   top: 1rem;
-  right: 6.5rem;
+  right: 2rem;
   background-color: transparent;
   border: 1px solid #ccc;
   padding: 0.5rem 1rem;
   cursor: pointer;
   font-size: 0.8rem;
   border-radius: 4px;
-  z-index: 20; // Z-index más alto
+  z-index: 20;
   transition: all 0.3s ease;
   
   &:hover {
