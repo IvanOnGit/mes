@@ -148,9 +148,9 @@ export const FormativeSeminars = styled.div`
     background-color: transparent;
     border: 1px solid white;
     border-radius: 50%;
-    padding: 0.5rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
+    padding: 0.2rem;
+    padding-left: 0.7rem;
+    padding-right: 0.7rem;
     font-size: 2rem;
     color: white;
     cursor: pointer;
