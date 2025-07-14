@@ -209,7 +209,7 @@ export const InCompanyExpanded = styled.div`
     flex-shrink: 0;
     align-self: flex-start; // Cambiar a flex-start
     position: sticky; // Mantener la imagen fija
-    margin-top: 1rem;
+    margin-top: 1.7rem;
   }
 
   .content-wrapper {
