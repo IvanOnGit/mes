@@ -113,3 +113,83 @@ export const Capsule = styled.div`
     padding: 0;
   }
 `;
+
+export const FormativeSeminars = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 30rem;
+  background-color: white;
+  gap: 2rem;
+
+  h2 {
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+  }
+
+  h3 {
+    color: black;
+    font-size: 1.5rem;
+    font-weight: 100;
+    margin: 0;
+    padding: 0;
+    border: 1px solid black;
+    padding: 0.7rem;
+    border-radius: 1.5rem;
+  }
+
+  button {
+    position: absolute;
+    margin-left: 1rem;
+    margin-top: 1rem;
+    background-color: transparent;
+    border: 1px solid white;
+    border-radius: 50%;
+    padding: 0.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+  }
+`;
+
+export const Seminars = styled.div`
+  display: flex;
+  gap: 2rem;
+`;
+
+export const IndividualSeminar = styled.div`
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  h4 {
+    margin: 0;
+    padding: 1rem;
+    font-size: 1.3rem;
+    width: auto;
+    max-width: 10rem;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    color: white;
+    display: flex;
+    align-self: flex-start;
+    text-align: right;
+  }
+
+  span {
+    width: 3rem;
+    height: 6px;
+    background-color: white;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin-right: 1rem;
+    margin-bottom: 0.5rem;
+  }
+`;

@@ -5,7 +5,7 @@ import FloatingTitle from "../FloatingTitle/FloatingTitle";
 import Hero from "../Hero/Hero";
 import DynamicImages from "../ImagesContainer/ImagesContainer";
 import Navbar from "../Navbar/Navbar";
-import { Capsule, CapsulesContainer, Container, ModalityContainer, Paragraph, TextContainer } from "./styles";
+import { Capsule, CapsulesContainer, Container, FormativeSeminars, IndividualSeminar, ModalityContainer, Paragraph, Seminars, TextContainer } from "./styles";
 
 const myImages = [
     "/images/Professional Training 1.svg",
@@ -50,6 +50,42 @@ function ProfessionalTraining() {
                 </Capsule>
               </CapsulesContainer>
       </ModalityContainer>
+      <FormativeSeminars>
+        <h2>SEMINARIOS FORMATIVOS</h2>
+        <h3> Alineados con la mirada de Biotrascendencia®</h3>
+        <Seminars>
+          <IndividualSeminar>
+            <img src="/images/Seminar 1.svg" alt="" />
+            <h4>HABILIDADES DE GESTIÓN</h4>
+            <span />
+            <button>+</button>
+          </IndividualSeminar>
+          <IndividualSeminar>
+            <img src="/images/Seminar 2.svg" alt="" />
+            <h4>LIDERAZGO GERENCIAL</h4>
+            <span />
+            <button>+</button>
+          </IndividualSeminar>
+          <IndividualSeminar>
+            <img src="/images/Seminar 3.svg" alt="" />
+            <h4>EFICIENCIA LABORAL</h4>
+            <span />
+            <button>+</button>
+          </IndividualSeminar>
+          <IndividualSeminar>
+            <img src="/images/Seminar 4.svg" alt="" />
+            <h4>RRHH</h4>
+            <span />
+            <button>+</button>
+          </IndividualSeminar>
+          <IndividualSeminar>
+            <img src="/images/Seminar 5.svg" alt="" />
+            <h4>VENTAS</h4>
+            <span />
+            <button>+</button>
+          </IndividualSeminar>
+        </Seminars>
+      </FormativeSeminars>
       <DynamicImages images={myImages} />
       <Contact />
     </Container>
