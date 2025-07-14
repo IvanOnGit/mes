@@ -22,7 +22,10 @@ import {
   CloseButton,
   InPeopleExpanded,
   InCompanyExpanded,
-  DropdownsContainer
+  DropdownsContainer,
+  DropdownButton,
+  DropdownContent,
+  DropdownItem
 } from "./styles";
 
 const myImages = [
@@ -31,18 +34,60 @@ const myImages = [
     "/images/Astro 3.svg",
   ];
 
+// Datos para los desplegables
+const dropdownData = {
+  RRHH: [
+    "Selección de personal.",
+    "Activación de talentos.",
+    "Planes de carreras.",
+    "Reconversión de puestos.",
+    "Re-ubicación de colaboradores.",
+    "Perfiles de Líderes.",
+    "Conocimiento sobre cada colaborador.",
+    "Cuándo y cómo hablar sobre pertinencias.",
+    "Cómo beneficiar para sus empleados."
+  ],
+  MARKETING: [
+    "Conocer las inquietudes de mercado.",
+    "Planificar lanzamientos.",
+    "Profundizar en los comportamientos de los consumidores.",
+    "Crear campañas de comunicación efectivas."
+  ],
+  "DIRECCIÓN GENERAL": [
+    "Conocer los perfiles y alcances de Directores y Gerentes.",
+    "Definir objetivos.",
+    "Crear Equipos de Líderes alineados a la misión y visión de la Empresa.",
+    "Conocer ciclos propios de la Empresa.",
+    "Contar con información del entorno para la planificación estratégica."
+  ],
+  "TODAS LAS ÁREAS": [
+    "Mejorar relacionamiento la comunicación particular y general.",
+    "Trabajar en equipo a través de la energía entre colaboradores.",
+    "Eficientar los procesos.",
+    "Potenciar habilidades, maximizar rendimientos y eficiencia.",
+    "Crear Equipos exitosos."
+  ]
+};
+
 function AstroConsulting() {
   const [expandedPersonas, setExpandedPersonas] = useState(false);
   const [expandedEmpresas, setExpandedEmpresas] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
 
   const togglePersonas = () => {
     setExpandedPersonas(!expandedPersonas);
     if (expandedEmpresas) setExpandedEmpresas(false);
+    setOpenDropdown(null);
   };
 
   const toggleEmpresas = () => {
     setExpandedEmpresas(!expandedEmpresas);
     if (expandedPersonas) setExpandedPersonas(false);
+    setOpenDropdown(null);
+  };
+
+  const toggleDropdown = (dropdown: string) => {
+    setOpenDropdown(openDropdown === dropdown ? null : dropdown);
   };
 
   return (
@@ -56,7 +101,7 @@ function AstroConsulting() {
       />
       
       {/* Contenedor que se expande/contrae */}
-      <ExpandedContainer $isExpanded={expandedPersonas || expandedEmpresas}>
+      <ExpandedContainer $isExpanded={expandedPersonas || expandedEmpresas} $hasOpenDropdown={openDropdown !== null}>
         {!expandedPersonas && !expandedEmpresas && (
           <TextContainer>
             <FirstContainer>
@@ -119,27 +164,43 @@ function AstroConsulting() {
             <CloseButton onClick={toggleEmpresas}>Ver menos</CloseButton>
             <InCompanyExpanded>
                 <img src="/images/InBusiness.svg" alt="" />
-                <div className='text'>
-                  <h2>EN LAS EMPRESAS</h2>
-                  <span />
-                  <p>
-                    La Astrología en las organizaciones es una herramienta potente que 
-                    brinda soluciones inmediatas, especialmente en las relaciones 
-                    y en el desarrollo de talentos.
-                  </p>
-                  <p>
-                    Cuando una persona está en el lugar adecuado impacta en el entorno. 
-                    Cuando los equipos son formados y reestructurados, en función a sus energías, 
-                    sus características y propósito personal, los resultados se manifiestan 
-                    y el clima laboral es virtuoso, colaborativo y constructivo.
-                  </p>
+                <div className="content-wrapper">
+                  <div className='text'>
+                    <h2>EN LAS EMPRESAS</h2>
+                    <span />
+                    <p>
+                      La Astrología en las organizaciones es una herramienta potente que 
+                      brinda soluciones inmediatas, especialmente en las relaciones 
+                      y en el desarrollo de talentos.
+                    </p>
+                    <p>
+                      Cuando una persona está en el lugar adecuado impacta en el entorno. 
+                      Cuando los equipos son formados y reestructurados, en función a sus energías, 
+                      sus características y propósito personal, los resultados se manifiestan 
+                      y el clima laboral es virtuoso, colaborativo y constructivo.
+                    </p>
+                  </div>
+                  <DropdownsContainer>
+                    {Object.entries(dropdownData).map(([key, items]) => (
+                      <div key={key} style={{ width: '100%' }}>
+                        <DropdownButton 
+                          onClick={() => toggleDropdown(key)}
+                          $isOpen={openDropdown === key}
+                        >
+                          {key}
+                          <span className="arrow">{openDropdown === key ? '▲' : '▼'}</span>
+                        </DropdownButton>
+                        <DropdownContent $isOpen={openDropdown === key}>
+                          {items.map((item, index) => (
+                            <DropdownItem key={index}>
+                              • {item}
+                            </DropdownItem>
+                          ))}
+                        </DropdownContent>
+                      </div>
+                    ))}
+                  </DropdownsContainer>
                 </div>
-                <DropdownsContainer>
-                  <button>RRHH</button>
-                  <button>MARKETING</button>
-                  <button>DIRECCIÓN GENERAL</button>
-                  <button>TODAS LAS ÁREAS</button>
-                </DropdownsContainer>
             </InCompanyExpanded>
           </ExpandedContent>
         )}

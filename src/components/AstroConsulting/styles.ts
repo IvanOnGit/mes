@@ -41,12 +41,13 @@ export const Container = styled.div`
   overflow: hidden;
 `;
 
-// Contenedor principal que mantiene la misma altura
-export const ExpandedContainer = styled.div<{ $isExpanded: boolean }>`
+// Contenedor principal que mantiene altura fija
+export const ExpandedContainer = styled.div<{ $isExpanded: boolean; $hasOpenDropdown?: boolean }>`
   width: 100%;
-  height: 20rem;
+  height: 20rem; // Altura fija siempre
   position: relative;
-  overflow: hidden;
+  overflow: visible;
+  z-index: 1;
 `;
 
 // Contenedor original
@@ -126,11 +127,12 @@ export const SecondContainer = styled.div`
   padding: 1rem;
 `;
 
-// Contenedor expandido unificado
+// Contenedor expandido unificado con z-index mayor
 export const ExpandedContent = styled.div<{ $bgColor: string; $fromLeft?: boolean }>`
   background-color: ${props => props.$bgColor};
   width: 50%;
-  height: 100%;
+  height: auto;
+  min-height: 20rem;
   position: absolute;
   top: 0;
   left: ${props => props.$fromLeft ? '0' : '50%'};
@@ -138,7 +140,12 @@ export const ExpandedContent = styled.div<{ $bgColor: string; $fromLeft?: boolea
   z-index: 10;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
+  padding: 2rem 0 3rem 0;
+  overflow: visible;
+  box-sizing: border-box;
+  max-height: 90vh; // Limitar altura máxima
+  overflow-y: auto; // Permitir scroll interno si es necesario
 `;
 
 export const InPeopleExpanded = styled.div`
@@ -146,9 +153,13 @@ export const InPeopleExpanded = styled.div`
   gap: 1rem;
   width: 100%;
   justify-content: center;
+  align-items: center;
+  margin-top: 1.2rem;
 
   img {
     height: 13rem;
+    position: sticky; // Mantener la imagen fija
+    top: 0;
   }
 
   & .text {
@@ -180,18 +191,43 @@ export const InPeopleExpanded = styled.div`
 `;
 
 export const InCompanyExpanded = styled.div`
-   display: flex;
-  gap: 1rem;
+  display: flex;
+  gap: 2rem;
   width: 100%;
   justify-content: center;
+  align-items: center;
+  min-height: 16rem;
+  flex-direction: column;
+  margin-left: 13rem;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+  }
 
   img {
     height: 13rem;
+    flex-shrink: 0;
+    align-self: flex-start; // Cambiar a flex-start
+    position: sticky; // Mantener la imagen fija
+    margin-top: 1rem;
+  }
+
+  .content-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+    
+    @media (min-width: 768px) {
+      flex-direction: row;
+    }
   }
 
   & .text {
-    width: 30rem;
+    width: 100%;
+    max-width: 25rem;
     gap: 1rem;
+    flex-shrink: 0;
 
     h2 {
       margin: 0;
@@ -219,20 +255,15 @@ export const InCompanyExpanded = styled.div`
 
 export const DropdownsContainer = styled.div`
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start;
+  align-items: flex-start;
   flex-direction: column;
-  gap: 1.4rem;
-  height: 100%;
-
-  button {
-    width: 20rem;
-    padding: 0.5rem;
-    background-color: transparent;
-    border: none;
-    border-bottom: 1px solid black;
-    text-align: left;
-  }
+  gap: 0;
+  width: 100%;
+  max-width: 22rem;
+  max-height: 60vh; // Limitar altura de los dropdowns
+  overflow-y: hidden; // Permitir scroll si es necesario
+  overflow-x: hidden;
 `;
 
 // Botón de cierre
@@ -246,7 +277,7 @@ export const CloseButton = styled.button`
   cursor: pointer;
   font-size: 0.8rem;
   border-radius: 4px;
-  z-index: 10;
+  z-index: 20; // Z-index más alto
   transition: all 0.3s ease;
   
   &:hover {
@@ -254,7 +285,8 @@ export const CloseButton = styled.button`
     transform: scale(1.05);
   }
 `;
-// Estilos originales del componente
+
+// Estilos originales del componente con z-index menor
 export const TypesOfLecturesContainer = styled.div`
   display: flex;
   justify-content: center;
@@ -264,6 +296,8 @@ export const TypesOfLecturesContainer = styled.div`
   background-color: black;
   gap: 2rem;
   padding: 2rem 0;
+  position: relative;
+  z-index: 0; // Z-index menor para que no interfiera
 
   h2 {
     color: white;
@@ -331,4 +365,51 @@ export const IconsContainer = styled.div`
   justify-content: center;
   align-items: center;
   gap: 2rem;
+`;
+
+export const DropdownButton = styled.button<{ $isOpen: boolean }>`
+  width: 100%;
+  padding: 1rem;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid black;
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+  
+  .arrow {
+    transition: transform 0.3s ease;
+    font-size: 0.8rem;
+    color: #666;
+  }
+`;
+
+export const DropdownContent = styled.div<{ $isOpen: boolean }>`
+  max-height: ${props => props.$isOpen ? '500px' : '0'};
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+  background-color: rgba(0, 0, 0, 0.02);
+  border-left: 2px solid #f0f0f0;
+  width: 100%;
+`;
+
+export const DropdownItem = styled.div`
+  padding: 0.5rem 1rem;
+  font-size: 0.8rem;
+  color: #555;
+  line-height: 1.4;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  
+  &:last-child {
+    border-bottom: none;
+  }
 `;
