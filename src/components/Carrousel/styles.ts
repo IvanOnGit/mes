@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const CarouselContainer = styled.div`
   width: 100%;
-  height: 600px;
+  height: 630px;
   position: relative;
   display: flex;
   flex-direction: column;
