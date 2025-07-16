@@ -1,14 +1,16 @@
 import Eugenia from "../Eugenia/Eugenia";
 import Navbar from "../Navbar/Navbar";
-import { Container } from "./styles";
+import { AboutMeContainer, Container } from "./styles";
 
 function AboutMe() {
 
   return (
     <Container>
         <Navbar />
-        <h1>About Me Working</h1>
         <Eugenia />
+        <AboutMeContainer>
+          <h1>Sobre mi</h1>
+        </AboutMeContainer>
     </Container>
   );
 }
