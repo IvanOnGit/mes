@@ -1,6 +1,6 @@
 import Eugenia from "../Eugenia/Eugenia";
 import Navbar from "../Navbar/Navbar";
-import { AboutMeContainer, ButtonsContainer, Container, IconsAndButtons, IconsContainer, TitleAndIcons } from "./styles";
+import { AboutMeContainer, ButtonsContainer, Card, CardsContainer, CollageSection, Container, IconsAndButtons, IconsContainer, TitleAndIcons, TitleTreeContainer, TreeContainer } from "./styles";
 
 function AboutMe() {
 
@@ -49,30 +49,36 @@ function AboutMe() {
             </ButtonsContainer>
           </IconsAndButtons>
         </AboutMeContainer>
-        <div>
+        <CollageSection>
+          <img src="/images/Collage.svg" alt="" />
+          <img src="/images/MySymbols.svg" alt="" />
+        </CollageSection>
+        <TreeContainer>
           <span></span>
-          <div>
-            <h1>RECORRIDO PROFESIONAL</h1>
-            <img src="" alt="" />
-          </div>
-          <div>
-            <div>
-              <h2>Card1</h2>
-              <p>Lorem ipsum dolor sit amet</p>
+          <TitleTreeContainer>
+            <h2>RECORRIDO PROFESIONAL</h2>
+            <img src="/images/Tree.svg" alt="" />
+          </TitleTreeContainer>
+          <CardsContainer>
+            <Card>
+              <h2>ÁMBITO CORPORATIVO</h2>
+              <p>Con más de 30 años de experiencia en el ámbito empresarial, María Eugenia ha desarrollado su carrera en organizaciones de primer nivel como Coca Cola Femsa, Banco Galicia, Banco Tornquist, CTI Móvil y TSU Cosméticos. En su trayectoria, se ha desempeñado como Gerente de Ventas y Responsable de Desarrollo.</p>
               <button>Ver más</button>
-            </div>
-            <div>
-              <h2>Card2</h2>
-              <p>Lorem ipsum dolor sit amet</p>
+            </Card>
+            <span />
+            <Card>
+              <h2>ÁMBITO EDUCATIVO Y FORMATIVO</h2>
+              <p>Como formadora de equipos de ventas, María Eugenia ha liderado y disfrutado muchos procesos de entrenamiento y capacitación a lo largo de su carrera, optimizando el desempeño y potenciando el talento de las personas. Además, ha ejercido como docente en talleres de orientación vocacional y desarrollo.</p>
               <button>Ver más</button>
-            </div>
-            <div>
-              <h2>Card3</h2>
-              <p>Lorem ipsum dolor sit amet</p>
+            </Card>
+            <span />
+            <Card>
+              <h2>ÁMBITO DE DESARROLLO HUMANO</h2>
+              <p>A partir de 2011, María Eugenia inició un proceso de búsqueda interior y exploración de diversas disciplinas y filosofías tras el fallecimiento de su marido. Este profundo proceso le permitió descubrir un nuevo mundo espiritual y un camino de evolución personal.</p>
               <button>Ver más</button>
-            </div>
-          </div>
-        </div>
+            </Card>
+          </CardsContainer>
+        </TreeContainer>
     </Container>
   );
 }
