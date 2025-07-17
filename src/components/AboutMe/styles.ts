@@ -255,3 +255,134 @@ export const StarsAndText = styled.div`
   flex-direction: column;
   gap: 1rem;
 `;
+
+// Nuevos estilos para el modal con animaciones
+export const ModalOverlay = styled.div<{ $isClosing: boolean }>`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  opacity: ${props => props.$isClosing ? 0 : 1};
+  transition: opacity 0.3s ease;
+`;
+
+export const ModalContent = styled.div<{ $isClosing: boolean }>`
+  background-color: black;
+  border: 1px solid white;
+  border-radius: 1rem;
+  width: 800px;
+  position: relative;
+  overflow-y: hidden;
+  display: flex;
+  justify-content: center;
+  gap: 6rem;
+  padding: 2rem;
+  transform: ${props => props.$isClosing ? 'scale(0.9)' : 'scale(1)'};
+  opacity: ${props => props.$isClosing ? 0 : 1};
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  animation: ${props => props.$isClosing ? 'none' : 'modalOpen 0.3s ease'};
+
+  @keyframes modalOpen {
+    from {
+      transform: scale(0.9);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+
+  h3 {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 200;
+    width: 18rem;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+  }
+
+  .close-button {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 0;
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    &:hover {
+      background-color: #242424;
+      border-radius: 50%;
+      transition: all 0.3s ease;
+    }
+  }
+`;
+
+export const ModalText = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  p {
+    color: white;
+    font-size: 0.75rem;
+    margin: 0;
+    padding: 0;
+    font-weight: 100;
+    width: 17rem;
+    text-align: justify;
+  }
+`;
+
+export const ModalImage = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  h3 {
+    margin-bottom: 1rem;
+  }
+
+  img {
+    width: 15rem;
+    height: 15rem;
+  }
+
+  img.meditatingBack {
+    margin-top: 1rem;
+    height: 22rem;
+
+    display: none;
+  }
+
+  h4 {
+    color: white;
+    font-size: 1.5rem;
+    margin: 0;
+    padding: 0;
+    font-weight: 100;
+    width: 15rem;
+  }
+
+  span {
+    margin-top: 0.3rem;
+    width: 2.5rem;
+    height: 5px;
+    background-color: white;
+  }
+`;
