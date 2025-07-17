@@ -147,14 +147,13 @@ export const CardsContainer = styled.div`
   display: flex;
   width: 100%;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start; /* Cambio aquí: de center a flex-start */
   gap: 1rem;
   margin-top: 7rem;
 
   span {
     width: 1px;
-    height: 20.1rem;
-    margin-top: 2rem;
+    height: 22.5rem;
     background-color: white;
     color: white;
   }
@@ -174,6 +173,7 @@ export const Card = styled.div`
     margin: 0;
     padding: 0;
     width: 16rem;
+    height: 4rem;
     margin-left: 1rem;
   }
 
@@ -184,7 +184,11 @@ export const Card = styled.div`
     padding: 0;
     font-weight: 100;
     width: 15rem;
+    height: 12rem;
     text-align: justify;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
   }
 
   button {
@@ -196,6 +200,7 @@ export const Card = styled.div`
     justify-content: center;
     padding: 1rem;
     width: 15rem;
+    margin-top: 1rem;
     text-align: center;
     cursor: pointer;
 
@@ -204,4 +209,49 @@ export const Card = styled.div`
       transition: all 0.3s ease;
     }
   }
+`;
+
+export const RecomendationsContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #404040;
+  height: 20rem;
+  width: 100%;
+  gap: 2rem;
+  margin-top: 4rem;
+`;
+
+export const Recomendation = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 25rem;
+  height: 12rem;
+  background-color: #161616;
+  border-radius: 2rem;
+  gap: 2rem;
+
+  p {
+    color: white;
+    font-size: 0.9rem;
+    margin: 0;
+    padding: 0;
+    font-weight: 100;
+    width: 15rem;
+  }
+`;
+
+export const UserFake = styled.div`
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  margin-bottom: 4rem;
+  background-color: white;
+`;
+
+export const StarsAndText = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 `;

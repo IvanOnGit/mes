@@ -1,6 +1,7 @@
+import Contact from "../Contact/Contact";
 import Eugenia from "../Eugenia/Eugenia";
 import Navbar from "../Navbar/Navbar";
-import { AboutMeContainer, ButtonsContainer, Card, CardsContainer, CollageSection, Container, IconsAndButtons, IconsContainer, TitleAndIcons, TitleTreeContainer, TreeContainer } from "./styles";
+import { AboutMeContainer, ButtonsContainer, Card, CardsContainer, CollageSection, Container, IconsAndButtons, IconsContainer, Recomendation, RecomendationsContainer, StarsAndText, TitleAndIcons, TitleTreeContainer, TreeContainer, UserFake } from "./styles";
 
 function AboutMe() {
 
@@ -79,6 +80,42 @@ function AboutMe() {
             </Card>
           </CardsContainer>
         </TreeContainer>
+        <RecomendationsContainer>
+          <Recomendation>
+            <UserFake />
+            <StarsAndText>
+              <div>
+                <img src="/images/Star.svg" alt="" />
+                <img src="/images/Star.svg" alt="" />
+                <img src="/images/Star.svg" alt="" />
+              </div>
+              <p>Referencias de clientes, empresas, entre otras cosas, acá se escriben los opiniones de los clientes de MES o íconos de empresas.</p>
+            </StarsAndText>
+          </Recomendation>
+          <Recomendation>
+            <UserFake />
+            <StarsAndText>
+              <div>
+                <img src="/images/Star.svg" alt="" />
+                <img src="/images/Star.svg" alt="" />
+                <img src="/images/Star.svg" alt="" />
+              </div>
+              <p>Referencias de clientes, empresas, entre otras cosas, acá se escriben los opiniones de los clientes de MES o íconos de empresas.</p>
+            </StarsAndText>
+          </Recomendation>
+          <Recomendation>
+            <UserFake />
+            <StarsAndText>
+              <div>
+                <img src="/images/Star.svg" alt="" />
+                <img src="/images/Star.svg" alt="" />
+                <img src="/images/Star.svg" alt="" />
+              </div>
+              <p>Referencias de clientes, empresas, entre otras cosas, acá se escriben los opiniones de los clientes de MES o íconos de empresas.</p>
+            </StarsAndText>
+          </Recomendation>
+        </RecomendationsContainer>
+        <Contact />
     </Container>
   );
 }
