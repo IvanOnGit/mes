@@ -17,7 +17,13 @@ import {
   Seminars, 
   TextContainer,
   CapsuleContent,
-  ExpandableCapsulesContainer
+  ExpandableCapsulesContainer,
+  ModalOverlay,
+  ModalContent,
+  ModalClose,
+  ModalBody,
+  ModalCapsules,
+  InnerModalCapsule
 } from "./styles";
 
 const myImages = [
@@ -44,11 +50,51 @@ const modalityData = [
   }
 ];
 
+const seminarData = [
+  {
+    id: 1,
+    title: "HABILIDADES DE GESTIÓN",
+    image: "/images/Seminar 1.svg"
+  },
+  {
+    id: 2,
+    title: "LIDERAZGO GERENCIAL",
+    image: "/images/Seminar 2.svg"
+  },
+  {
+    id: 3,
+    title: "EFICIENCIA LABORAL",
+    image: "/images/Seminar 3.svg"
+  },
+  {
+    id: 4,
+    title: "RRHH",
+    image: "/images/Seminar 4.svg"
+  },
+  {
+    id: 5,
+    title: "VENTAS",
+    image: "/images/Seminar 5.svg"
+  }
+];
+
 function ProfessionalTraining() {
   const [expandedCapsule, setExpandedCapsule] = useState<number | null>(null);
+  const [modalOpen, setModalOpen] = useState<boolean>(false);
+  const [selectedSeminar, setSelectedSeminar] = useState<typeof seminarData[0] | null>(null);
 
   const toggleCapsule = (id: number) => {
     setExpandedCapsule(expandedCapsule === id ? null : id);
+  };
+
+  const openModal = (seminar: typeof seminarData[0]) => {
+    setSelectedSeminar(seminar);
+    setModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setModalOpen(false);
+    setSelectedSeminar(null);
   };
 
   return (
@@ -98,38 +144,126 @@ function ProfessionalTraining() {
         <h2>SEMINARIOS FORMATIVOS</h2>
         <h3> Alineados con la mirada de Biotrascendencia®</h3>
         <Seminars>
-          <IndividualSeminar>
-            <img src="/images/Seminar 1.svg" alt="" />
-            <h4>HABILIDADES DE GESTIÓN</h4>
-            <span />
-            <button>+</button>
-          </IndividualSeminar>
-          <IndividualSeminar>
-            <img src="/images/Seminar 2.svg" alt="" />
-            <h4>LIDERAZGO GERENCIAL</h4>
-            <span />
-            <button>+</button>
-          </IndividualSeminar>
-          <IndividualSeminar>
-            <img src="/images/Seminar 3.svg" alt="" />
-            <h4>EFICIENCIA LABORAL</h4>
-            <span />
-            <button>+</button>
-          </IndividualSeminar>
-          <IndividualSeminar>
-            <img src="/images/Seminar 4.svg" alt="" />
-            <h4>RRHH</h4>
-            <span />
-            <button>+</button>
-          </IndividualSeminar>
-          <IndividualSeminar>
-            <img src="/images/Seminar 5.svg" alt="" />
-            <h4>VENTAS</h4>
-            <span />
-            <button>+</button>
-          </IndividualSeminar>
+          {seminarData.map((seminar) => (
+            <IndividualSeminar key={seminar.id}>
+              <img src={seminar.image} alt={seminar.title} />
+              <h4>{seminar.title}</h4>
+              <span />
+              <button onClick={() => openModal(seminar)}>+</button>
+            </IndividualSeminar>
+          ))}
         </Seminars>
       </FormativeSeminars>
+
+      {/* Modal */}
+      {modalOpen && (
+        <ModalOverlay onClick={closeModal}>
+          <ModalContent onClick={(e) => e.stopPropagation()}>
+            <ModalClose onClick={closeModal}>×</ModalClose>
+            <ModalBody>
+              {/* Contenido específico para cada seminario */}
+              {selectedSeminar?.id === 1 && (
+                <div>
+                  <div>
+                    <h3>La Solución Está Fuera De La Caja</h3>
+                    <p>Qué sostiene lo automático, repetido y el desgano. Apostando a la Motivación, Creatividad, Confianza. Recursos para avanzar</p>
+                  </div>
+                  <div>
+                     <h3>Reconversión de puestos</h3>
+                     <p>Entrenamiento para lograr cambios orgánicos y favorables ante nuevas funciones, tareas y responsabilidades. Desarrollo de habilidades.</p>
+                  </div>
+                </div>
+              )}
+
+              {selectedSeminar?.id === 2 && (
+                <div>
+                  <div>
+                      <h3>Liderazgo Escencial</h3>
+                      <p>El líder de la era de acuario. Liderazgo auténtico, visionario, transformador.</p>
+                  </div>
+                  <div>
+                      <h3>Ecosistema Virtuoso</h3>
+                      <p>Organizaciones que avanzan. Colaboradores que aportan valor. Cambio de paradigmas y herramientas sistémicas</p>
+                  </div>
+                  <div>
+                      <h3>Kit de Herramientas para la Solución y Disolución de Conflictos</h3>
+                      <p>Entrenamiento en técnicas para erradicar los conflictos y las trabas personales. Las diferencias que enriquecen y nutren.</p>
+                  </div>
+                  <div>
+                      <h3>Autogestión</h3>
+                      <p>Entrenamiento en proactividad, eficiencia y autonomía. Incorporación de indicadores de gestión.</p>
+                  </div>
+                </div>
+              )}
+
+              {selectedSeminar?.id === 3 && (
+                <div>
+                  <div>
+                      <h3>Kit de Herramientas para la Solución y Disolución de Conflictos </h3>
+                      <p>Entrenamiento en técnicas para erradicar los conflictos y las trabas personales. Las diferencias que enriquecen y nutren.</p>
+                  </div>
+                  <div>
+                      <h3>LLÉVALO PUESTO ! Talleres vivenciales.</h3>
+                      <p>COMPROMISO Y PERTENENCIA. Taller de entrenamiento del sentido de pertenencia y el valor del compromiso. VALORES CORPORATIVO. Taller para internalizar los valores de la Empresa.</p>
+                      <p><strong>*CONSULTE SOBRE SU TEMA DE INTERÉS*</strong></p>
+                  </div>
+                  <div>
+                      <h3>Transformando los Miedos en Oportunidades</h3>
+                      <p>Darle lugar a los miedos, problemas que paralizan y limitan la prosperidad individual y por consiguiente la corporativa. Lo personal siempre impacta en el rendimiento laboral. Darle lugar para fluir y avanzar.</p>
+                      <p><strong>*CONSULTE SOBRE LA SAGA DESINTOXICANDO*</strong></p>
+                  </div>
+                  <div>
+                      <h3>Autogestión</h3>
+                      <p>Entrenamiento en proactividad, eficiencia y autonomía. Incorporación de indicadores de gestión.</p>
+                  </div>
+                  <div>
+                      <h3>Zombie vs Protagonistas</h3>
+                      <p>Taller de transformación de trabas y obstáculos para la prosperidad.</p>
+                  </div>
+                  <div>
+                      <h3>Desintoxicando  1</h3>
+                      <p>“ Críticas, Quejas y Chismes”. Las toxinas que anulan e impiden el valor humano: Una mirada inteligente para despojar creencias y fomentar ambientes virtuosos.</p>
+                      <p><strong>*CONSULTE SOBRE LA SAGA DESINTOXICANDO*</strong></p>
+                  </div>
+                </div>
+              )}
+
+              {selectedSeminar?.id === 4 && (
+                <div>
+                  <div>
+                      <h3>Astrología Empresarial</h3>
+                      <p>Introducción al lenguaje para conocer mejor a las personas de la empresa y alocarlas donde puedan desplegar sus talentos. Inteligencia aplicada para lograr eficiencia y resultados.</p>
+                  </div>
+                  <div>
+                      <h3>Metodología Sistémica Empresarial</h3>
+                      <p>Herramienta para encontrar soluciones rápidas, integrativas y sostenibles. Revoluciona tu equipo</p>
+                  </div>
+                </div>
+              )}
+
+              {selectedSeminar?.id === 5 && (
+                <div>
+                  <div>
+                      <h3>Programa de Formación en Ventas</h3>
+                      <ModalCapsules>
+                        <InnerModalCapsule>MÓDULO 1</InnerModalCapsule>
+                        <InnerModalCapsule>MÓDULO 2</InnerModalCapsule>
+                        <InnerModalCapsule>MÓDULO 3</InnerModalCapsule>
+                        <InnerModalCapsule>MÓDULO 4</InnerModalCapsule>
+                        <InnerModalCapsule>MÓDULO 5</InnerModalCapsule>
+                      </ModalCapsules>
+                  </div>
+                  <div>
+                      <h3>VENDEDORES EXITOSOS, se nace o se hacen?”. Creando los NUEVOS EMBAJADORES CORPORATIVOS.</h3>
+                      <p>Herramienta para encontrar soluciones rápidas, integrativas y sostenibles. RevolucNueva mirada para la organización y entrenamiento transformador para los responsables de generar nuevos clientes, aumentar la facturación, representar a la Empresa.iona tu equipo</p>
+                  </div>
+                </div>
+              )}
+            </ModalBody>
+          </ModalContent>
+        </ModalOverlay>
+      )}
+
       <DynamicImages images={myImages} />
       <Contact />
     </Container>

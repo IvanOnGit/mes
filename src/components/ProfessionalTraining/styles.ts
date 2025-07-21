@@ -197,6 +197,12 @@ export const FormativeSeminars = styled.div`
     font-size: 2rem;
     color: white;
     cursor: pointer;
+    transition: all 0.3s ease;
+    
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+      transform: scale(1.1);
+    }
   }
 `;
 
@@ -209,6 +215,7 @@ export const IndividualSeminar = styled.div`
   display: flex;
   flex-direction: column;
   position: relative;
+  cursor: pointer;
 
   h4 {
     margin: 0;
@@ -235,4 +242,114 @@ export const IndividualSeminar = styled.div`
     margin-right: 1rem;
     margin-bottom: 0.5rem;
   }
+`;
+
+// Estilos del Modal
+export const ModalOverlay = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  backdrop-filter: blur(5px);
+`;
+
+export const ModalContent = styled.div`
+  background-color: white;
+  border-radius: 1rem;
+  width: 90%;
+  max-width: 600px;
+  max-height: 80vh;
+  overflow-y: hidden;
+  position: relative;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  animation: modalSlideIn 0.3s ease-out;
+
+  @keyframes modalSlideIn {
+    from {
+      opacity: 0;
+      transform: translateY(-50px) scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  h2 {
+    background-color: #1A1A1A;
+    color: white;
+    margin: 0;
+    padding: 2rem;
+    border-radius: 1rem 1rem 0 0;
+    font-size: 1.5rem;
+    font-weight: 100;
+    text-align: center;
+  }
+`;
+
+export const ModalClose = styled.button`
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: black;
+  cursor: pointer;
+  z-index: 1001;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: scale(1.1);
+  }
+`;
+
+export const ModalBody = styled.div`
+  padding: 2rem;
+  
+  p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+
+  h4 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+  }
+
+  ul {
+    margin: 0.5rem 0;
+    padding-left: 1.5rem;
+  }
+
+  li {
+    margin-bottom: 0.5rem;
+  }
+`;
+
+export const ModalCapsules = styled.div`
+  display: flex;
+  gap: 0.2rem;
+`;
+
+export const InnerModalCapsule = styled.div`
+  border: 1px solid black;
+  border-radius: 1rem;
+  padding: 0.5rem;
 `;
