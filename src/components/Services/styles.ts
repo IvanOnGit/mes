@@ -20,6 +20,27 @@ export const Container = styled.div`
     font-weight: 400;
     margin-bottom: 2rem;
   }
+
+  /* Mobile/Desktop View Toggle */
+  .desktop-view {
+    display: flex;
+    
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
+
+  .mobile-view {
+    display: none;
+    
+    @media (max-width: 768px) {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      max-width: 400px;
+      gap: 1rem;
+    }
+  }
 `;
 
 export const InnerContainer = styled.div`
@@ -144,7 +165,7 @@ export const ExpandedDescription = styled.div`
   opacity: 0;
   max-height: 0;
   overflow: hidden;
-  transition: all 0.6s ease;
+  transition: all 0.4s ease;
   transform: translateY(20px);
   
   &.show {
@@ -153,11 +174,27 @@ export const ExpandedDescription = styled.div`
     transform: translateY(0);
   }
   
+  /* Mobile styles */
+  &.mobile {
+    margin-top: 1rem;
+    padding: 0 1rem;
+    transition: all 0.3s ease;
+    
+    &.show {
+      max-height: 600px;
+    }
+  }
+  
   .service-description {
     color: rgba(255, 255, 255, 0.8);
     font-size: 1.1rem;
     line-height: 1.6;
     margin-bottom: 2rem;
+    
+    @media (max-width: 768px) {
+      font-size: 1rem;
+      margin-bottom: 1.5rem;
+    }
   }
 
   h3 {
@@ -165,11 +202,21 @@ export const ExpandedDescription = styled.div`
     font-size: 1.5rem;
     font-weight: 300;
     margin-bottom: 2rem;
+    
+    @media (max-width: 768px) {
+      font-size: 1.3rem;
+      margin-bottom: 1.5rem;
+    }
   }
 
   .action-buttons {
     display: flex;
     gap: 1rem;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      gap: 0.8rem;
+    }
 
     button {
       padding: 1rem 2rem;
@@ -179,6 +226,11 @@ export const ExpandedDescription = styled.div`
       cursor: pointer;
       transition: all 0.3s ease;
       font-weight: 500;
+
+      @media (max-width: 768px) {
+        padding: 0.8rem 1.5rem;
+        font-size: 0.9rem;
+      }
 
       &.btn-primary {
         background-color: white;
@@ -336,5 +388,145 @@ export const ImageItem = styled.div`
   &.active.expanded .close-icon:hover {
     background-color: rgba(255, 255, 255, 0.9);
     color: black;
+  }
+`;
+
+/* NEW: Mobile Service Item Component */
+export const MobileServiceItem = styled.div`
+  position: relative;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  
+  &.expanded {
+    margin-bottom: 2rem;
+  }
+
+  .mobile-title {
+    background-color: transparent;
+    padding: 0 0 0.8rem 0;
+    margin-bottom: 0.5rem;
+    transition: all 0.3s ease;
+    
+    h2 {
+      color: white;
+      font-size: 1rem;
+      font-weight: 300;
+      margin: 0;
+      border-bottom: 1px solid white;
+      padding-bottom: 0.5rem;
+      transition: all 0.3s ease;
+    }
+  }
+  
+  &.active .mobile-title {
+    h2 {
+      font-size: 1.1rem;
+      font-weight: 400;
+      border-bottom-color: white;
+    }
+  }
+  
+  &.expanded .mobile-title {
+    margin-bottom: 1rem;
+    
+    h2 {
+      font-size: 1.2rem;
+      font-weight: 300;
+      border-bottom: 2px solid white;
+      padding-bottom: 0.8rem;
+    }
+  }
+
+  .mobile-image-container {
+    position: relative;
+    border-radius: 0 3rem 0 0;
+    overflow: hidden;
+    height: 120px;
+    transition: all 0.3s ease;
+    
+    &:hover {
+      transform: scale(1.02);
+    }
+    
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      transition: all 0.3s ease;
+    }
+    
+    .plus-icon {
+      position: absolute;
+      bottom: 15px;
+      right: 15px;
+      width: 35px;
+      height: 35px;
+      background-color: rgba(255, 255, 255, 0.9);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      font-weight: bold;
+      color: black;
+      transition: all 0.2s ease;
+      transform: scale(0.8);
+    }
+    
+    .close-icon {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      width: 35px;
+      height: 35px;
+      background-color: rgba(0, 0, 0, 0.8);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      font-weight: bold;
+      color: white;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      transform: scale(0);
+      z-index: 3;
+    }
+  }
+  
+  &.active .mobile-image-container {
+    .plus-icon {
+      transform: scale(1);
+      background-color: white;
+    }
+    
+    img {
+      filter: brightness(1.1) saturate(1.1);
+    }
+  }
+  
+  &.expanded .mobile-image-container {
+    height: 250px;
+    border-radius: 15px;
+    
+    .plus-icon {
+      transform: scale(0);
+    }
+    
+    .close-icon {
+      transform: scale(1);
+      
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.9);
+        color: black;
+      }
+    }
+    
+    img {
+      filter: brightness(1.2);
+    }
   }
 `;

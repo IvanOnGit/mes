@@ -6,7 +6,8 @@ import {
   TitleItem, 
   ExpandedDescription,
   Images, 
-  ImageItem
+  ImageItem,
+  MobileServiceItem
 } from "./styles";
 import { Link } from 'react-router-dom';
 
@@ -62,18 +63,18 @@ function InteractiveServices() {
     return (event: React.MouseEvent) =>{
       event.stopPropagation();
       if (activeService === index && isExpanded) {
-      // Animación de salida simple: fade out rápido
+      // Animación de salida más rápida para mobile
       setShowContent(false);
       setIsExpanded(false);
       setTimeout(() => {
         setActiveService(-1);
-      }, 500);
+      }, 200);
     } else {
       setActiveService(index);
       setIsExpanded(true);
       setTimeout(() => {
         setShowContent(true);
-      }, 800);
+      }, 300);
     }
     }
   },[activeService, isExpanded]);
@@ -84,14 +85,15 @@ function InteractiveServices() {
     setTimeout(() => {
       setIsExpanded(false);
       setActiveService(-1);
-    }, 700);
+    }, 300);
   };
 
   return (
     <Container>
       <h1>SERVICIOS</h1>
       
-      <InnerContainer className={isExpanded ? 'expanded' : ''}>
+      {/* Desktop Version */}
+      <InnerContainer className={`desktop-view ${isExpanded ? 'expanded' : ''}`}>
         <Titles className={isExpanded ? 'expanded' : ''}>
           {services.map((service, index) => (
             <TitleItem 
@@ -146,6 +148,46 @@ function InteractiveServices() {
           })}
         </Images>
       </InnerContainer>
+
+      {/* Mobile Version */}
+      <div className="mobile-view">
+        {services.map((service, index) => (
+          <MobileServiceItem 
+            key={service.id}
+            className={`
+              ${activeService === index ? 'active' : ''}
+              ${isExpanded && activeService === index ? 'expanded' : ''}
+              ${showContent && activeService === index ? 'show-content' : ''}
+            `}
+            onClick={handleServiceClick(index)}
+          >
+            <div className="mobile-title">
+              <h2>+ {service.title}</h2>
+            </div>
+            <div className="mobile-image-container">
+              <img src={service.image} alt={service.title} />
+              <div className="plus-icon">+</div>
+              {isExpanded && activeService === index && (
+                <div className="close-icon" onClick={handleClose}>×</div>
+              )}
+            </div>
+            {isExpanded && activeService === index && (
+              <ExpandedDescription className={`mobile ${showContent ? 'show' : ''}`}>
+                <p className="service-description">
+                  {service.description}
+                </p>
+                <h3>{service.subtitle}</h3>
+                <div className="action-buttons">
+                  <Link to={service.route}>
+                    <button className="btn-primary">Ver más</button>
+                  </Link>
+                  <button className="btn-secondary">Contactar</button>
+                </div>
+              </ExpandedDescription>
+            )}
+          </MobileServiceItem>
+        ))}
+      </div>
     </Container>
   );
 }
