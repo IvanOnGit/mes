@@ -15,6 +15,17 @@ export const Container = styled.div`
     background-color: white;
     color: white;
   }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 1rem;
+    height: 40rem;
+    padding: 1rem;
+    width: 80%;
+    span {
+      display: none;
+    }
+  }
 `;
 
 export const LeftSide = styled.div`
