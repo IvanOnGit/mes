@@ -37,4 +37,21 @@ export const Container = styled.div`
       transition: all 0.3s ease;
     }
   }
+
+  @media (max-width: 768px) {
+    gap: 1rem;
+
+    h2 {
+      font-size: 0.8rem;
+    }
+
+    button {
+      padding: 0.3rem;
+      font-size: 0.8rem;
+    }
+
+    .Subcontainer {
+      width: 10rem;
+    }
+  }
 `;
