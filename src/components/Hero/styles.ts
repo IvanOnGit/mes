@@ -18,4 +18,9 @@ export const Container = styled.div`
 export const Image = styled.img`
   width: 38rem;
   height: 20rem;
+
+  @media (max-width: 768px) {
+    width: 20rem;
+    height: 13rem;
+  }
 `;

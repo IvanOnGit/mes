@@ -236,6 +236,10 @@ export const ExpandedDescription = styled.div`
         background-color: white;
         color: black;
 
+        @media (max-width: 768px) {
+          width: 100%;
+        }
+
         &:hover {
           background-color: rgba(255, 255, 255, 0.9);
           transform: translateY(-2px);

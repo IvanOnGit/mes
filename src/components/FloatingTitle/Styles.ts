@@ -25,4 +25,13 @@ export const Container = styled.div`
         background-color: white;
         z-index: 999;
     }
+
+    @media (max-width: 768px) {
+        margin-right: 1rem;
+        margin-top: 12rem;
+
+        h1 {
+            font-size: 2rem;
+        }
+    }
 `;

@@ -37,6 +37,20 @@ export const TextContainer = styled.div`
   font-size: 0.8rem;
   width: 20rem;
  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    height: auto;
+    gap: 1rem;
+
+    p {
+      text-align: justify;
+    }
+
+    img {
+      width: 20.2rem;
+    }
+  }
 `;
 
 export const StagesContainer = styled.div`

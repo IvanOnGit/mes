@@ -17,4 +17,14 @@ export const Container = styled.div`
         padding: 0;
         font-family: 'Oooh Baby', cursive;
     }
+
+    @media (max-width: 768px) {
+        margin-top: 22rem;
+        margin-left: 14rem;
+
+        p {
+            font-size: 1.5rem;
+            width: 10rem;
+        }
+    }
 `;

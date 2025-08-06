@@ -42,6 +42,26 @@ export const TextContainer = styled.div`
     height: 15rem;
     padding-right: 5rem;
   }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    height: auto;
+    gap: 1rem;
+
+    p {
+      text-align: justify;
+    }
+
+    img:first-of-type {
+      padding-left: 0;
+      width: 21rem;
+    }
+
+    img:last-of-type {
+      padding-right: 0;
+      width: 21rem;
+    }
+  }
 `;
 
 export const ModalityContainer = styled.div`
