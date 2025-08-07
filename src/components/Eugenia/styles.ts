@@ -12,6 +12,10 @@ export const Container = styled.div`
   height: 41rem;
   position: absolute;
   background: linear-gradient(to top, #D9D9D9, #717171, #1F1F1F, #000000);
+
+  @media (max-width: 768px) {
+    height: 30rem;
+  }
 `;
 
 export const StyledEugenia = styled.img`
@@ -22,6 +26,12 @@ export const StyledEugenia = styled.img`
   margin-right: 30rem;
   height: auto;
   position: absolute;
+
+  @media (max-width: 768px) {
+    width: 23rem;
+    height: 23rem;
+    margin-right: 10rem;
+  }
 `;
 
 export const StyledMantra = styled.img`
@@ -29,6 +39,13 @@ export const StyledMantra = styled.img`
   height: 40rem;
   margin-top: 1rem;
   margin-right: 30rem;
+
+  @media (max-width: 768px) {
+    width: 30rem;
+    height: 30rem;
+    margin-right: 9rem;
+    margin-top: 5rem;
+  }
 `;
 
 export const TextContainer = styled.div`
@@ -63,4 +80,22 @@ export const TextContainer = styled.div`
     cursor: pointer;
     width: 10rem;
   }
+
+  @media (max-width: 768px) {
+      margin-left: 12rem;
+      margin-top: 10.5rem;
+
+      h1 {
+        font-size: 1rem;
+        width: 12rem;
+      }
+
+      h2 {
+        font-size: 1.2rem;
+      }
+
+      button {
+        font-size: 0.6rem;
+      }
+    }
 `;

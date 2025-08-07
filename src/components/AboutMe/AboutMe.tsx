@@ -2,7 +2,7 @@ import { useState } from "react";
 import Contact from "../Contact/Contact";
 import Eugenia from "../Eugenia/Eugenia";
 import Navbar from "../Navbar/Navbar";
-import { AboutMeContainer, ButtonsContainer, Card, CardsContainer, CollageSection, Container, IconsAndButtons, IconsContainer, ModalContent, ModalImage, ModalOverlay, ModalText, Recomendation, RecomendationsContainer, StarsAndText, TitleAndIcons, TitleTreeContainer, TreeContainer, UserFake } from "./styles";
+import { AboutMeContainer, ButtonsContainer, Card, CardsContainer, CollageSection, Container, IconsAndButtons, IconsContainer, MobileCollageSection, ModalContent, ModalImage, ModalOverlay, ModalText, Recomendation, RecomendationsContainer, StarsAndText, TitleAndIcons, TitleTreeContainer, TreeContainer, UserFake } from "./styles";
 
 function AboutMe() {
   const [activeModal, setActiveModal] = useState<number | null>(null);
@@ -71,6 +71,11 @@ function AboutMe() {
           <img src="/images/Collage.svg" alt="" />
           <img src="/images/MySymbols.svg" alt="" />
         </CollageSection>
+        <MobileCollageSection>
+          <img src="/images/MobileCollage1.svg" alt="" />
+          <img src="/images/MobileCollage2.svg" alt="" />
+          <img src="/images/MobileCollage3.svg" alt="" />
+        </MobileCollageSection>
         <TreeContainer>
           <span></span>
           <TitleTreeContainer>

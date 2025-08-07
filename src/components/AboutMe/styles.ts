@@ -32,11 +32,20 @@ export const AboutMeContainer = styled.div`
     margin: 0;
     padding: 0;
   }
+
+  @media (max-width: 768px) {
+    margin-top: 22rem;
+  }
 `;
 
 export const IconsAndButtons = styled.div`
   display: flex;
   gap: 20rem;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 0rem;
+  }
 `;
 
 export const TitleAndIcons = styled.div`
@@ -107,6 +116,29 @@ export const CollageSection = styled.div`
     margin-top: 50rem;
     object-fit: contain;
     position: absolute;
+  }
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+`;
+
+export const MobileCollageSection = styled.div`
+  display: none;
+
+  @media (max-width: 768px) {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 50rem;
+    gap: 2rem;
+
+    img {
+      width: 23rem;
+    }
   }
 `;
 
