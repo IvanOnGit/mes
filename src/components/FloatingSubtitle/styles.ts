@@ -14,4 +14,11 @@ export const Container = styled.div`
         margin: 0;
         padding: 0;
     }
+
+    @media (max-width: 768px) {
+
+        h2 {
+            text-align: center;
+        }
+    }
 `;

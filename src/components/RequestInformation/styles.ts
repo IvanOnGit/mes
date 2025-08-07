@@ -31,6 +31,11 @@ export const Container = styled.div`
         font-weight: 200;
         margin: 0;
         padding: 0;
+
+        @media (max-width: 768px) {
+            font-size: 1rem;
+            text-align: center;
+        }
     }
 
     button {
