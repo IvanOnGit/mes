@@ -110,15 +110,6 @@ function AboutMe() {
                 <img src="/images/Star.svg" alt="" />
                 <img src="/images/Star.svg" alt="" />
                 <img src="/images/Star.svg" alt="" />
-              </div>
-              <p>Referencias de clientes, empresas, entre otras cosas, acá se escriben los opiniones de los clientes de MES o íconos de empresas.</p>
-            </StarsAndText>
-          </Recomendation>
-          <Recomendation>
-            <UserFake />
-            <StarsAndText>
-              <div>
-                <img src="/images/Star.svg" alt="" />
                 <img src="/images/Star.svg" alt="" />
                 <img src="/images/Star.svg" alt="" />
               </div>
@@ -129,6 +120,21 @@ function AboutMe() {
             <UserFake />
             <StarsAndText>
               <div>
+                <img src="/images/Star.svg" alt="" />
+                <img src="/images/Star.svg" alt="" />
+                <img src="/images/Star.svg" alt="" />
+                <img src="/images/Star.svg" alt="" />
+                <img src="/images/Star.svg" alt="" />
+              </div>
+              <p>Referencias de clientes, empresas, entre otras cosas, acá se escriben los opiniones de los clientes de MES o íconos de empresas.</p>
+            </StarsAndText>
+          </Recomendation>
+          <Recomendation>
+            <UserFake />
+            <StarsAndText>
+              <div>
+                <img src="/images/Star.svg" alt="" />
+                <img src="/images/Star.svg" alt="" />
                 <img src="/images/Star.svg" alt="" />
                 <img src="/images/Star.svg" alt="" />
                 <img src="/images/Star.svg" alt="" />
@@ -146,7 +152,7 @@ function AboutMe() {
               <button className="close-button" onClick={closeModal}>×</button>
               <ModalImage>
                 <h3>ÁMBITO CORPORATIVO</h3>
-                <img src="/images/Corporate.svg" alt="" />
+                <img src="/images/Corporate9.svg" alt="" />
                 <h4>Enfoque Cercano y Personalizado</h4>
                 <span />
               </ModalImage>

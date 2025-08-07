@@ -155,6 +155,15 @@ export const TreeContainer = styled.div`
     margin-bottom: 2rem;
     border-radius: 1rem;
   }
+
+  @media (max-width: 768px) {
+    padding: 0 1rem;
+    
+    span {
+      width: 90%;
+      max-width: 350px;
+    }
+  }
 `;
 
 export const TitleTreeContainer = styled.div`
@@ -173,13 +182,25 @@ export const TitleTreeContainer = styled.div`
       padding: 0;
       width: 100%;
     }
+
+    @media (max-width: 768px) {
+      text-align: center;
+
+      h2 {
+        font-size: 1.5rem;
+      }
+
+      img {
+        width: 22rem;
+      }
+    }
 `;
 
 export const CardsContainer = styled.div`
   display: flex;
   width: 100%;
   justify-content: center;
-  align-items: flex-start; /* Cambio aquí: de center a flex-start */
+  align-items: flex-start;
   gap: 1rem;
   margin-top: 7rem;
 
@@ -188,6 +209,19 @@ export const CardsContainer = styled.div`
     height: 22.5rem;
     background-color: white;
     color: white;
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 4rem;
+
+    span {
+      width: 91%;
+      height: 1px;
+      background-color: white;
+    }
   }
 `;
 
@@ -241,6 +275,31 @@ export const Card = styled.div`
       transition: all 0.3s ease;
     }
   }
+
+  @media (max-width: 768px) {
+    width: 90%;
+    max-width: 350px;
+    
+    h2 {
+      width: 100%;
+      height: auto;
+      margin-left: 0;
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      width: 100%;
+      height: auto;
+      text-align: justify;
+      margin-bottom: 1rem;
+    }
+
+    button {
+      width: 100%;
+      max-width: 320px;
+    }
+  }
 `;
 
 export const RecomendationsContainer = styled.div`
@@ -272,6 +331,14 @@ export const Recomendation = styled.div`
     font-weight: 100;
     width: 15rem;
   }
+
+  @media (max-width: 768px) {
+
+    padding: 1rem;
+    p {
+      font-size: 0.7rem;
+    }
+  }
 `;
 
 export const UserFake = styled.div`
@@ -280,6 +347,10 @@ export const UserFake = styled.div`
   border-radius: 50%;
   margin-bottom: 4rem;
   background-color: white;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 `;
 
 export const StarsAndText = styled.div`
@@ -288,7 +359,7 @@ export const StarsAndText = styled.div`
   gap: 1rem;
 `;
 
-// Nuevos estilos para el modal con animaciones
+// Estilos para el modal con scroll
 export const ModalOverlay = styled.div<{ $isClosing: boolean }>`
   position: fixed;
   top: 0;
@@ -302,15 +373,26 @@ export const ModalOverlay = styled.div<{ $isClosing: boolean }>`
   z-index: 1000;
   opacity: ${props => props.$isClosing ? 0 : 1};
   transition: opacity 0.3s ease;
+  padding: 2rem;
+  
+  @media (max-width: 768px) {
+    padding: 1rem;
+    align-items: flex-start;
+    padding-top: 2rem;
+    left: auto;
+    width: 90%;
+  }
 `;
 
 export const ModalContent = styled.div<{ $isClosing: boolean }>`
   background-color: black;
   border: 1px solid white;
   border-radius: 1rem;
-  width: 800px;
+  width: 100%;
+  max-width: 800px;
+  max-height: 90vh;
   position: relative;
-  overflow-y: hidden;
+  overflow-y: auto;
   display: flex;
   justify-content: center;
   gap: 6rem;
@@ -319,6 +401,25 @@ export const ModalContent = styled.div<{ $isClosing: boolean }>`
   opacity: ${props => props.$isClosing ? 0 : 1};
   transition: transform 0.3s ease, opacity 0.3s ease;
   animation: ${props => props.$isClosing ? 'none' : 'modalOpen 0.3s ease'};
+
+  /* Estilos para el scrollbar */
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: #1c1c1c;
+    border-radius: 4px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #404040;
+    border-radius: 4px;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: #606060;
+  }
 
   @keyframes modalOpen {
     from {
@@ -356,11 +457,27 @@ export const ModalContent = styled.div<{ $isClosing: boolean }>`
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 1001;
     
     &:hover {
       background-color: #242424;
       border-radius: 50%;
       transition: all 0.3s ease;
+    }
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 2rem;
+    padding: 1.5rem;
+    margin: 0; /* Elimina el margen que puede estar causando el desplazamiento */
+    max-height: 85vh;
+    width: calc(100% - 2rem); /* Asegura que no se desborde */
+    max-width: none; /* Permite que use todo el ancho disponible */
+    
+    h3 {
+      width: 100%;
+      text-align: center;
     }
   }
 `;
@@ -379,12 +496,19 @@ export const ModalText = styled.div`
     width: 17rem;
     text-align: justify;
   }
+
+  @media (max-width: 768px) {
+    p {
+      width: 100%;
+    }
+  }
 `;
 
 export const ModalImage = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  flex-shrink: 0;
 
   h3 {
     margin-bottom: 1rem;
@@ -398,7 +522,6 @@ export const ModalImage = styled.div`
   img.meditatingBack {
     margin-top: 1rem;
     height: 22rem;
-
     display: none;
   }
 
@@ -416,5 +539,20 @@ export const ModalImage = styled.div`
     width: 2.5rem;
     height: 5px;
     background-color: white;
+  }
+
+  @media (max-width: 768px) {
+    align-items: center;
+    text-align: center;
+
+    h3, h4 {
+      width: 100%;
+      text-align: center;
+    }
+
+    img {
+      width: 16rem;
+      height: 12rem;
+    }
   }
 `;
