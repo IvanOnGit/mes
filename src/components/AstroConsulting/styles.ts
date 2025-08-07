@@ -640,7 +640,6 @@ export const ModalityContainer = styled.div`
   @media (max-width: 768px) {
     height: auto;
     padding: 2rem 1rem;
-    gap: 1.5rem;
   }
 
   h2 {
@@ -665,13 +664,32 @@ export const IconsContainer = styled.div`
   align-items: center;
   gap: 2rem;
 
+  div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  img {
+    @media (max-width: 768px) {
+      width: 10rem;
+      height: 10rem;
+      object-fit: contain;
+    }
+  }
+
   @media (max-width: 768px) {
-    gap: 1.5rem;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1.5rem;
+    max-width: 300px;
   }
 
   @media (max-width: 480px) {
     gap: 1rem;
+    grid-gap: 1rem;
+    max-width: 250px;
   }
 `;
 
