@@ -81,6 +81,11 @@ export const ModalityContainer = styled.div`
     margin: 0;
     padding: 0;
   }
+
+  @media (max-width: 768px) {
+    height: auto;
+    padding: 2rem 0;
+  }
 `;
 
 export const CapsulesContainer = styled.div`
@@ -92,6 +97,16 @@ export const CapsulesContainer = styled.div`
     width: 2rem;
     height: 1px;
     background-color: white;
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 0;
+
+    span {
+      width: 1px;
+      height: 1rem;
+    }
   }
 `;
 
@@ -106,6 +121,7 @@ export const Capsule = styled.div`
   align-items: center;
   flex-direction: column;
   text-align: center;
+  min-height: 4rem;
 
   h3 {
     color: white;
@@ -121,5 +137,14 @@ export const Capsule = styled.div`
     font-size: 0.8rem;
     margin: 0;
     padding: 0;
+  }
+
+  @media (max-width: 768px) {
+    width: 20rem;
+    min-height: 4rem;
+    
+    h3 {
+      width: auto;
+    }
   }
 `;

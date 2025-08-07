@@ -51,7 +51,7 @@ function Biotrascendence() {
           </Capsule>
           <span></span>
           <Capsule>
-            <h3>Procesos De Transformación Conductual</h3>
+            <h3>Procesos De <br />Transformación Conductual</h3>
           </Capsule>
         </CapsulesContainer>
       </ModalityContainer>

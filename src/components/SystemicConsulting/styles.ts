@@ -40,25 +40,6 @@ export const TextContainer = styled.div`
   margin-top: 1rem;
   margin-bottom: 1rem;
  }
-
- @media (max-width: 768px) {
-    flex-direction: column;
-    height: auto;
-    gap: 1rem;
-
-    p {
-      text-align: justify;
-    }
-
-    img {
-      width: 20.2rem;
-    }
-
-    button {
-      margin-left: 0;
-      width: 100%;
-    }
-  }
 `;
 
 export const Paragraph = styled.p`

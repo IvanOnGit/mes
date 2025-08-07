@@ -108,11 +108,24 @@ export const CapsulesContainer = styled.div`
   align-items: flex-start;
   gap: 0;
 
+  flex-direction: column; /* por defecto en mobile */
+  align-items: center;
+
   span {
-    width: 2rem;
-    height: 1px;
+    width: 1px;
+    height: 2rem;
     background-color: white;
-    margin-top: 1.5rem;
+  }
+
+  @media (min-width: 769px) {
+    flex-direction: row;
+    align-items: flex-start;
+
+    span {
+      width: 2rem;
+      height: 1px;
+      margin: 1.5rem 0 0 0;
+    }
   }
 `;
 

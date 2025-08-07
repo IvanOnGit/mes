@@ -60,9 +60,10 @@ export const StagesContainer = styled.div`
   flex-direction: column;
   width: 100%;
   background-color: #1A1A1A;
-  height: 20rem;
+  height: 20rem; // ✅ Mantener para desktop
   gap: 2rem;
   overflow: hidden;
+
   h2 {
     color: white;
     font-size: 3rem;
@@ -70,20 +71,40 @@ export const StagesContainer = styled.div`
     margin: 0;
     padding: 0;
   }
+
+  @media (max-width: 768px) {
+    height: auto; // ✅ Mobile necesita crecer
+    padding: 2rem 0;
+  }
 `;
 
 export const CapsulesContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
+  flex-direction: row; // ✅ Horizontal por defecto (desktop)
+  flex-wrap: nowrap;
+  overflow: visible;
 
   span {
     width: 2rem;
     height: 1px;
     background-color: white;
+    margin: 0;
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column; // ✅ Vertical para mobile
+    gap: 0; // ✅ Eliminar espacio para que los spans toquen las cápsulas
+
+    span {
+      width: 1px;
+      height: 1rem;
+      margin: 0;
+    }
   }
 `;
+
 
 export const Capsule = styled.div`
   background-color: transparent;
