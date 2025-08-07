@@ -3,7 +3,7 @@ import { Container, LeftSide, RightSide } from "./styles";
 function Contact() {
 
   return (
-    <Container>
+    <Container id='contacto'>
       <LeftSide>
         <h1>Estás a una decisión de transformar tu vida.</h1>
         <div className="button-container">

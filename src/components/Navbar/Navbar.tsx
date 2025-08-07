@@ -15,10 +15,10 @@ function Navbar() {
       
       {/* Desktop Menu */}
       <ContainerLinks>
-        <a>Inicio</a>
-        <a>Servicios</a>
+        <Link to={'/'}>Inicio</Link>
+        <a href="#servicios">Servicios</a>
         <Link to={'/sobre-mi'}>Sobre Mi</Link>
-        <a>Contacto</a>
+        <a href="#contacto">Contacto</a>
       </ContainerLinks>
 
       {/* Hamburger Menu Button */}
@@ -30,10 +30,10 @@ function Navbar() {
 
       {/* Mobile Menu */}
       <MobileMenu $isOpen={isMenuOpen}>
-        <a onClick={() => setIsMenuOpen(false)}>Inicio</a>
-        <a onClick={() => setIsMenuOpen(false)}>Servicios</a>
+        <Link to={'/'} onClick={() => setIsMenuOpen(false)}>Inicio</Link>
+        <a href="#servicios" onClick={() => setIsMenuOpen(false)}>Servicios</a>
         <Link to={'/sobre-mi'} onClick={() => setIsMenuOpen(false)}>Sobre Mi</Link>
-        <a onClick={() => setIsMenuOpen(false)}>Contacto</a>
+        <a href="#contacto" onClick={() => setIsMenuOpen(false)}>Contacto</a>
       </MobileMenu>
     </Container>
   );
