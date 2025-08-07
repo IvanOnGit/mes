@@ -195,14 +195,17 @@ export const FormativeSeminars = styled.div`
   align-items: center;
   flex-direction: column;
   width: 100%;
-  height: 30rem;
+  min-height: 30rem;
+  height: auto;
   background-color: white;
   gap: 2rem;
+  padding: 2rem 1rem;
 
   h2 {
     font-weight: bold;
     margin: 0;
     padding: 0;
+    text-align: center;
   }
 
   h3 {
@@ -214,6 +217,7 @@ export const FormativeSeminars = styled.div`
     border: 1px solid black;
     padding: 0.7rem;
     border-radius: 1.5rem;
+    text-align: center;
   }
 
   button {
@@ -236,11 +240,34 @@ export const FormativeSeminars = styled.div`
       transform: scale(1.1);
     }
   }
+
+  @media (max-width: 768px) {
+    h3 {
+      font-size: 1rem;
+      padding: 0.5rem;
+    }
+  }
 `;
 
 export const Seminars = styled.div`
   display: flex;
   gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  @media (max-width: 768px) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    width: 90%;
+    max-width: 400px;
+    
+    /* Para que el último elemento (VENTAS) se centre si es impar */
+    & > :nth-child(5) {
+      grid-column: 1 / -1;
+      justify-self: center;
+    }
+  }
 `;
 
 export const IndividualSeminar = styled.div`
@@ -248,6 +275,15 @@ export const IndividualSeminar = styled.div`
   flex-direction: column;
   position: relative;
   cursor: pointer;
+  width: 200px;
+  height: 150px;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0.5rem;
+  }
 
   h4 {
     margin: 0;
@@ -274,6 +310,24 @@ export const IndividualSeminar = styled.div`
     margin-right: 1rem;
     margin-bottom: 0.5rem;
   }
+
+  @media (max-width: 768px) {
+    width: 100%;
+    height: 120px;
+    
+    h4 {
+      font-size: 1rem;
+      max-width: 8rem;
+      padding: 0.5rem;
+    }
+    
+    span {
+      width: 2rem;
+      height: 4px;
+      margin-right: 0.5rem;
+      margin-bottom: 0.3rem;
+    }
+  }
 `;
 
 // Estilos del Modal
@@ -297,7 +351,7 @@ export const ModalContent = styled.div`
   width: 90%;
   max-width: 600px;
   max-height: 80vh;
-  overflow-y: hidden;
+  overflow-y: auto; /* Cambiado de hidden a auto */
   position: relative;
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
   animation: modalSlideIn 0.3s ease-out;
@@ -332,7 +386,7 @@ export const ModalClose = styled.button`
   background: none;
   border: none;
   font-size: 2rem;
-  color: black;
+  color: white; /* Cambiado a blanco para mejor visibilidad */
   cursor: pointer;
   z-index: 1001;
   width: 40px;
@@ -358,11 +412,16 @@ export const ModalBody = styled.div`
     margin-bottom: 1rem;
   }
 
-  h4 {
-    margin-top: 0;
+  h3 {
+    margin-top: 1.5rem;
     margin-bottom: 0.5rem;
     font-size: 1.1rem;
     font-weight: 600;
+  }
+
+  /* Primer h3 no necesita margin-top */
+  h3:first-child {
+    margin-top: 0;
   }
 
   ul {
@@ -373,15 +432,46 @@ export const ModalBody = styled.div`
   li {
     margin-bottom: 0.5rem;
   }
+
+  /* Separación entre secciones */
+  > div {
+    margin-bottom: 2rem;
+  }
+
+  > div:last-child {
+    margin-bottom: 0;
+  }
+
+  /* Estilo para contenido destacado */
+  strong {
+    font-weight: 600;
+    color: #1A1A1A;
+  }
 `;
 
 export const ModalCapsules = styled.div`
   display: flex;
-  gap: 0.2rem;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin: 1rem 0;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    text-align: center;
+  }
 `;
 
 export const InnerModalCapsule = styled.div`
   border: 1px solid black;
   border-radius: 1rem;
-  padding: 0.5rem;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  background-color: #f9f9f9;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: #e9e9e9;
+    transform: translateY(-2px);
+  }
 `;

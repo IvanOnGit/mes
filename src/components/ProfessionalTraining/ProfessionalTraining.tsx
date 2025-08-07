@@ -54,27 +54,27 @@ const seminarData = [
   {
     id: 1,
     title: "HABILIDADES DE GESTIÓN",
-    image: "/images/Seminar 1.svg"
+    image: "/images/Seminar 1.jpg"
   },
   {
     id: 2,
     title: "LIDERAZGO GERENCIAL",
-    image: "/images/Seminar 2.svg"
+    image: "/images/Seminar 2.jpg"
   },
   {
     id: 3,
     title: "EFICIENCIA LABORAL",
-    image: "/images/Seminar 3.svg"
+    image: "/images/Seminar 3.jpg"
   },
   {
     id: 4,
     title: "RRHH",
-    image: "/images/Seminar 4.svg"
+    image: "/images/Seminar 4.jpg"
   },
   {
     id: 5,
     title: "VENTAS",
-    image: "/images/Seminar 5.svg"
+    image: "/images/Seminar 5.jpg"
   }
 ];
 
