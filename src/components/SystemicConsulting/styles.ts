@@ -40,6 +40,25 @@ export const TextContainer = styled.div`
   margin-top: 1rem;
   margin-bottom: 1rem;
  }
+
+ @media (max-width: 768px) {
+    flex-direction: column;
+    height: auto;
+    gap: 1rem;
+
+    p {
+      text-align: justify;
+    }
+
+    img {
+      width: 20.2rem;
+    }
+
+    button {
+      margin-left: 0;
+      width: 100%;
+    }
+    }
 `;
 
 export const Paragraph = styled.p`
@@ -63,6 +82,11 @@ export const ModalityContainer = styled.div`
     font-size: 2.5rem;
     font-weight: 100;
   }
+
+  @media (max-width: 768px) {
+    height: auto;
+    gap: 1.5rem;
+  }
 `;
 
 export const IconsContainer = styled.div`
@@ -70,4 +94,26 @@ export const IconsContainer = styled.div`
   justify-content: center;
   align-items: center;
   gap: 2rem;
+
+  div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  img {
+    @media (max-width: 768px) {
+      width: 9rem;
+      height: 9rem;
+      object-fit: contain;
+    }
+  }
+
+  @media (max-width: 768px) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1.5rem;
+    max-width: 300px;
+  }
 `;
