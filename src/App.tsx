@@ -1,12 +1,12 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './components/Home/Home';
-import Biotrascendence from './components/Biotrascendence/biotrascendence';
 import SystemicConsulting from './components/SystemicConsulting/SystemicConsulting';
 import AstroConsulting from './components/AstroConsulting/AstroConsulting';
 import TalentActivationSystem from './components/TalentActivationSystem/TalentActivationSystem';
 import ProfessionalTraining from './components/ProfessionalTraining/ProfessionalTraining';
 import ScrollToTop from './components/ScrollToTop/ScrollToTop';
 import AboutMe from './components/AboutMe/AboutMe';
+import Biotrascendence from './components/Biotrascendence/Biotrascendence';
 
 function App() {
   return (
