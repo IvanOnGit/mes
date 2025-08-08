@@ -14,7 +14,7 @@ import Contact from "../Contact/Contact";
     "/images/Bio 3.svg",
   ];
 
-function Biotrascendence() {
+function Bio() {
   return (
     <Container>
       <Navbar />
@@ -62,4 +62,4 @@ function Biotrascendence() {
   );
 }
 
-export default Biotrascendence;
+export default Bio;

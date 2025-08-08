@@ -6,7 +6,7 @@ import TalentActivationSystem from './components/TalentActivationSystem/TalentAc
 import ProfessionalTraining from './components/ProfessionalTraining/ProfessionalTraining';
 import ScrollToTop from './components/ScrollToTop/ScrollToTop';
 import AboutMe from './components/AboutMe/AboutMe';
-import Biotrascendence from './components/Biotrascendence/Biotrascendence';
+import Bio from './components/Bio/Bio';
 
 function App() {
   return (
@@ -14,7 +14,7 @@ function App() {
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/biotrascendencia" element={<Biotrascendence />} />
+        <Route path="/biotrascendencia" element={<Bio />} />
         <Route path="/consultoria-sistemica" element={< SystemicConsulting/>} />
         <Route path="/consultoria-astrologica" element={< AstroConsulting/>} />
         <Route path="/talent-activation-system" element={< TalentActivationSystem/>} />
