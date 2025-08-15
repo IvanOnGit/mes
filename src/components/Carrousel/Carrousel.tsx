@@ -5,7 +5,11 @@ import {
   Image,
   ArrowButton,
   SlidesWrapper,
-  ArrowsContainer
+  ArrowsContainer,
+  MobileCarousel,
+  MobileSlideContainer,
+  MobileSlide,
+  MobileImage
 } from "./styles";
 
 interface SlideData {
@@ -35,7 +39,20 @@ const slides: SlideData[] = [
 const Carousel: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+  const [isMobile, setIsMobile] = useState(false);
   const intervalRef = useRef<number | null>(null);
+
+  // Detectar si es mobile
+  useEffect(() => {
+    const checkIfMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    checkIfMobile();
+    window.addEventListener('resize', checkIfMobile);
+
+    return () => window.removeEventListener('resize', checkIfMobile);
+  }, []);
 
   const nextSlide = useCallback(() => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % slides.length);
@@ -51,7 +68,7 @@ const Carousel: React.FC = () => {
       setIsAutoPlaying(false);
       navigationFn();
       
-      // Reanudar autoplay después de 5 segundos
+      // Reanudar autoplay después de 4 segundos
       setTimeout(() => {
         setIsAutoPlaying(true);
       }, 4000);
@@ -61,9 +78,12 @@ const Carousel: React.FC = () => {
   // Efecto para el autoplay
   useEffect(() => {
     if (isAutoPlaying) {
+      // En mobile, hacer el cambio más lento (5 segundos)
+      const interval = isMobile ? 5000 : 3000;
+      
       intervalRef.current = setInterval(() => {
         nextSlide();
-      }, 3000);
+      }, interval);
     } else {
       if (intervalRef.current) {
         clearInterval(intervalRef.current);
@@ -77,16 +97,7 @@ const Carousel: React.FC = () => {
         clearInterval(intervalRef.current);
       }
     };
-  }, [isAutoPlaying, nextSlide]);
-
-  // Pausar autoplay cuando el usuario hace hover sobre el carousel
-  // const handleMouseEnter = useCallback(() => {
-  //   setIsAutoPlaying(false);
-  // },[]);
-
-  // const handleMouseLeave = useCallback(() => {
-  //   setIsAutoPlaying(true);
-  // },[]);
+  }, [isAutoPlaying, nextSlide, isMobile]);
 
   const getSlidePosition = useCallback((index: number) => {
     const totalSlides = slides.length;
@@ -103,11 +114,31 @@ const Carousel: React.FC = () => {
     return "hidden";
   },[currentIndex]);
 
+  // Renderizar versión mobile
+  if (isMobile) {
+    return (
+      <MobileCarousel>
+        <MobileSlideContainer>
+          {/* Primera serie de imágenes */}
+          {slides.map((slide, index) => (
+            <MobileSlide key={`first-${index}`}>
+              <MobileImage src={slide.src} alt={slide.text} />
+            </MobileSlide>
+          ))}
+          {/* Segunda serie de imágenes (para el loop infinito) */}
+          {slides.map((slide, index) => (
+            <MobileSlide key={`second-${index}`}>
+              <MobileImage src={slide.src} alt={slide.text} />
+            </MobileSlide>
+          ))}
+        </MobileSlideContainer>
+      </MobileCarousel>
+    );
+  }
+
+  // Renderizar versión desktop (original)
   return (
-    <CarouselContainer 
-      // onMouseEnter={handleMouseEnter}
-      // onMouseLeave={handleMouseLeave}
-    >
+    <CarouselContainer>
       <SlidesWrapper>
         {slides.map((slide, index) => {
           const position = getSlidePosition(index);

@@ -106,3 +106,50 @@ export const ArrowButton = styled.button`
     transform: scale(1.1);
   }
 `;
+
+// ========== ESTILOS PARA MOBILE ==========
+
+export const MobileCarousel = styled.div`
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  background-color: #000;
+  
+  @media (min-width: 769px) {
+    display: none;
+  }
+`;
+
+export const MobileSlideContainer = styled.div`
+  display: flex;
+  width: 800%; /* 4 slides * 2 = 8 para el loop infinito */
+  height: 100%;
+  animation: infiniteSlide 20s linear infinite; /* 20s = 5s por imagen * 4 imágenes */
+  
+  @keyframes infiniteSlide {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%); /* Se mueve la mitad porque duplicamos las imágenes */
+    }
+  }
+  
+  &:hover {
+    animation-play-state: paused; /* Opcional: pausar en hover */
+  }
+`;
+
+export const MobileSlide = styled.div`
+  flex: 0 0 12.5%; /* 100% / 8 slides = 12.5% cada una */
+  height: 100%;
+  position: relative;
+`;
+
+export const MobileImage = styled.img`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+`;
