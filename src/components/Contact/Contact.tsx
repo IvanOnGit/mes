@@ -16,7 +16,7 @@ function Contact() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      const response = await fetch("http://localhost:3001/api/contact", {
+      const response = await fetch("https://mes-backend-it48.onrender.com/api/contact", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
