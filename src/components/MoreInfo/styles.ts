@@ -40,18 +40,22 @@ export const Container = styled.div`
 
   @media (max-width: 768px) {
     gap: 1rem;
+    padding: 1rem;
 
     h2 {
-      font-size: 0.8rem;
+      font-size: 0.9rem;
+      text-align: center;
+      padding: 0.5rem;
     }
 
     button {
-      padding: 0.3rem;
+      padding: 0.7rem;
       font-size: 0.8rem;
     }
 
     .Subcontainer {
-      width: 10rem;
+      font-size: 1rem;
+      text-align: center;
     }
   }
 `;
