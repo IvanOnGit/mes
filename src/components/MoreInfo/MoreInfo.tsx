@@ -10,7 +10,13 @@ function Navbar() {
         <span></span>
         <div className='Subcontainer'>
             <h2>Consultorías <br /> <strong>Vida Plena + Impacto</strong></h2>
-            <button>Más Información</button>
+            <button
+            onClick={() => {
+              document.getElementById("contacto")?.scrollIntoView({ behavior: "smooth" });
+            }}
+          >
+            Más Información
+          </button>
         </div>
     </Container>
   );
