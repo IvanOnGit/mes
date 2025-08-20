@@ -30,6 +30,10 @@ export const Logo = styled.img`
   @media (min-width: 1025px) {
     margin-left: 6.81rem;
   }
+
+  @media (max-width: 768px) {
+    width: 17.5rem;
+  }
 `;
 
 export const ContainerLinks = styled.div`
