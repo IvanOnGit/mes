@@ -139,7 +139,6 @@ function Contact() {
           <h1>Estás a una decisión de transformar tu vida.</h1>
           <div className="button-container">
             <p><strong>¿EMPEZAMOS?</strong></p>
-            <button>Contacto</button>
           </div>
         </LeftSide>
         <span></span>
