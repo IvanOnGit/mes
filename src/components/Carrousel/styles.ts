@@ -28,7 +28,7 @@ interface SlideProps {
 
 export const Slide = styled.div<SlideProps>`
   position: absolute;
-  transition: all 0.6s ease-in-out;
+  transition: all 1s ease-in-out;
   overflow: hidden;
   
   ${({ position }) => {

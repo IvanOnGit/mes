@@ -79,7 +79,7 @@ const Carousel: React.FC = () => {
   useEffect(() => {
     if (isAutoPlaying) {
       // En mobile, hacer el cambio más lento (5 segundos)
-      const interval = isMobile ? 5000 : 3000;
+      const interval = isMobile ? 5000 : 7000;
       
       intervalRef.current = setInterval(() => {
         nextSlide();
