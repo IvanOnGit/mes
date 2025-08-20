@@ -13,12 +13,18 @@ export const Container = styled.div`
   width: 100%;
   position: relative;
   overflow-x: hidden;
+  font-family: "Inter", sans-serif;
 
   h1 {
     color: white;
     font-size: 3rem;
     font-weight: 400;
     margin-bottom: 2rem;
+
+    @media (max-width: 768px) {
+      font-size: 2.2rem;
+      letter-spacing: 0.3rem;
+    }
   }
 
   /* Mobile/Desktop View Toggle */
