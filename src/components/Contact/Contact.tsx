@@ -25,7 +25,7 @@ function Contact() {
       });
 
       const data = await response.json();
-      alert(data.message || "Mensaje enviado correctamente ✅");
+      alert(data.message || "Gracias por tu mensaje. Nos ponemos en contacto a la brevedad.");
     } catch (error) {
       console.error("Error al enviar el formulario:", error);
       alert("Hubo un error al enviar el mensaje ❌");
