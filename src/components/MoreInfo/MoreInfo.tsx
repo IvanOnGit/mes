@@ -1,6 +1,6 @@
 import { Container } from "./styles";
 
-function Navbar() {
+function MoreInfo() {
 
   return (
     <Container>
@@ -22,4 +22,4 @@ function Navbar() {
   );
 }
 
-export default Navbar;
+export default MoreInfo;
