@@ -55,7 +55,7 @@ function Bio() {
           </Capsule>
         </CapsulesContainer>
       </ModalityContainer>
-      <RequestInformation title="¡Lográ tu meta en 3 meses!" />
+      <RequestInformation title="¡Que tu paso deje huellas, transfórmate en un Lider de impacto!" />
       <DynamicImages images={myImages} />
       <Contact />
     </Container>

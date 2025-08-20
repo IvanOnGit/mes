@@ -20,7 +20,8 @@ export const Container = styled.div`
         padding: 0;
 
         @media (max-width: 768px) {
-            font-size: 1.5rem;
+            font-size: 1.4rem;
+            width: 70%;
             text-align: center;
         }
     }
