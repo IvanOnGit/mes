@@ -82,13 +82,96 @@ export const RightSide = styled.div`
 
     input, textarea {
       background-color: #1a1a1a;
-      color: white;
+      color: white !important; // Fuerza el color
       border: none;
-      border-bottom: 2px solid white;
+      border-bottom: 4px solid white;
       padding: 0.8rem;
       font-size: 1rem;
       resize: none;
       outline: none;
+      
+      // Estilos adicionales para asegurar el color
+      &::placeholder {
+        color: #888 !important;
+      }
+      
+      // Para prevenir estilos de autocomplete
+      &:-webkit-autofill,
+      &:-webkit-autofill:hover,
+      &:-webkit-autofill:focus,
+      &:-webkit-autofill:active {
+        -webkit-box-shadow: 0 0 0 30px #1a1a1a inset !important;
+        -webkit-text-fill-color: white !important;
+      }
+    }
+
+    textarea {
+      height: 120px;
+    }
+
+    button {
+      background-color: white;
+      color: black;
+      border: none;
+      padding: 0.8rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+
+      &:hover {
+        background-color: #ddd;
+      }
+    }
+  }
+`;
+
+// Opción 2: Alternativa usando CSS más específico
+export const RightSideAlternative = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 400px;
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+
+    input, textarea {
+      background-color: #1a1a1a !important;
+      color: white !important;
+      border: none;
+      border-bottom: 4px solid white;
+      padding: 0.8rem;
+      font-size: 1rem;
+      resize: none;
+      outline: none;
+      font-family: inherit !important;
+      
+      &::placeholder {
+        color: rgba(255, 255, 255, 0.5) !important;
+        opacity: 1 !important;
+      }
+      
+      &:focus {
+        color: white !important;
+      }
+      
+      // Estilos específicos para diferentes navegadores
+      &:-moz-placeholder { color: rgba(255, 255, 255, 0.5) !important; }
+      &::-moz-placeholder { color: rgba(255, 255, 255, 0.5) !important; }
+      &:-ms-input-placeholder { color: rgba(255, 255, 255, 0.5) !important; }
+      &::-webkit-input-placeholder { color: rgba(255, 255, 255, 0.5) !important; }
+    }
+
+    // Si quieres un color diferente (ejemplo: rojo)
+    input.red-text, textarea.red-text {
+      color: red !important;
+      
+      &:-webkit-autofill {
+        -webkit-text-fill-color: red !important;
+      }
     }
 
     textarea {
