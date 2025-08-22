@@ -147,15 +147,8 @@ function Contact() {
             <input
               type="text"
               name="nombre"
-              placeholder="Nombre y Apellido"
+              placeholder="Nombre/Organización"
               value={formData.nombre}
-              onChange={handleChange}
-            />
-            <input
-              type="tel"
-              name="telefono"
-              placeholder="Celular"
-              value={formData.telefono}
               onChange={handleChange}
             />
             <input
@@ -165,9 +158,16 @@ function Contact() {
               value={formData.email}
               onChange={handleChange}
             />
+            <input
+              type="tel"
+              name="telefono"
+              placeholder="Tel/Cel"
+              value={formData.telefono}
+              onChange={handleChange}
+            />
             <textarea
               name="mensaje"
-              placeholder="¿Cómo te ayudo?"
+              placeholder="Mensaje/Consulta"
               value={formData.mensaje}
               onChange={handleChange}
             />
