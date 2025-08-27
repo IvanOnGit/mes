@@ -111,7 +111,7 @@ export const ArrowButton = styled.button`
 
 export const MobileCarousel = styled.div`
   width: 100%;
-  height: 40rem;
+  height: 35rem;
   position: relative;
   overflow: hidden;
   background-color: #000;
