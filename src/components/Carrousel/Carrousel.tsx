@@ -14,24 +14,29 @@ import {
 
 interface SlideData {
   src: string;
+  mobileSrc: string; // Nueva propiedad para imágenes mobile
   text: string;
 }
 
 const slides: SlideData[] = [
   {
     src: "/images/Imagen 1.jpg",
+    mobileSrc: "/images/Imagen 1 mobile.jpg",
     text: "Quien se atreve a mirar la oscuridad"
   },
   {
     src: "/images/Imagen 2.jpg",
+    mobileSrc: "/images/Imagen 2 mobile.jpg",
     text: "Tiene el poder de transformarla"
   },
   {
     src: "/images/Imagen 3.jpeg",
+    mobileSrc: "/images/Imagen 3 mobile.jpg",
     text: "En nuevos recursos, nuevas posibilidades, nuevos escenarios"
   },
   {
     src: "/images/Imagen 4.jpg",
+    mobileSrc: "/images/Imagen 4 mobile.jpg",
     text: "Es otro nivel, lo que requiere este contexto, de adentro hacia afuera"
   }
 ];
@@ -119,16 +124,16 @@ const Carousel: React.FC = () => {
     return (
       <MobileCarousel>
         <MobileSlideContainer>
-          {/* Primera serie de imágenes */}
+          {/* Primera serie de imágenes mobile */}
           {slides.map((slide, index) => (
             <MobileSlide key={`first-${index}`}>
-              <MobileImage src={slide.src} alt={slide.text} />
+              <MobileImage src={slide.mobileSrc} alt={slide.text} />
             </MobileSlide>
           ))}
-          {/* Segunda serie de imágenes (para el loop infinito) */}
+          {/* Segunda serie de imágenes mobile (para el loop infinito) */}
           {slides.map((slide, index) => (
             <MobileSlide key={`second-${index}`}>
-              <MobileImage src={slide.src} alt={slide.text} />
+              <MobileImage src={slide.mobileSrc} alt={slide.text} />
             </MobileSlide>
           ))}
         </MobileSlideContainer>

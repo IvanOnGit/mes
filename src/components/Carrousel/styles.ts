@@ -111,7 +111,7 @@ export const ArrowButton = styled.button`
 
 export const MobileCarousel = styled.div`
   width: 100%;
-  height: 100vh;
+  height: 47rem;
   position: relative;
   overflow: hidden;
   background-color: #000;
@@ -123,7 +123,7 @@ export const MobileCarousel = styled.div`
 
 export const MobileSlideContainer = styled.div`
   display: flex;
-  width: 800%; /* 4 slides * 2 = 8 para el loop infinito */
+  width: 1000%; /* 4 slides * 2 = 8 para el loop infinito */
   height: 100%;
   animation: infiniteSlide 20s linear infinite; /* 20s = 5s por imagen * 4 imágenes */
   
