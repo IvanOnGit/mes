@@ -5,50 +5,103 @@ export const Container = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
-  overflow: hidden;
+  overflow-x: hidden;
 `;
 
 export const TextContainer = styled.div`
- display: flex;
- justify-content: center;
- align-items: center;
- width: 100%;
- background-color: white;
- height: 20rem;
- gap: 2rem;
- padding: 1rem;
- overflow: hidden;
-
- img {
-  width: 26rem;
-  height: 15rem;
- }
-
- h2 {
-  margin: 0;
-  padding-bottom: 0.5rem;
-  margin-top: 1rem;
-  font-size: 1rem;
-  border-bottom: 3px solid black;
- }
-
- p {
-  margin-bottom: 1rem;
-  font-size: 0.8rem;
-  width: 20rem;
- }
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  background-color: white;
+  padding: 4rem 6rem;
+  gap: 4rem;
+  box-sizing: border-box;
 
   @media (max-width: 768px) {
     flex-direction: column;
-    height: auto;
-    gap: 1rem;
+    padding: 2rem 1.5rem;
+    gap: 2rem;
+    overflow-x: hidden;
+  }
+`;
+
+export const LeftColumn = styled.div`
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  justify-content: flex-end;
+  align-items: flex-end;
+
+  p {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    text-align: justify;
+    max-width: 29rem;
+  }
+
+  .italic-text {
+    font-style: italic;
+    margin-top: 1rem;
+  }
+
+  @media (max-width: 768px) {
+    align-items: flex-start;
+    width: 100%;
 
     p {
+      font-size: 0.9rem;
+      max-width: 100%;
+    }
+  }
+`;
+
+export const RightColumn = styled.div`
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  .top-section {
+    p {
+      margin: 0;
+      font-size: 0.95rem;
+      line-height: 1.7;
       text-align: justify;
+      max-width: 29rem;
+    }
+  }
+
+  .image-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    img {
+      width: 100%;
+      margin-right: 20rem;
+      max-width: 28rem;
+      height: auto;
+    }
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
+
+    .top-section p {
+      font-size: 0.9rem;
+      max-width: 100%;
     }
 
-    img {
-      width: 20.2rem;
+    .image-section {
+      width: 100%;
+      
+      img {
+        max-width: 100%;
+        margin-right: 0;
+      }
     }
   }
 `;
@@ -60,9 +113,10 @@ export const StagesContainer = styled.div`
   flex-direction: column;
   width: 100%;
   background-color: #1A1A1A;
-  height: 20rem; // ✅ Mantener para desktop
+  height: 20rem;
   gap: 2rem;
   overflow: hidden;
+  box-sizing: border-box;
 
   h2 {
     color: white;
@@ -73,8 +127,14 @@ export const StagesContainer = styled.div`
   }
 
   @media (max-width: 768px) {
-    height: auto; // ✅ Mobile necesita crecer
-    padding: 2rem 0;
+    height: auto;
+    padding: 2rem 1.5rem;
+    gap: 1.5rem;
+
+    h2 {
+      font-size: 2rem;
+      text-align: center;
+    }
   }
 `;
 
@@ -82,7 +142,7 @@ export const CapsulesContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: row; // ✅ Horizontal por defecto (desktop)
+  flex-direction: row;
   flex-wrap: nowrap;
   overflow: visible;
 
@@ -94,8 +154,9 @@ export const CapsulesContainer = styled.div`
   }
 
   @media (max-width: 768px) {
-    flex-direction: column; // ✅ Vertical para mobile
-    gap: 0; // ✅ Eliminar espacio para que los spans toquen las cápsulas
+    flex-direction: column;
+    gap: 0;
+    width: 100%;
 
     span {
       width: 1px;
@@ -104,7 +165,6 @@ export const CapsulesContainer = styled.div`
     }
   }
 `;
-
 
 export const Capsule = styled.div`
   background-color: transparent;
@@ -117,6 +177,7 @@ export const Capsule = styled.div`
   align-items: center;
   flex-direction: column;
   text-align: center;
+  box-sizing: border-box;
 
   h3 {
     color: white;
@@ -131,5 +192,19 @@ export const Capsule = styled.div`
     font-size: 0.8rem;
     margin: 0;
     padding: 0;
+  }
+
+  @media (max-width: 768px) {
+    width: calc(100% - 3rem);
+    max-width: 20rem;
+    padding: 1rem;
+
+    h3 {
+      font-size: 0.95rem;
+    }
+
+    p {
+      font-size: 0.75rem;
+    }
   }
 `;

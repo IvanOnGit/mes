@@ -4,7 +4,6 @@ import FloatingDescription from "../FloatingDescription/FloatingDescription";
 import FloatingSubtitle from "../FloatingSubtitle/FloatingSubtitle";
 import FloatingTitle from "../FloatingTitle/FloatingTitle";
 import Hero from "../Hero/Hero";
-import DynamicImages from "../ImagesContainer/ImagesContainer";
 import Navbar from "../Navbar/Navbar";
 import { 
   Capsule, 
@@ -25,12 +24,7 @@ import {
   ModalCapsules,
   InnerModalCapsule
 } from "./styles";
-
-const myImages = [
-  "/images/Professional Training 1.svg",
-  "/images/Professional Training 2.svg",
-  "/images/Professional Training 3.svg",
-];
+import RequestInformation from "../RequestInformation/RequestInformation";
 
 const modalityData = [
   {
@@ -263,8 +257,7 @@ function ProfessionalTraining() {
           </ModalContent>
         </ModalOverlay>
       )}
-
-      <DynamicImages images={myImages} />
+      <RequestInformation title="¡Multiplicá tu Crecimiento!" />
       <Contact />
     </Container>
   );

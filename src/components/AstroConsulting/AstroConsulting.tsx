@@ -4,7 +4,6 @@ import FloatingDescription from "../FloatingDescription/FloatingDescription";
 import FloatingSubtitle from "../FloatingSubtitle/FloatingSubtitle";
 import FloatingTitle from "../FloatingTitle/FloatingTitle";
 import Hero from "../Hero/Hero";
-import DynamicImages from "../ImagesContainer/ImagesContainer";
 import Navbar from "../Navbar/Navbar";
 import RequestInformation from "../RequestInformation/RequestInformation";
 import { 
@@ -27,12 +26,6 @@ import {
   DropdownContent,
   DropdownItem
 } from "./styles";
-
-const myImages = [
-    "/images/Astro 1.svg",
-    "/images/Astro 2.svg",
-    "/images/Astro 3.svg",
-  ];
 
 // Datos para los desplegables
 const dropdownData = {
@@ -250,7 +243,6 @@ function AstroConsulting() {
               </IconsContainer>
       </ModalityContainer>
       <RequestInformation title="¡Deja el Piloto Automático y Comanda tu Vida!" />
-      <DynamicImages images={myImages} />
       <Contact />
     </Container>
   );

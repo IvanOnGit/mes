@@ -5,65 +5,105 @@ export const Container = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
-  overflow: hidden;
+  overflow-x: hidden;
 `;
 
 export const TextContainer = styled.div`
- display: flex;
- justify-content: center;
- align-items: center;
- width: 100%;
- background-color: white;
- height: 20rem;
- gap: 2rem;
- padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  background-color: white;
+  padding: 4rem 6rem;
+  gap: 4rem;
+  box-sizing: border-box;
 
- h2 {
-  margin: 0;
-  padding-bottom: 0.5rem;
-  font-size: 1rem;
-  border-bottom: 3px solid black;
- }
-
- p {
-  margin-bottom: 1rem;
-  font-size: 0.8rem;
-  width: 20rem;
- }
-
- button {
-  font-size: 1rem;
-  color: white;
-  background-color: black;
-  padding: 0.5rem;
-  margin-left: 10rem;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
- }
-
- @media (max-width: 768px) {
+  @media (max-width: 768px) {
     flex-direction: column;
-    height: auto;
-    gap: 1rem;
-
-    p {
-      text-align: justify;
-    }
-
-    img {
-      width: 20.2rem;
-    }
-
-    button {
-      margin-left: 0;
-      width: 100%;
-    }
-    }
+    padding: 2rem 1.5rem;
+    gap: 2rem;
+    overflow-x: hidden;
+  }
 `;
 
-export const Paragraph = styled.p`
-  border-bottom: 1px solid black;
-  padding-bottom: 1.8rem;
+export const LeftColumn = styled.div`
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  justify-content: flex-end;
+  align-items: flex-end;
+
+  p {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    text-align: justify;
+    max-width: 29rem;
+  }
+
+  .italic-text {
+    font-style: italic;
+    margin-top: 1rem;
+  }
+
+  @media (max-width: 768px) {
+    align-items: flex-start;
+    width: 100%;
+
+    p {
+      font-size: 0.9rem;
+      max-width: 100%;
+    }
+  }
+`;
+
+export const RightColumn = styled.div`
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  .top-section {
+    p {
+      margin: 0;
+      font-size: 0.95rem;
+      line-height: 1.7;
+      text-align: justify;
+      max-width: 29rem;
+    }
+  }
+
+  .image-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    img {
+      width: 100%;
+      margin-right: 20rem;
+      max-width: 28rem;
+      height: auto;
+    }
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
+
+    .top-section p {
+      font-size: 0.9rem;
+      max-width: 100%;
+    }
+
+    .image-section {
+      width: 100%;
+      
+      img {
+        max-width: 100%;
+        margin-right: 0;
+      }
+    }
+  }
 `;
 
 export const ModalityContainer = styled.div`
@@ -71,21 +111,28 @@ export const ModalityContainer = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  gap: 2rem;
-  height: 20rem;
+  gap: 3rem;
+  padding: 4rem 2rem;
   width: 100%;
   background-color: #1A1A1A;
+  box-sizing: border-box;
 
   h2 {
     color: white;
     margin: 0;
-    font-size: 2.5rem;
+    font-size: 3rem;
     font-weight: 100;
+    letter-spacing: 0.1rem;
   }
 
   @media (max-width: 768px) {
-    height: auto;
-    gap: 1.5rem;
+    padding: 2rem 1.5rem;
+    gap: 2rem;
+
+    h2 {
+      font-size: 2rem;
+      text-align: center;
+    }
   }
 `;
 
@@ -94,6 +141,7 @@ export const IconsContainer = styled.div`
   justify-content: center;
   align-items: center;
   gap: 2rem;
+  flex-wrap: wrap;
 
   div {
     display: flex;
@@ -103,17 +151,23 @@ export const IconsContainer = styled.div`
   }
 
   img {
-    @media (max-width: 768px) {
-      width: 9rem;
-      height: 9rem;
-      object-fit: contain;
-    }
+    width: 5rem;
+    height: 5rem;
+    object-fit: contain;
   }
 
   @media (max-width: 768px) {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-gap: 1.5rem;
-    max-width: 300px;
+    gap: 1.5rem;
+    max-width: 100%;
+    width: 100%;
+    padding: 0 1rem;
+    box-sizing: border-box;
+
+    img {
+      width: 4rem;
+      height: 4rem;
+    }
   }
 `;
