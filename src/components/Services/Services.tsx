@@ -16,14 +16,14 @@ const services = [
     id: 0,
     title: "LÍDERES - BIOTRASCENDENCIA",
     description: "La consultoría le brinda a los Líderes las herramientas necesarias para alcanzar sus metas profesionales y prosperar en entornos complejos, dinámicos y cambiantes.",
-    subtitle: "Facilitar la evolución consciente",
+    subtitle: "PRESENCIA · CONSCIENCIA · SENTIDO ",
     image: "/images/BIOTRASCENDENCIA.jpg",
     route: "/biotrascendencia"
   },
   {
     id: 1,
     title: "CONSULTORÍA SISTÉMICA",
-    description: "Cada persona está interconectada con los demás miembros de los sistemas a los que pertenece, y estas relaciones operan mas allá de su voluntad o conocimiento, influyendo profundamente en su comportamiento y experiencia.",
+    description: "Cada persona está interconectada con los demás miembros de los sistemas a los que pertenece, y estas relaciones operan más allá de su voluntad o conocimiento, influyendo profundamente en su comportamiento y experiencia.",
     subtitle: "Fluir y avanzar",
     image: "/images/CONSULTORÍA SISTÉMICA.jpg",
     route: "/consultoria-sistemica"
@@ -39,7 +39,7 @@ const services = [
   {
     id: 3,
     title: "TALENT ACTIVATION SYSTEM",
-    description: "Es una experiencia holística integral, que permite incorporar recursos, desplegar habilidades, sentir mayor confianza y transformar los obstáculos para alcanzar un nivel superior.",
+    description: "Esta mirada holística integral permite incorporar recursos, desplegar los dones y habilidades, sentir mayor confianza y transformar los obstáculos para alcanzar un nivel superior.",
     subtitle: "A creative and systemic way to fast transformation",
     image: "/images/TAS.jpg",
     route: "/talent-activation-system"
@@ -47,7 +47,7 @@ const services = [
   {
     id: 4,
     title: "PROFESSIONAL TRAINING",
-    description: "Programas de formación especializados para el desarrollo de competencias técnicas y habilidades blandas en entornos profesionales.",
+    description: "A través de Programas de Formación y de Talleres de Capacitación y Entrenamiento se combinan conocimientos teóricos, actividades prácticas y experiencias vivenciales.",
     subtitle: "Entrenamientos que impactan. De la teoría a la acción!",
     image: "/images/PROFESSIONAL TRAINING.jpg",
     route: "/professional-training"
@@ -63,7 +63,6 @@ function InteractiveServices() {
     return (event: React.MouseEvent) =>{
       event.stopPropagation();
       if (activeService === index && isExpanded) {
-      // Animación de salida más rápida para mobile
       setShowContent(false);
       setIsExpanded(false);
       setTimeout(() => {
@@ -103,6 +102,7 @@ function InteractiveServices() {
                 ${isExpanded && activeService !== index ? 'hidden' : ''}
                 ${isExpanded && activeService === index ? 'expanded' : ''}
                 ${showContent && activeService === index ? 'show-content' : ''}
+                ${index === services.length - 1 ? 'last-item' : ''}
               `}
               onClick={handleServiceClick(index)}
             >
@@ -158,6 +158,7 @@ function InteractiveServices() {
               ${activeService === index ? 'active' : ''}
               ${isExpanded && activeService === index ? 'expanded' : ''}
               ${showContent && activeService === index ? 'show-content' : ''}
+              ${index === services.length - 1 ? 'last-item' : ''}
             `}
             onClick={handleServiceClick(index)}
           >

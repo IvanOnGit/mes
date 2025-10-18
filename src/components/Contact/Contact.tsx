@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Container, LeftSide, RightSide, ModalOverlay, ModalContent, ModalHeader, IconContainer, SuccessIcon, ErrorIcon, ModalTitle, ModalMessage, ModalButton } from "./styles";
+import { Container, LeftSide, RightSide, ModalOverlay, ModalContent, ModalHeader, IconContainer, SuccessIcon, ErrorIcon, ModalTitle, ModalMessage, ModalButton, StyledSignature, SocialLogos } from "./styles";
 
 // Componente Modal
 interface ModalProps {
@@ -139,6 +139,13 @@ function Contact() {
           <h1>Estás a una decisión de transformar tu vida.</h1>
           <div className="button-container">
             <p><strong>¿EMPEZAMOS?</strong></p>
+          </div>
+          <div className="bottom-section">
+            <SocialLogos>
+              <img src="/images/Linkedin.png" alt="LinkedIn" />
+              <img src="/images/Instagram.png" alt="Instagram" />
+            </SocialLogos>
+            <StyledSignature src="/images/Signature.png" alt="Firma" />
           </div>
         </LeftSide>
         <span></span>

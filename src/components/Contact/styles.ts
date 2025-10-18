@@ -1,7 +1,5 @@
 import styled from "styled-components";
 
-// Estilos existentes del Container, LeftSide y RightSide...
-
 export const Container = styled.div`
   background-color: black;
   display: flex;
@@ -10,6 +8,7 @@ export const Container = styled.div`
   height: 30rem;
   width: 100%;
   gap: 10rem;
+  font-family: 'Geologica', sans-serif;
 
   span {
     width: 1px;
@@ -39,7 +38,7 @@ export const LeftSide = styled.div`
   h1 {
     color: white;
     font-size: 1.8rem;
-    font-weight: 400;
+    font-weight: 300;
     margin: 0;
     padding: 0;
   }
@@ -50,7 +49,8 @@ export const LeftSide = styled.div`
 
     p {
       color: white;
-      font-size: 1.5rem;
+      font-size: 1.7rem;
+      font-weight: bold;
       margin: 0;
       padding: 0;
     }
@@ -65,6 +65,62 @@ export const LeftSide = styled.div`
       align-items: center;
       height: 1rem;
     }
+  }
+
+  .bottom-section {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 1rem;
+
+    @media (max-width: 768px) {
+      gap: 1.5rem;
+      justify-content: flex-start;
+    }
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+`;
+
+export const SocialLogos = styled.div`
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+
+  img {
+    width: 2.5rem;
+    height: 2.5rem;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  @media (max-width: 768px) {
+    margin-bottom: 2rem;
+
+    img {
+      width: 2rem;
+      height: 2rem;
+    }
+  }
+`;
+
+export const StyledSignature = styled.img`
+  width: 25rem;
+  height: auto;
+  object-fit: contain;
+  position: absolute;
+  margin-top: 5rem;
+
+  @media (max-width: 768px) {
+    width: 10rem;
+    margin-top: 0;
+    margin-left: 4rem;
   }
 `;
 
@@ -82,7 +138,7 @@ export const RightSide = styled.div`
 
     input, textarea {
       background-color: #1a1a1a;
-      color: white !important; // Fuerza el color
+      color: white !important;
       border: none;
       border-bottom: 4px solid white;
       padding: 0.8rem;
@@ -90,12 +146,10 @@ export const RightSide = styled.div`
       resize: none;
       outline: none;
       
-      // Estilos adicionales para asegurar el color
       &::placeholder {
         color: #888 !important;
       }
       
-      // Para prevenir estilos de autocomplete
       &:-webkit-autofill,
       &:-webkit-autofill:hover,
       &:-webkit-autofill:focus,
@@ -123,78 +177,13 @@ export const RightSide = styled.div`
       }
     }
   }
-`;
 
-// Opción 2: Alternativa usando CSS más específico
-export const RightSideAlternative = styled.div`
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  max-width: 400px;
-
-  form {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    width: 100%;
-
-    input, textarea {
-      background-color: #1a1a1a !important;
-      color: white !important;
-      border: none;
-      border-bottom: 4px solid white;
-      padding: 0.8rem;
-      font-size: 1rem;
-      resize: none;
-      outline: none;
-      font-family: inherit !important;
-      
-      &::placeholder {
-        color: rgba(255, 255, 255, 0.5) !important;
-        opacity: 1 !important;
-      }
-      
-      &:focus {
-        color: white !important;
-      }
-      
-      // Estilos específicos para diferentes navegadores
-      &:-moz-placeholder { color: rgba(255, 255, 255, 0.5) !important; }
-      &::-moz-placeholder { color: rgba(255, 255, 255, 0.5) !important; }
-      &:-ms-input-placeholder { color: rgba(255, 255, 255, 0.5) !important; }
-      &::-webkit-input-placeholder { color: rgba(255, 255, 255, 0.5) !important; }
-    }
-
-    // Si quieres un color diferente (ejemplo: rojo)
-    input.red-text, textarea.red-text {
-      color: red !important;
-      
-      &:-webkit-autofill {
-        -webkit-text-fill-color: red !important;
-      }
-    }
-
-    textarea {
-      height: 120px;
-    }
-
-    button {
-      background-color: white;
-      color: black;
-      border: none;
-      padding: 0.8rem;
-      font-weight: bold;
-      cursor: pointer;
-      transition: all 0.3s ease;
-
-      &:hover {
-        background-color: #ddd;
-      }
-    }
+  @media (max-width: 768px) {
+    max-width: 100%;
   }
 `;
 
-// Nuevos estilos para el modal
+// Estilos del modal (se mantienen igual)
 export const ModalOverlay = styled.div`
   position: fixed;
   top: 0;
@@ -207,7 +196,7 @@ export const ModalOverlay = styled.div`
   align-items: center;
   z-index: 1000;
   animation: fadeIn 0.3s ease-out;
-  padding: 1rem; // Espacio en mobile
+  padding: 1rem;
 
   @keyframes fadeIn {
     from { opacity: 0; }
@@ -229,7 +218,7 @@ export const ModalContent = styled.div`
   @media (max-width: 768px) {
     min-width: unset;
     max-width: unset;
-    margin: 1rem; // Espacio adicional en mobile
+    margin: 1rem;
     padding: 24px;
   }
 

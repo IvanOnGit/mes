@@ -30,12 +30,12 @@ const slides: SlideData[] = [
     text: "Tiene el poder de transformarla"
   },
   {
-    src: "/images/Imagen 3.jpeg",
+    src: "/images/Foto 3 carrusel.jpg",
     mobileSrc: "/images/Imagen 3 mobile.jpg",
     text: "En nuevos recursos, nuevas posibilidades, nuevos escenarios"
   },
   {
-    src: "/images/Imagen 4.jpg",
+    src: "/images/Foto 4 carrusel.jpg",
     mobileSrc: "/images/Imagen 4 mobile.jpg",
     text: "Es otro nivel, lo que requiere este contexto, de adentro hacia afuera"
   }

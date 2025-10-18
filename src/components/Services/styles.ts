@@ -83,6 +83,18 @@ export const TitleItem = styled.div`
   padding: 1rem 0;
   border-radius: 8px;
   
+  &.last-item h2 {
+    border-bottom: none;
+  }
+
+  &.last-item:hover h2 {
+    border-bottom-color: transparent;
+  }
+
+  &.last-item.active h2 {
+    border-bottom-color: transparent;
+  }
+
   &.hidden {
     opacity: 0;
     transform: translateY(-20px);
@@ -225,9 +237,8 @@ export const ExpandedDescription = styled.div`
     }
 
     button {
-      padding: 1rem 2rem;
+      padding: 0.6rem 3rem;
       border: none;
-      border-radius: 8px;
       font-size: 1rem;
       cursor: pointer;
       transition: all 0.3s ease;
@@ -408,6 +419,18 @@ export const MobileServiceItem = styled.div`
   transition: all 0.3s ease;
   margin-bottom: 1rem;
   padding: 1rem;
+
+  &.last-item .mobile-title h2 {
+    border-bottom: none;
+  }
+  
+  &.last-item.active .mobile-title h2 {
+    border-bottom: none;
+  }
+  
+  &.last-item.expanded .mobile-title h2 {
+    border-bottom: none;
+  }
   
   &.expanded {
     margin-bottom: 2rem;

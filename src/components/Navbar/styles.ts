@@ -33,6 +33,7 @@ export const Logo = styled.img`
 
   @media (max-width: 768px) {
     width: 17.5rem;
+    font-weight: bolder;
   }
 `;
 
