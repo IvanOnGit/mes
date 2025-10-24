@@ -1,24 +1,23 @@
-import { Container, MandalaImage } from "./styles";
+import { Container } from "./styles";
 
 function MoreInfo() {
-
   return (
     <Container>
-        <MandalaImage src="/images/Mandala.svg" alt="Mandala" />
-        <div className='Subcontainer'>
-            <h2>VIDA PLENA + IMPACTO<br /> en todos los ámbitos. <br /><strong>LÍDERES QUE TRASCIENDEN.</strong></h2>
-        </div>
-        <span></span>
-        <div className='Subcontainer'>
-            <h2>¡Acelera Tu Cambio <br />Empieza a Vivir Tu Meta!</h2>
-            <button
-            onClick={() => {
-              document.getElementById("contacto")?.scrollIntoView({ behavior: "smooth" });
-            }}
-          >
-            Más Información
-          </button>
-        </div>
+      <div className="Row">
+        <h2>VIDA PLENA + IMPACTO<br />en todos los ámbitos.</h2>
+        <h2>¡Acelera Tu Cambio <br /><strong>Empieza a Vivir Tu Meta!</strong></h2>
+      </div>
+
+      <div className="Row">
+        <h3><strong>LÍDERES QUE TRASCIENDEN.</strong></h3>
+        <button
+          onClick={() => {
+            document.getElementById("contacto")?.scrollIntoView({ behavior: "smooth" });
+          }}
+        >
+          Quiero mi Cambio
+        </button>
+      </div>
     </Container>
   );
 }

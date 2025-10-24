@@ -1,36 +1,66 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  background: linear-gradient(to bottom, #000000, #1F1F1F, #717171, #b8b7b7ff);
   width: 100%;
   height: 15rem;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 5rem;
+  gap: 1rem;
   position: relative;
+  background-image: url('/images/fondo socalo.jpg');
+  background-size: cover;
 
-  h2 {
-    font-size: 1rem;
-    font-weight: 400;
+  .Row {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 5rem;
     z-index: 2;
-    text-align: center;
-    width: 15rem;
-    color: white;
   }
 
-  .Subcontainer {
-    width: 13rem;
-    z-index: 2;
+  h2 {
+    font-size: 1.5rem;
+    font-weight: 400;
+    text-align: center;
+    width: 22rem;
+    color: white;
+    margin: 0;
+    line-height: 1.8rem;
+  }
+
+  h3 {
+    color: white;
+    font-size: 1.4rem;
+    font-weight: 300;
+    text-align: center;
+    margin: 0;
+    line-height: 1.8rem;
+    width: 22rem;
+    position: absolute;
+    margin-right: 27rem;
+
+    @media (max-width: 768px) {
+      margin-right: 0;
+    }
   }
 
   button {
     background-color: white;
     border: 1px solid black;
-    margin-left: 4rem;
     padding: 0.5rem;
     cursor: pointer;
     z-index: 2;
+    width: 10rem;
+    font-size: 0.9rem;
+    margin: 0;
+    align-self: flex-start; /* Asegurar alineación superior */
+    margin-left: 27rem;
+
+    @media (max-width: 768px) {
+      margin-left: 0;
+    }
 
     &:hover {
       background-color: black;
@@ -40,42 +70,29 @@ export const Container = styled.div`
   }
 
   @media (max-width: 768px) {
-    gap: 1rem;
+    height: auto;
     padding: 1rem;
-    flex-direction: column;
-    margin-left: -2rem;
+    gap: 0.5rem;
+
+    .Row {
+      flex-direction: column;
+      gap: 0.5rem;
+      align-items: center;
+    }
 
     h2 {
-      font-size: 0.9rem;
-      text-align: center;
-      padding: 0.5rem;
+      font-size: 1rem;
+      width: auto;
+    }
+
+    h3 {
+      width: auto;
+      padding-top: 0;
     }
 
     button {
-      padding: 0.7rem;
       font-size: 0.8rem;
-      margin-left: 3rem;
+      padding: 0.7rem;
     }
-
-    .Subcontainer {
-      font-size: 1rem;
-      text-align: center;
-    }
-  }
-`;
-
-export const MandalaImage = styled.img`
-  position: absolute;
-  width: 20rem;
-  height: 20rem;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  opacity: 1;
-  z-index: 1;
-
-  @media (max-width: 768px) {
-    width: 6rem;
-    height: 6rem;
   }
 `;

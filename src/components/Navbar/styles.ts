@@ -48,6 +48,7 @@ export const ContainerLinks = styled.div`
     text-decoration: none;
     font-family: "Inter", sans-serif;
     cursor: pointer;
+    letter-spacing: 0.1rem;
   }
 
   @media (max-width: 1024px) {
