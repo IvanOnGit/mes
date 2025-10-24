@@ -17,7 +17,7 @@ function Navbar() {
       <ContainerLinks>
         <Link to={'/'}>Inicio</Link>
         <a href="#servicios">Servicios</a>
-        <Link to={'/sobre-mi'}>Sobre Mi</Link>
+        <Link to={'/sobre-mi'}>Sobre Mí</Link>
         <a href="#contacto">Contacto</a>
       </ContainerLinks>
 

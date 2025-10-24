@@ -111,11 +111,12 @@ export const SocialLogos = styled.div`
 `;
 
 export const StyledSignature = styled.img`
-  width: 25rem;
+  width: 18rem;
   height: auto;
   object-fit: contain;
   position: absolute;
   margin-top: 5rem;
+  margin-left: 3rem;
 
   @media (max-width: 768px) {
     width: 10rem;
@@ -145,6 +146,7 @@ export const RightSide = styled.div`
       font-size: 1rem;
       resize: none;
       outline: none;
+      font-family: 'Geologica', sans-serif;
       
       &::placeholder {
         color: #888 !important;
