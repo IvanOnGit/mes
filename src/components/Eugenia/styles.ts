@@ -22,7 +22,7 @@ export const StyledEugenia = styled.img`
   width: 26rem;
   height: 26rem;
   margin-left: 2rem;
-  margin-top: 10rem;
+  margin-top: 4rem;
   margin-right: 30rem;
   height: auto;
   position: absolute;
@@ -51,26 +51,26 @@ export const StyledMantra = styled.img`
 export const TextContainer = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   position: absolute;
   margin-top: 15.5rem;
   margin-left: 37rem;
-  gap: 0.2rem;
-
-  h1 {
-    color: white;
-    font-size: 2rem;
-    width: 32rem;
-    font-weight: 100;
-    margin: 0;
-    padding: 0;
-  }
+  gap: 1rem;
 
   h2 {
     color: white;
-    font-size: 2.3rem;
-    font-weight: bold;
+    font-size: 2rem;
+    width: 34rem;
     margin: 0;
     padding: 0;
+    text-align: center;
+    font-weight: 100;
+    font-family: 'Geologica', sans-serif;
+
+    strong {
+      font-weight: bold;
+    }
   }
 
   button {

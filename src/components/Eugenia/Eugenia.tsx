@@ -4,12 +4,11 @@ function Eugenia() {
 
   return (
     <Container>
-        <StyledEugenia src="/images/Eugenia.svg" alt="" />
+        <StyledEugenia src="/images/Eugenia.png" alt="" />
         <StyledMantra src="/images/Mantra.svg" alt="" />
         <TextContainer>
-          <h1>Estás a una decisión de transformar tu vida.</h1>
-          <h2>¿EMPEZAMOS?</h2>
-          <button>Solicitá Información</button>
+          <h2>El valor de lo <strong>auténtico</strong>, inspira. Tenés el <strong>poder de elegir.</strong><br /> Descubrí tu forma. <br /><strong>La vida es ahora!</strong></h2>
+          <button onClick={() => {document.getElementById("contacto")?.scrollIntoView({ behavior: "smooth" })}}>TE ACOMPAÑO</button>
         </TextContainer>
     </Container>
   );
