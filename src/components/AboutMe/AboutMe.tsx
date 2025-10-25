@@ -204,7 +204,7 @@ function AboutMe() {
           </TitleTreeContainer>
           <CardsContainer>
             <Card>
-              <h2>ÁMBITO <br />EMPRESARIAL</h2>
+              <h2 className="mobile">ÁMBITO <br />EMPRESARIAL</h2>
               <p>Con más de 30 años de experiencia en el ámbito empresarial, María Eugenia ha desarrollado su carrera en organizaciones de primer nivel como Coca Cola Femsa, Banco Galicia, Banco Tornquist, CTI Móvil y TSU Cosméticos. En su trayectoria, se ha desempeñado como Gerente de Ventas y Responsable de Desarrollo de Mercado, alcanzando un alto nivel de expertise comercial y liderando exitosas estrategias en el mundo corporativo [...]</p>
               <button onClick={() => openModal(1)}>Ver más</button>
             </Card>

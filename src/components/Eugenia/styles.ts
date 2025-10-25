@@ -28,9 +28,7 @@ export const StyledEugenia = styled.img`
   position: absolute;
 
   @media (max-width: 768px) {
-    width: 23rem;
-    height: 23rem;
-    margin-right: 10rem;
+    display: none;
   }
 `;
 
@@ -43,7 +41,7 @@ export const StyledMantra = styled.img`
   @media (max-width: 768px) {
     width: 30rem;
     height: 30rem;
-    margin-right: 9rem;
+    margin-right: 0rem;
     margin-top: 5rem;
   }
 `;
@@ -82,7 +80,7 @@ export const TextContainer = styled.div`
   }
 
   @media (max-width: 768px) {
-      margin-left: 12rem;
+      margin-left: 0rem;
       margin-top: 10.5rem;
 
       h1 {
@@ -92,10 +90,11 @@ export const TextContainer = styled.div`
 
       h2 {
         font-size: 1.2rem;
+        width: 19rem;
       }
 
       button {
-        font-size: 0.6rem;
+        font-size: 0.8rem;
       }
     }
 `;

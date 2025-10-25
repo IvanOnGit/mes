@@ -70,7 +70,7 @@ export const Container = styled.div`
   }
 
   @media (max-width: 768px) {
-    height: auto;
+    height: 20rem;
     padding: 1rem;
     gap: 0.5rem;
 
@@ -93,6 +93,9 @@ export const Container = styled.div`
     button {
       font-size: 0.8rem;
       padding: 0.7rem;
+      position: absolute;
+      margin-left: -5rem;
+      margin-bottom: -5.5rem;
     }
   }
 `;

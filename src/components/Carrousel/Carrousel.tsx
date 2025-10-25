@@ -14,7 +14,7 @@ import {
 
 interface SlideData {
   src: string;
-  mobileSrc: string; // Nueva propiedad para imágenes mobile
+  mobileSrc?: string; // Nueva propiedad para imágenes mobile
   text: string;
 }
 
@@ -36,7 +36,6 @@ const slides: SlideData[] = [
   },
   {
     src: "/images/Imagen 4.jpg",
-    mobileSrc: "/images/Imagen 3 mobile.jpg",
     text: "En nuevos recursos, nuevas posibilidades, nuevos escenarios"
   },
   {
@@ -51,6 +50,9 @@ const Carousel: React.FC = () => {
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
   const [isMobile, setIsMobile] = useState(false);
   const intervalRef = useRef<number | null>(null);
+
+  // Filtrar slides que tienen mobileSrc para mobile
+  const mobileSlides = slides.filter(slide => slide.mobileSrc);
 
   // Detectar si es mobile
   useEffect(() => {
@@ -129,16 +131,16 @@ const Carousel: React.FC = () => {
     return (
       <MobileCarousel>
         <MobileSlideContainer>
-          {/* Primera serie de imágenes mobile */}
-          {slides.map((slide, index) => (
+          {/* Primera serie de imágenes mobile - solo las que tienen mobileSrc */}
+          {mobileSlides.map((slide, index) => (
             <MobileSlide key={`first-${index}`}>
-              <MobileImage src={slide.mobileSrc} alt={slide.text} />
+              <MobileImage src={slide.mobileSrc!} alt={slide.text} />
             </MobileSlide>
           ))}
           {/* Segunda serie de imágenes mobile (para el loop infinito) */}
-          {slides.map((slide, index) => (
+          {mobileSlides.map((slide, index) => (
             <MobileSlide key={`second-${index}`}>
-              <MobileImage src={slide.mobileSrc} alt={slide.text} />
+              <MobileImage src={slide.mobileSrc!} alt={slide.text} />
             </MobileSlide>
           ))}
         </MobileSlideContainer>

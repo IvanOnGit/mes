@@ -28,10 +28,14 @@ export const AboutMeContainer = styled.div`
     margin-bottom: 3rem;
     width: 100%;
     justify-content: flex-start;
+
+    @media (max-width: 768px) {
+      text-align: center;
+    }
   }
 
   @media (max-width: 768px) {
-    margin-top: 22rem;
+    margin-top: 33rem;
   }
 `;
 
@@ -329,6 +333,13 @@ export const CollageSection = styled.div`
   gap: 5rem;
   margin-top: 2rem;
   margin-bottom: 2rem;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    height: 50rem;
+    gap: 2rem;
+    margin-bottom: 23rem;
+  }
 `;
 
 export const WhatIdoContainer = styled.div`
@@ -347,6 +358,10 @@ export const StyledEugeniaParada = styled.img`
     width: 18rem;
     height: 30rem;
     object-fit: contain;
+
+    @media (max-width: 768px) {
+      display: none;
+    }
 `;
 
 export const AlwaysContainer = styled.div`
@@ -372,6 +387,10 @@ span::after {
   background-color: black;
   border-radius: 50%;      /* la hace circular */
 }
+
+ @media (max-width: 768px) {
+   width: 92%;
+ }
 `;
 
 export const AlwaysText = styled.div`
@@ -382,6 +401,10 @@ export const AlwaysText = styled.div`
 
   h2 {
     font-family: 'Oooh Baby', cursive;
+    
+    @media (max-width: 768px) {
+      font-size: 1.7rem;
+    }
   }
 `;
 
@@ -399,6 +422,10 @@ export const StyledEugeniaSentada = styled.img`
     width: 18rem;
     object-fit: contain;
     margin-bottom: 1rem;
+
+    @media (max-width: 768px) {
+      display: none;
+    }
 `;
 
 export const Lists = styled.div`
@@ -461,6 +488,8 @@ export const TreeContainer = styled.div`
 
   @media (max-width: 768px) {
     padding: 0 1rem;
+    height: 85rem;
+    margin-top: -20rem;
     
     span {
       width: 90%;
@@ -582,6 +611,7 @@ export const Card = styled.div`
   @media (max-width: 768px) {
     width: 90%;
     max-width: 350px;
+    gap: 0rem;
     
     h2 {
       width: 100%;
@@ -589,6 +619,12 @@ export const Card = styled.div`
       margin-left: 0;
       text-align: center;
       margin-bottom: 1rem;
+
+      &.mobile {
+        br {
+          display: none;
+        }
+      }
     }
 
     p {
@@ -601,6 +637,7 @@ export const Card = styled.div`
     button {
       width: 100%;
       max-width: 320px;
+      margin-top: 1rem;
     }
   }
 `;
@@ -745,6 +782,11 @@ export const ModalText = styled.div`
     h3 {
       width: 32rem;
       position: absolute;
+
+      @media (max-width: 768px) {
+        width: 13.5rem;
+        text-align: left;
+      }
     }
 
     h4 {
@@ -756,6 +798,11 @@ export const ModalText = styled.div`
     h3 {
       width: 32rem;
       position: absolute;
+
+      @media (max-width: 768px) {
+        width: 13.5rem;
+        text-align: left;
+      }
     }
 
     h4 {
@@ -774,6 +821,12 @@ export const ModalText = styled.div`
   @media (max-width: 768px) {
     p {
       width: 100%;
+      font-size: 0.7rem;
+    }
+
+    h3 {
+      font-size: 1rem;
+      text-align: left;
     }
   }
 `;
@@ -817,6 +870,7 @@ export const ModalImage = styled.div`
     img {
       width: 16rem;
       height: 12rem;
+      margin-top: 0rem;
     }
   }
   
@@ -828,6 +882,11 @@ export const ModalImage = styled.div`
       margin-left: 1rem;
       margin-top: 4rem;
       object-fit: contain;
+
+      @media (max-width: 768px) {
+        margin-left: 0rem;
+        margin-top: 0rem;
+      }
     }
   }
 
@@ -839,6 +898,11 @@ export const ModalImage = styled.div`
       margin-left: 1rem;
       margin-top: 4rem;
       object-fit: contain;
+
+      @media (max-width: 768px) {
+        margin-left: 0rem;
+        margin-top: 0rem;
+      }
     }
   }
 `;
