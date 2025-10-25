@@ -13,17 +13,11 @@ export const AboutMeContainer = styled.div`
   background-color: black;
   display: flex;
   align-items: center;
+  justify-content: center;
   flex-direction: column;
   overflow: hidden;
   margin-top: 40rem;
-  margin-bottom: 2rem;
-
-  span {
-    width: 44.5rem;
-    height: 10px;
-    margin-top: 7rem;
-    background-color: #1C1C1C;
-  }
+  min-height: 40rem;
 
   h1 {
     color: white;
@@ -31,6 +25,9 @@ export const AboutMeContainer = styled.div`
     font-weight: 200;
     margin: 0;
     padding: 0;
+    margin-bottom: 3rem;
+    width: 100%;
+    justify-content: flex-start;
   }
 
   @media (max-width: 768px) {
@@ -38,56 +35,287 @@ export const AboutMeContainer = styled.div`
   }
 `;
 
-export const IconsAndButtons = styled.div`
+export const DropdownsAndIcons = styled.div`
   display: flex;
-  gap: 20rem;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 4rem;
+  width: 100%;
+  max-width: 1200px;
 
-  @media (max-width: 768px) {
+  .dropdowns-section {
+    display: flex;
     flex-direction: column;
-    gap: 0rem;
+    gap: 0;
+    flex: 1;
+    max-width: 500px;
+  }
+
+  .icons-section {
+    flex: 1;
+    max-width: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  @media (max-width: 968px) {
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+
+    .dropdowns-section,
+    .icons-section {
+      width: 90%;
+      max-width: none;
+    }
   }
 `;
 
-export const TitleAndIcons = styled.div`
-  display: flex;
-  flex-direction: column;
-  margin-top: 2rem;
-  gap: 4rem;
-`;
-
-export const IconsContainer = styled.div`
+export const IconsGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(3, 1fr);
-  gap: 1rem;
-  width: 15rem;
-  height: 15rem;
-  justify-items: center;
-  align-items: center;
-  
-  img {
-    width: 4rem;
-    height: 4rem;
-    object-fit: contain;
+  gap: 1.5rem;
+  padding: 2rem;
+  width: 100%;
+  max-width: 400px;
+
+  @media (max-width: 768px) {
+    gap: 1rem;
+    padding: 1rem;
   }
 `;
 
-export const ButtonsContainer = styled.div`
+export const IconWrapper = styled.div`
+  position: relative;
   display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  margin-top: 8rem;
+  justify-content: center;
+  align-items: center;
 
-  button {
-    background-color: transparent;
-    border: none;
-    border-bottom: 1px solid white;
-    color: white;
-    text-align: left;
+  img {
+    width: 100%;
+    max-width: 4rem;
+    height: auto;
+    aspect-ratio: 1;
+    object-fit: contain;
+    background-color: white;
+    border-radius: 50%;
+    padding: 0.5rem;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+  }
+
+  &:hover {
+    img {
+      transform: scale(1.1);
+    }
+
+    > div {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  /* Para los iconos de la columna derecha, ajustar el tooltip */
+  &:nth-child(3),
+  &:nth-child(6),
+  &:nth-child(9) {
+    > div {
+      left: auto;
+      right: 0;
+      transform: translateX(0);
+
+      &::after {
+        left: auto;
+        right: 1rem;
+        transform: translateX(0);
+      }
+    }
+  }
+
+  /* Para los iconos de la columna izquierda */
+  &:nth-child(1),
+  &:nth-child(4),
+  &:nth-child(7) {
+    > div {
+      left: 0;
+      transform: translateX(0);
+
+      &::after {
+        left: 1rem;
+        transform: translateX(0);
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    img {
+      max-width: 100px;
+    }
+  }
+`;
+
+export const Tooltip = styled.div`
+  position: absolute;
+  bottom: 120%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #c0c0c0;
+  color: black;
+  padding: 0.75rem 1rem;
+  border-radius: 1rem;
+  font-size: 0.75rem;
+  font-weight: 400;
+  white-space: normal; /* Cambio importante aquí */
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  z-index: 100;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  min-width: 200px;
+  max-width: 280px; /* Ancho máximo para que quepa bien */
+  text-align: left;
+  display: flex;
+  align-items: flex-start; /* Cambio aquí para alinear al inicio */
+  justify-content: flex-start;
+  gap: 0.5rem;
+  line-height: 1.4; /* Añadido para mejor legibilidad */
+
+  /* Icono Hat antes del texto */
+  &::before {
+    content: '';
+    display: inline-block;
+    width: 1.2rem;
+    height: 1.2rem;
+    background-image: url('/images/Hat.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    flex-shrink: 0;
+    margin-top: 0.1rem; /* Ajuste fino para alineación */
+  }
+
+  /* Flecha del globo */
+  &::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 8px solid #c0c0c0;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 0.7rem;
+    padding: 0.5rem 0.75rem;
+    min-width: 150px;
+    max-width: 220px;
+
+    &::before {
+      width: 1rem;
+      height: 1rem;
+    }
+  }
+`;
+
+export const Dropdown = styled.div`
+  border-bottom: 1px solid white;
+  overflow: visible;
+  transition: all 0.4s ease;
+  position: relative;
+  
+  /* Bolita blanca completa al inicio del border */
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: -4.5px;
+    left: 0;
+    width: 9px;
+    height: 9px;
+    background-color: white;
+    border-radius: 50%;
+    z-index: 1;
+  }
+  
+  &:last-of-type {
+    border-bottom: none;
+    
+    &::before {
+      display: none;
+    }
+  }
+`;
+
+export const DropdownHeader = styled.div<{ $isOpen: boolean }>`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 1rem;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.3s ease;
+  height: 4rem;
+  box-sizing: border-box;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+  }
+
+  .dropdown-title {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
-    padding-bottom: 0.5rem;
+    gap: 0.75rem;
+    color: white;
+    font-size: 1rem;
+    font-weight: 300;
+    letter-spacing: 0.05em;
+
+    .dropdown-icon {
+      width: 2rem;
+      height: 2.3rem;
+      object-fit: contain;
+    }
+
+    #bio-icon {
+      height: 3.3rem;
+    }
+  }
+
+  .arrow {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 200;
+    transition: transform 0.3s ease;
+    transform: ${props => props.$isOpen ? 'rotate(180deg)' : 'rotate(0deg)'};
+  }
+`;
+
+export const DropdownContent = styled.div<{ $isOpen: boolean }>`
+  max-height: ${props => props.$isOpen ? '500px' : '0'};
+  overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.4s ease, opacity 0.4s ease;
+  padding: ${props => props.$isOpen ? '1rem 1rem 1.5rem 1rem' : '0 1rem'};
+  opacity: ${props => props.$isOpen ? '1' : '0'};
+
+  p {
+    color: white;
+    font-size: 0.9rem;
+    font-weight: 100;
+    line-height: 1.6;
+    margin: 0;
+    margin-bottom: 1rem;
+    text-align: justify;
+  }
+
+  p.extra-text {
+    font-size: 0.85rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0;
+    text-align: left;
   }
 `;
 
@@ -302,64 +530,6 @@ export const Card = styled.div`
   }
 `;
 
-export const RecomendationsContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #404040;
-  height: 20rem;
-  width: 100%;
-  gap: 2rem;
-  margin-top: 4rem;
-`;
-
-export const Recomendation = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 25rem;
-  height: 12rem;
-  background-color: #161616;
-  border-radius: 2rem;
-  gap: 2rem;
-
-  p {
-    color: white;
-    font-size: 0.9rem;
-    margin: 0;
-    padding: 0;
-    font-weight: 100;
-    width: 15rem;
-  }
-
-  @media (max-width: 768px) {
-
-    padding: 1rem;
-    p {
-      font-size: 0.7rem;
-    }
-  }
-`;
-
-export const UserFake = styled.div`
-  width: 4rem;
-  height: 4rem;
-  border-radius: 50%;
-  margin-bottom: 4rem;
-  background-color: white;
-
-  @media (max-width: 768px) {
-    display: none;
-  }
-`;
-
-export const StarsAndText = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-`;
-
-// Estilos para el modal con scroll
 export const ModalOverlay = styled.div<{ $isClosing: boolean }>`
   position: fixed;
   top: 0;
@@ -402,7 +572,6 @@ export const ModalContent = styled.div<{ $isClosing: boolean }>`
   transition: transform 0.3s ease, opacity 0.3s ease;
   animation: ${props => props.$isClosing ? 'none' : 'modalOpen 0.3s ease'};
 
-  /* Estilos para el scrollbar */
   &::-webkit-scrollbar {
     width: 8px;
   }
@@ -470,10 +639,10 @@ export const ModalContent = styled.div<{ $isClosing: boolean }>`
     flex-direction: column;
     gap: 2rem;
     padding: 1.5rem;
-    margin: 0; /* Elimina el margen que puede estar causando el desplazamiento */
+    margin: 0;
     max-height: 85vh;
-    width: calc(100% - 2rem); /* Asegura que no se desborde */
-    max-width: none; /* Permite que use todo el ancho disponible */
+    width: calc(100% - 2rem);
+    max-width: none;
     
     h3 {
       width: 100%;
@@ -532,13 +701,6 @@ export const ModalImage = styled.div`
     padding: 0;
     font-weight: 100;
     width: 15rem;
-  }
-
-  span {
-    margin-top: 0.3rem;
-    width: 2.5rem;
-    height: 5px;
-    background-color: white;
   }
 
   @media (max-width: 768px) {

@@ -2,11 +2,30 @@ import { useState } from "react";
 import Contact from "../Contact/Contact";
 import Eugenia from "../Eugenia/Eugenia";
 import Navbar from "../Navbar/Navbar";
-import { AboutMeContainer, ButtonsContainer, Card, CardsContainer, CollageSection, Container, IconsAndButtons, IconsContainer, MobileCollageSection, ModalContent, ModalImage, ModalOverlay, ModalText, Recomendation, RecomendationsContainer, StarsAndText, TitleAndIcons, TitleTreeContainer, TreeContainer, UserFake } from "./styles";
+import { AboutMeContainer, Card, CardsContainer, CollageSection, Container, DropdownsAndIcons, MobileCollageSection, ModalContent, ModalImage, ModalOverlay, ModalText, TitleTreeContainer, TreeContainer, Dropdown, DropdownHeader, DropdownContent, IconsGrid, IconWrapper, Tooltip } from "./styles";
 
 function AboutMe() {
   const [activeModal, setActiveModal] = useState<number | null>(null);
   const [isClosing, setIsClosing] = useState(false);
+  const [openDropdowns, setOpenDropdowns] = useState<{ [key: string]: boolean }>({
+    bio: false,
+    viajera: false,
+    investigadora: false,
+    creadora: false,
+    agente: false
+  });
+
+  const iconsData = [
+  { src: "/images/About me Icon 1.svg", alt: "Icon 1", tooltip: "Magister en Dirección de Empresas MBA, EDDE" },
+  { src: "/images/About me Icon 2.svg", alt: "Icon 2", tooltip: "Lic. en Comercialización de UADE (1° promedio Cs. Empresariales)" },
+  { src: "/images/About me Icon 3.svg", alt: "Icon 3", tooltip: "Programa de Emprendedores en IAE - NAVES" },
+  { src: "/images/About me Icon 4.svg", alt: "Icon 4", tooltip: "Astróloga humanista CASA XI" },
+  { src: "/images/About me Icon 5.svg", alt: "Icon 5", tooltip: "Astróloga humanista, evolutiva, sistémica, transpersonal y empresarial. NUEVA DELPHIOS" },
+  { src: "/images/About me Icon 6.svg", alt: "Icon 6", tooltip: "Consteladora Familiar con orientación al trauma trifocal ICFT" },
+  { src: "/images/About me Icon 7.svg", alt: "Icon 7", tooltip: "Consteladora Organizacional y Consultora Sistémica CONGRUENCIA SAC" },
+  { src: "/images/About me Icon 8.svg", alt: "Icon 8", tooltip: "Comunicadora Sistémica CLCF" },
+  { src: "/images/About me Icon 9.svg", alt: "Icon 9", tooltip: "Practicante Chamánica FSS" },
+];
 
   const openModal = (modalNumber: number) => {
     setActiveModal(modalNumber);
@@ -15,11 +34,17 @@ function AboutMe() {
 
   const closeModal = () => {
     setIsClosing(true);
-    // Esperar a que termine la animación antes de cerrar completamente
     setTimeout(() => {
       setActiveModal(null);
       setIsClosing(false);
     }, 300);
+  };
+
+  const toggleDropdown = (key: string) => {
+    setOpenDropdowns(prev => ({
+      ...prev,
+      [key]: !prev[key]
+    }));
   };
 
   return (
@@ -27,45 +52,106 @@ function AboutMe() {
         <Navbar />
         <Eugenia />
         <AboutMeContainer>
-          <span></span>
-          <IconsAndButtons>            
-            <TitleAndIcons>
-              <h1>Sobre mi</h1>
-              <IconsContainer>
-                  <img src="/images/About me Icon 1.svg" alt="" />
-                  <img src="/images/About me Icon 2.svg" alt="" />
-                  <img src="/images/About me Icon 3.svg" alt="" />
-                  <img src="/images/About me Icon 4.svg" alt="" />
-                  <img src="/images/About me Icon 5.svg" alt="" />
-                  <img src="/images/About me Icon 6.svg" alt="" />
-                  <img src="/images/About me Icon 7.svg" alt="" />
-                  <img src="/images/About me Icon 8.svg" alt="" />
-                  <img src="/images/About me Icon 9.svg" alt="" />
-              </IconsContainer>
-            </TitleAndIcons>
-            <ButtonsContainer>
-              <button>
-                  <img src="/images/BioMagister.svg" alt="" />
-                  Bio - Magister
-              </button>
-              <button>
-                  <img src="/images/Traveller.svg" alt="" />
-                  Viajera
-              </button>
-              <button>
-                  <img src="/images/Investigator.svg" alt="" />
-                  Investigadora
-              </button>
-              <button>
-                  <img src="/images/Creator.svg" alt="" />
-                  Creadora
-              </button>
-              <button>
-                  <img src="/images/ChangeAgent.svg" alt="" />
-                  Agente de Cambio
-              </button>
-            </ButtonsContainer>
-          </IconsAndButtons>
+          <h1>Sobre mi</h1>
+          <DropdownsAndIcons>
+            <div className="dropdowns-section">
+              <Dropdown>
+                <DropdownHeader 
+                  onClick={() => toggleDropdown('bio')}
+                  $isOpen={openDropdowns.bio}
+                >
+                  <span className="dropdown-title">
+                    <img id="bio-icon" src="/images/BioMagister.svg" alt="" className="dropdown-icon" />
+                    Bio - Magister
+                  </span>
+                  <span className="arrow">⌄</span>
+                </DropdownHeader>
+                <DropdownContent $isOpen={openDropdowns.bio}>
+                  <p>Guía y mentora para alcanzar una vida plena, consciente y de trascendencia. Facilita procesos de evolución personal y profesional.</p>
+                  <p className="extra-text">—¿Cómo te conectas con la vida?</p>
+                </DropdownContent>
+              </Dropdown>
+
+              <Dropdown>
+                <DropdownHeader 
+                  onClick={() => toggleDropdown('viajera')}
+                  $isOpen={openDropdowns.viajera}
+                >
+                  <span className="dropdown-title">
+                    <img src="/images/Traveller.svg" alt="" className="dropdown-icon" />
+                    Viajera
+                  </span>
+                  <span className="arrow">⌄</span>
+                </DropdownHeader>
+                <DropdownContent $isOpen={openDropdowns.viajera}>
+                  <p>Interesada en explorar el mundo, los planos espirituales, y las nuevas experiencias. Conectada con el presente, enriqueciéndose de lo que emerge después de abrirse al cambio y a expandir sus horizontes, encontrando belleza y gratitud en cada paso.</p>
+                  <p className="extra-text">— La vida es el viaje</p>
+                </DropdownContent>
+              </Dropdown>
+
+              <Dropdown>
+                <DropdownHeader 
+                  onClick={() => toggleDropdown('investigadora')}
+                  $isOpen={openDropdowns.investigadora}
+                >
+                  <span className="dropdown-title">
+                    <img src="/images/Investigator.svg" alt="" className="dropdown-icon" />
+                    Investigadora
+                  </span>
+                  <span className="arrow">⌄</span>
+                </DropdownHeader>
+                <DropdownContent $isOpen={openDropdowns.investigadora}>
+                  <p>Observadora y en continua formación y actualización. Se inspira tanto de pensadores y profesionales que dejan su legado, como de sus propias investigaciones, lo que le permite cultivarse, cuestionar y ampliar su perspectiva para compartir al mundo.</p>
+                  <p className="extra-text">— Lo que observo es mi creación</p>
+                </DropdownContent>
+              </Dropdown>
+
+              <Dropdown>
+                <DropdownHeader 
+                  onClick={() => toggleDropdown('creadora')}
+                  $isOpen={openDropdowns.creadora}
+                >
+                  <span className="dropdown-title">
+                    <img src="/images/Creator.svg" alt="" className="dropdown-icon" />
+                    Creadora
+                  </span>
+                  <span className="arrow">⌄</span>
+                </DropdownHeader>
+                <DropdownContent $isOpen={openDropdowns.creadora}>
+                  <p>Biotrascendencia® como resultado de su visión, propósito, trayectoria, experiencia de vida, formación y motivación. Esta filosofía que nace para aportar sensibilidad, compartir a quienes resuenen con el enfoque evolutivo y su búsqueda.</p>
+                  <p className="extra-text">— Presencia + Conciencia + Sentido</p>
+                </DropdownContent>
+              </Dropdown>
+
+              <Dropdown>
+                <DropdownHeader 
+                  onClick={() => toggleDropdown('agente')}
+                  $isOpen={openDropdowns.agente}
+                >
+                  <span className="dropdown-title">
+                    <img src="/images/ChangeAgent.svg" alt="" className="dropdown-icon" />
+                    Agente De Cambio
+                  </span>
+                  <span className="arrow">⌄</span>
+                </DropdownHeader>
+                <DropdownContent $isOpen={openDropdowns.agente}>
+                  <p>María Eugenia se caracteriza por llevar a cabo, implementar y dejar huellas en el camino. Inspirar, motivar, sembrar, generar el cambio, mostrarlo. Cada uno es protagonista de su propia vida, el desafío es elegir vivirlo.</p>
+                  <p className="extra-text">— Si quieres vivirlo, ¿qué esperas? Let's go!</p>
+                </DropdownContent>
+              </Dropdown>
+            </div>
+
+            <div className="icons-section">
+              <IconsGrid>
+                {iconsData.map((icon, index) => (
+                  <IconWrapper key={index}>
+                    <img src={icon.src} alt={icon.alt} />
+                    <Tooltip>{icon.tooltip}</Tooltip>
+                  </IconWrapper>
+                ))}
+              </IconsGrid>
+            </div>
+          </DropdownsAndIcons>
         </AboutMeContainer>
         <CollageSection>
           <img src="/images/Collage.svg" alt="" />
@@ -102,47 +188,6 @@ function AboutMe() {
             </Card>
           </CardsContainer>
         </TreeContainer>
-        <RecomendationsContainer>
-          <Recomendation>
-            <UserFake />
-            <StarsAndText>
-              <div>
-                <img src="/images/Star.svg" alt="" />
-                <img src="/images/Star.svg" alt="" />
-                <img src="/images/Star.svg" alt="" />
-                <img src="/images/Star.svg" alt="" />
-                <img src="/images/Star.svg" alt="" />
-              </div>
-              <p>Referencias de clientes, empresas, entre otras cosas, acá se escriben los opiniones de los clientes de MES o íconos de empresas.</p>
-            </StarsAndText>
-          </Recomendation>
-          <Recomendation>
-            <UserFake />
-            <StarsAndText>
-              <div>
-                <img src="/images/Star.svg" alt="" />
-                <img src="/images/Star.svg" alt="" />
-                <img src="/images/Star.svg" alt="" />
-                <img src="/images/Star.svg" alt="" />
-                <img src="/images/Star.svg" alt="" />
-              </div>
-              <p>Referencias de clientes, empresas, entre otras cosas, acá se escriben los opiniones de los clientes de MES o íconos de empresas.</p>
-            </StarsAndText>
-          </Recomendation>
-          <Recomendation>
-            <UserFake />
-            <StarsAndText>
-              <div>
-                <img src="/images/Star.svg" alt="" />
-                <img src="/images/Star.svg" alt="" />
-                <img src="/images/Star.svg" alt="" />
-                <img src="/images/Star.svg" alt="" />
-                <img src="/images/Star.svg" alt="" />
-              </div>
-              <p>Referencias de clientes, empresas, entre otras cosas, acá se escriben los opiniones de los clientes de MES o íconos de empresas.</p>
-            </StarsAndText>
-          </Recomendation>
-        </RecomendationsContainer>
         <Contact />
 
         {/* Modales */}
