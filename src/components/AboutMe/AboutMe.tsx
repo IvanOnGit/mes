@@ -2,7 +2,7 @@ import { useState } from "react";
 import Contact from "../Contact/Contact";
 import Eugenia from "../Eugenia/Eugenia";
 import Navbar from "../Navbar/Navbar";
-import { AboutMeContainer, Card, CardsContainer, CollageSection, Container, DropdownsAndIcons, MobileCollageSection, ModalContent, ModalImage, ModalOverlay, ModalText, TitleTreeContainer, TreeContainer, Dropdown, DropdownHeader, DropdownContent, IconsGrid, IconWrapper, Tooltip } from "./styles";
+import { AboutMeContainer, Card, CardsContainer,Container, DropdownsAndIcons, ModalContent, ModalImage, ModalOverlay, ModalText, TitleTreeContainer, TreeContainer, Dropdown, DropdownHeader, DropdownContent, IconsGrid, IconWrapper, Tooltip, CollageSection, StyledEugeniaParada, WhatIdoContainer, StyledEugeniaSentada, AlwaysContainer, AlwaysIcons, AlwaysText, MyAxis, Lists, MySymbology } from "./styles";
 
 function AboutMe() {
   const [activeModal, setActiveModal] = useState<number | null>(null);
@@ -154,14 +154,49 @@ function AboutMe() {
           </DropdownsAndIcons>
         </AboutMeContainer>
         <CollageSection>
-          <img src="/images/Collage.svg" alt="" />
-          <img src="/images/MySymbols.svg" alt="" />
+          <WhatIdoContainer>
+            <StyledEugeniaParada src="/images/EugeniaParada.png" alt="" />
+            <div className="Lists-container">
+              <Lists>
+                <h2>Que me gusta hacer?</h2>
+                <span></span>
+                <ul>
+                  <li>Facilitar y acompañar procesos evolutivos.</li>
+                  <li>Conectar y abrir puertas.</li>
+                  <li>Ayudar a encontrar un mayor bienestar.</li>
+                  <li>Sembrar amor, sentido y entusiasmo.</li>
+                </ul>
+              </Lists>
+              <Lists>
+                <h2>Cómo lo hago?</h2>
+                <span></span>
+                <ul>
+                  <li>Descubriendo los talentos.</li>
+                  <li>Activando la potencia de las personas.</li>
+                  <li>Creando nuevas posibilidades.</li>
+                  <li>Combinando disciplinas al servicio de la vida.</li>
+                </ul>
+              </Lists>
+              <Lists>
+                <h2>Mi Simbología</h2>
+                <span></span>
+                <MySymbology src="/images/MySymbology.png" alt="" />
+              </Lists>
+            </div>
+          </WhatIdoContainer>
+          <AlwaysContainer>
+            <StyledEugeniaSentada src="/images/EugeniaSentada.png" alt="" />
+            <AlwaysText>
+              <h2>Siempre con:</h2>
+              <AlwaysIcons src="/images/AlwaysIcons.png" alt="" />
+            </AlwaysText>
+            <span></span>
+            <AlwaysText>
+              <h2>Mi eje</h2>
+              <MyAxis src="/images/MyAxis.png" alt="" />
+            </AlwaysText>
+          </AlwaysContainer>
         </CollageSection>
-        <MobileCollageSection>
-          <img src="/images/MobileCollage1.svg" alt="" />
-          <img src="/images/MobileCollage2.svg" alt="" />
-          <img src="/images/MobileCollage3.svg" alt="" />
-        </MobileCollageSection>
         <TreeContainer>
           <span></span>
           <TitleTreeContainer>

@@ -323,51 +323,133 @@ export const CollageSection = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
-  background-color: white;
+  height: 45rem;
   width: 100%;
+  background-color: white;
+  gap: 5rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+`;
+
+export const WhatIdoContainer = styled.div`
+  display: flex;
   gap: 2rem;
-  margin-top: 4rem;
-  margin-bottom: 4rem;
+  align-items: center;
 
-  img {
-    width: 80rem;
-    height: 35rem;
-    margin-top: 5rem;
-    margin-bottom: 14rem;
-    object-fit: contain;
-  }
-
-  img:last-of-type {
-    width: 55rem;
-    height: 10rem;
-    margin-top: 50rem;
-    object-fit: contain;
-    position: absolute;
-  }
-
-  @media (max-width: 768px) {
-    display: none;
+  .Lists-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
   }
 `;
 
-export const MobileCollageSection = styled.div`
-  display: none;
+export const StyledEugeniaParada = styled.img`
+    width: 18rem;
+    height: 30rem;
+    object-fit: contain;
+`;
 
-  @media (max-width: 768px) {
-    background-color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    width: 100%;
-    height: 50rem;
-    gap: 2rem;
+export const AlwaysContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 
-    img {
-      width: 23rem;
-    }
+  span {
+  display: block;          /* para que respete ancho completo */
+  height: 2px;
+  background-color: black;
+  position: relative;      /* necesario para posicionar el ::after */
+}
+
+span::after {
+  content: "";
+  position: absolute;
+  right: 0;                /* la ubica al final derecho */
+  top: 50%;                /* la centra verticalmente */
+  transform: translateY(-50%);
+  width: 8px;              /* tamaño de la bolita */
+  height: 8px;
+  background-color: black;
+  border-radius: 50%;      /* la hace circular */
+}
+`;
+
+export const AlwaysText = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+
+  h2 {
+    font-family: 'Oooh Baby', cursive;
   }
+`;
+
+export const AlwaysIcons = styled.img`
+    width: 10rem;
+    object-fit: contain;
+`;
+
+export const MyAxis = styled.img`
+    width: 10rem;
+    object-fit: contain;
+`;
+
+export const StyledEugeniaSentada = styled.img`
+    width: 18rem;
+    object-fit: contain;
+    margin-bottom: 1rem;
+`;
+
+export const Lists = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  h2 {
+    font-family: 'Oooh Baby', cursive;
+    margin: 0;
+  }
+
+  span {
+  display: block;          /* para que respete ancho completo */
+  height: 2px;
+  background-color: black;
+  position: relative;      /* necesario para posicionar el ::after */
+}
+
+span::after {
+  content: "";
+  position: absolute;
+  right: 0;                /* la ubica al final derecho */
+  top: 50%;                /* la centra verticalmente */
+  transform: translateY(-50%);
+  width: 8px;              /* tamaño de la bolita */
+  height: 8px;
+  background-color: black;
+  border-radius: 50%;      /* la hace circular */
+}
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding-left: 1.2rem;
+    margin: 0;
+    
+  }
+
+  li {
+    padding: 0;
+    margin: 0;
+    font-family: 'Geologica', sans-serif;
+    font-weight: 100;
+  } 
+`;
+
+export const MySymbology = styled.img`
+  width: 20rem;
 `;
 
 export const TreeContainer = styled.div`
