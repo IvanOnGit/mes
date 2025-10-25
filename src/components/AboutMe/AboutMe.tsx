@@ -198,27 +198,26 @@ function AboutMe() {
           </AlwaysContainer>
         </CollageSection>
         <TreeContainer>
-          <span></span>
           <TitleTreeContainer>
-            <h2>RECORRIDO PROFESIONAL</h2>
+            <h2>Recorrido Profesional</h2>
             <img src="/images/Tree.svg" alt="" />
           </TitleTreeContainer>
           <CardsContainer>
             <Card>
-              <h2>ÁMBITO CORPORATIVO</h2>
-              <p>Con más de 30 años de experiencia en el ámbito empresarial, María Eugenia ha desarrollado su carrera en organizaciones de primer nivel como Coca Cola Femsa, Banco Galicia, Banco Tornquist, CTI Móvil y TSU Cosméticos. En su trayectoria, se ha desempeñado como Gerente de Ventas y Responsable de Desarrollo.</p>
+              <h2>ÁMBITO <br />EMPRESARIAL</h2>
+              <p>Con más de 30 años de experiencia en el ámbito empresarial, María Eugenia ha desarrollado su carrera en organizaciones de primer nivel como Coca Cola Femsa, Banco Galicia, Banco Tornquist, CTI Móvil y TSU Cosméticos. En su trayectoria, se ha desempeñado como Gerente de Ventas y Responsable de Desarrollo de Mercado, alcanzando un alto nivel de expertise comercial y liderando exitosas estrategias en el mundo corporativo [...]</p>
               <button onClick={() => openModal(1)}>Ver más</button>
             </Card>
             <span />
             <Card>
-              <h2>ÁMBITO EDUCATIVO Y FORMATIVO</h2>
-              <p>Como formadora de equipos de ventas, María Eugenia ha liderado y disfrutado muchos procesos de entrenamiento y capacitación a lo largo de su carrera, optimizando el desempeño y potenciando el talento de las personas. Además, ha ejercido como docente en talleres de orientación vocacional y desarrollo.</p>
+              <h2>ÁMBITO DE CAPACITACIÓN Y FORMACIÓN</h2>
+              <p>Como formadora de equipos de ventas, María Eugenia ha liderado y brindado cientos de procesos de entrenamiento y capacitación a lo largo de su carrera, optimizando el desempeño y POTENCIANDO EL TALENTO de las personas. Ha ejercido como docente de orientación vocacional y desarrollo de habilidades para el mundo laboral de nivel secundario, y dictado talleres [...] </p>
               <button onClick={() => openModal(2)}>Ver más</button>
             </Card>
             <span />
             <Card>
-              <h2>ÁMBITO DE DESARROLLO HUMANO</h2>
-              <p>A partir de 2011, María Eugenia inició un proceso de búsqueda interior y exploración de diversas disciplinas y filosofías tras el fallecimiento de su marido. Este profundo proceso le permitió descubrir un nuevo mundo espiritual y un camino de evolución personal.</p>
+              <h2>ÁMBITO DE <br />DESARROLLO HUMANO</h2>
+              <p>Desde 2011 María Eugenia inició un profundo camino de búsqueda interior, impulsado por una fuerte experiencia que marcó su vida personal, esta etapa de resiliencia y transformación la llevó a explorar diversas disciplinas holísticas. En 2019, con la convicción de que el conocimiento adquirido debía estar al servicio de las personas, decidió compartir estas herramientas con quienes buscan reconectar consigo mismos [...]</p>
               <button onClick={() => openModal(3)}>Ver más</button>
             </Card>
           </CardsContainer>
@@ -230,17 +229,16 @@ function AboutMe() {
           <ModalOverlay $isClosing={isClosing} onClick={closeModal}>
             <ModalContent $isClosing={isClosing} onClick={(e) => e.stopPropagation()}>
               <button className="close-button" onClick={closeModal}>×</button>
-              <ModalImage>
-                <h3>ÁMBITO CORPORATIVO</h3>
-                <img src="/images/Corporate9.svg" alt="" />
-                <h4>Enfoque Cercano y Personalizado</h4>
-                <span />
-              </ModalImage>
               <ModalText>
+                <h3>ÁMBITO EMPRESARIAL</h3>
+                <h4>Enfoque Humano y Creativo</h4>
                 <p>Con más de 30 años de experiencia en el ámbito empresarial, María Eugenia ha desarrollado su carrera en organizaciones de primer nivel como Coca Cola Femsa, Banco Galicia, Banco Tornquist, CTI Móvil y TSU Cosméticos. En su trayectoria, se ha desempeñado como Gerente de Ventas y Responsable de Desarrollo de Mercado, alcanzando un alto nivel de expertise comercial y liderando exitosas estrategias en el mundo corporativo.</p>
                 <p>En 2007, creó y fundó la Consultora Comercial y de Gestión Empresarial SYS Argentina®, la cual dirige hasta la fecha. A través de su equipo ha brindado soluciones a más de 1.200 pymes, siendo especialista en el mercado financiero y de retailers, abarcando actividades claves como ventas, marketing y atención al cliente.</p>
                 <p>Su ADN diferencial está marcado por una absoluta vocación de servicio, un enfoque cercano y personalizado hacia las personas, un compromiso con la excelencia profesional y, además, por su espíritu emprendedor, que la ha impulsado a crear diversos proyectos, generando redes y abriendo nuevas oportunidades y soluciones innovadoras.</p>
               </ModalText>
+              <ModalImage>
+                <img src="/images/Corporate9.png" alt="" />
+              </ModalImage>
             </ModalContent>
           </ModalOverlay>
         )}
@@ -249,17 +247,16 @@ function AboutMe() {
           <ModalOverlay $isClosing={isClosing} onClick={closeModal}>
             <ModalContent $isClosing={isClosing} onClick={(e) => e.stopPropagation()}>
               <button className="close-button" onClick={closeModal}>×</button>
-              <ModalImage>
-                <h3>ÁMBITO EDUCATIVO Y FORMATIVO</h3>
-                <img src="/images/Formation.svg" alt="" />
-                <h4>Talentos y Propósito en Acción</h4>
-                <span />
-              </ModalImage>
-              <ModalText>
+              <ModalText className="modal2">
+                <h3>ÁMBITO DE CAPACITACIÓN Y FORMACIÓN</h3>
+                <h4>Activadora de Talentos</h4>
                 <p>Como formadora de equipos de ventas, María Eugenia ha liderado y brindado cientos de procesos de entrenamiento y capacitación a lo largo de su carrera, optimizando el desempeño y potenciando el talento de las personas. </p>
                 <p>Ha ejercido como docente de orientación vocacional y desarrollo de habilidades para el mundo laboral de nivel secundario y dictado talleres para ayudar a jóvenes y adultos a desarrollarse profesionalmente. Su sello: Generosa en compartir su experticia y crear espacios vivenciales.</p>
                 <p>Desde la Consultoría instruye y acompaña  a través de Formación In Company y Professional Training® en ventas, eficiencia laboral, liderazgo y habilidades de gestión. Y a través de Mundo Vocacional® facilita procesos de autoconocimiento, vocación, ocupación, profesión y propósito en acción.</p>
               </ModalText>
+              <ModalImage className="modal2">
+                <img src="/images/Formation.jpg" alt="" />
+              </ModalImage>
             </ModalContent>
           </ModalOverlay>
         )}
@@ -268,20 +265,16 @@ function AboutMe() {
           <ModalOverlay $isClosing={isClosing} onClick={closeModal}>
             <ModalContent $isClosing={isClosing} onClick={(e) => e.stopPropagation()}>
               <button className="close-button" onClick={closeModal}>×</button>
-              <ModalImage>
+              <ModalText className="modal3">
                 <h3>ÁMBITO DE DESARROLLO HUMANO</h3>
-                <img src="/images/MeditatingBack.svg" alt="" />
                 <h4>Evolución Personal</h4>
-                <span />
-                <img className="meditatingBack" src="/images/MeditatingFront.svg" alt="" />
-              </ModalImage>
-              <ModalText>
-                <p>A partir de 2011, María Eugenia inició su proceso de búsqueda interior y exploración de nuevas disciplinas y filosofías tras el fallecimiento de su marido. Esto le permitió descubrir un mundo de autoconsciencia y el camino de evolución personal.</p>
-                <p>En 2019, sintió el impulso de compartir todas las herramientas que había adquirido durante su proceso resiliente y de transformación. Así, comenzó a facilitar y orientar a clientes, integrando su experiencia empresarial con una profunda visión de bienestar y humanidad. Con una fuerte convicción de que lo esencial de la vida está negado o desconectado en muchos ámbitos, continuó formándose, investigando y actualizándose.</p>
-                <p>En 2022, fundó Casa Cinco, un espacio  destinado a facilitar la expresión del ser, compartir actividades de autoconocimiento, conexión y conciencia, promoviendo el bienestar integral en la vida personal y profesional en su ciudad natal.</p>
-                <p>Eugenia brinda talleres grupales, conferencias y consultoría organizacional, combinando diversas disciplinas para promover el desarrollo humano y empresarial. A través de Biotrascendencia®, ayuda a las personas y a las  organizaciones a alcanzar una vida plena, dar un salto evolutivo, trascendiendo los límites que les impiden avanzar.</p>
-                <p>Agradecida y acompañada por su equipo de colaboradoras, maravillosas personas, quienes  comparten el compromiso y la pasión por lo que hacen.</p>
+                <p>Desde 2011 María Eugenia inició un profundo camino de búsqueda interior, impulsado por una fuerte experiencia que marcó su vida personal, esta etapa de resiliencia y transformación la llevó a explorar diversas disciplinas holísticas.</p>
+                <p>En 2019, con la convicción de que el conocimiento adquirido debía estar al servicio de las personas, decidió compartir estas herramientas con quienes buscan reconectar consigo mismos. Desde entonces, acompaña procesos de autoconocimiento, conexión y conciencia, promoviendo el bienestar integral tanto en el ámbito personal como profesional.</p>
+                <p>Hoy, Eugenia brinda sesiones individuales y talleres grupales como Astróloga, Consteladora Familiar y Consultora Sistémica. Integrando su sólida experiencia en el mundo empresarial, también diseña conferencias y entrenamientos para organizaciones, donde fusiona sus conocimientos holísticos con una mirada estratégica, generando intervenciones de alto impacto orientadas al desarrollo humano y organizacional.</p>
               </ModalText>
+              <ModalImage className="modal3">
+                <img src="/images/MeditatingBack.jpg" alt="" />
+              </ModalImage>
             </ModalContent>
           </ModalOverlay>
         )}

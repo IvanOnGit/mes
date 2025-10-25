@@ -457,14 +457,7 @@ export const TreeContainer = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-
-  span {
-    width: 62.5rem;
-    height: 10px;
-    background-color: #1C1C1C;
-    margin-bottom: 2rem;
-    border-radius: 1rem;
-  }
+  height: 65rem;
 
   @media (max-width: 768px) {
     padding: 0 1rem;
@@ -486,7 +479,7 @@ export const TitleTreeContainer = styled.div`
 
   h2 {
       color: white;
-      font-size: 2rem;
+      font-size: 1.4rem;
       font-weight: 200;
       margin: 0;
       padding: 0;
@@ -516,7 +509,7 @@ export const CardsContainer = styled.div`
 
   span {
     width: 1px;
-    height: 22.5rem;
+    height: 27.2rem;
     background-color: white;
     color: white;
   }
@@ -544,7 +537,7 @@ export const Card = styled.div`
 
   h2 {
     color: white;
-    font-size: 1.3rem;
+    font-size: 1rem;
     font-weight: 200;
     margin: 0;
     padding: 0;
@@ -576,7 +569,7 @@ export const Card = styled.div`
     justify-content: center;
     padding: 1rem;
     width: 15rem;
-    margin-top: 1rem;
+    margin-top: 6rem;
     text-align: center;
     cursor: pointer;
 
@@ -647,7 +640,6 @@ export const ModalContent = styled.div<{ $isClosing: boolean }>`
   overflow-y: auto;
   display: flex;
   justify-content: center;
-  gap: 6rem;
   padding: 2rem;
   transform: ${props => props.$isClosing ? 'scale(0.9)' : 'scale(1)'};
   opacity: ${props => props.$isClosing ? 0 : 1};
@@ -737,15 +729,46 @@ export const ModalText = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  font-family: 'Geologica', sans-serif;
 
   p {
     color: white;
-    font-size: 0.75rem;
+    font-size: 0.65rem;
     margin: 0;
     padding: 0;
     font-weight: 100;
     width: 17rem;
     text-align: justify;
+  }
+
+  &.modal2 {
+    h3 {
+      width: 32rem;
+      position: absolute;
+    }
+
+    h4 {
+      margin-top: 3rem;
+    }
+  }
+
+  &.modal3 {
+    h3 {
+      width: 32rem;
+      position: absolute;
+    }
+
+    h4 {
+      margin-top: 3rem;
+    }
+  }
+
+  h4 {
+    color: white;
+    font-size: 1.5rem;
+    margin: 0;
+    padding: 0;
+    font-weight: 100;
   }
 
   @media (max-width: 768px) {
@@ -761,13 +784,10 @@ export const ModalImage = styled.div`
   align-items: flex-start;
   flex-shrink: 0;
 
-  h3 {
-    margin-bottom: 1rem;
-  }
-
   img {
-    width: 15rem;
-    height: 15rem;
+    width: 20rem;
+    height: 17rem;
+    margin-top: 7rem;
   }
 
   img.meditatingBack {
@@ -797,6 +817,28 @@ export const ModalImage = styled.div`
     img {
       width: 16rem;
       height: 12rem;
+    }
+  }
+  
+  &.modal2 {
+
+    justify-content: center;
+    align-items: center;
+    img {
+      margin-left: 1rem;
+      margin-top: 4rem;
+      object-fit: contain;
+    }
+  }
+
+  &.modal3 {
+
+    justify-content: center;
+    align-items: center;
+    img {
+      margin-left: 1rem;
+      margin-top: 4rem;
+      object-fit: contain;
     }
   }
 `;
