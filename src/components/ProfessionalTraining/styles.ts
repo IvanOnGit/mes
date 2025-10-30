@@ -14,7 +14,7 @@ export const TextContainer = styled.div`
   align-items: center;
   width: 100%;
   background-color: white;
-  height: 20rem;
+  height: 25em;
   gap: 2rem;
   padding: 1rem;
 
@@ -41,6 +41,10 @@ export const TextContainer = styled.div`
     margin-bottom: 3.5rem;
   }
 
+  img {
+    width: 23rem;
+  }
+
   @media (max-width: 768px) {
     flex-direction: column;
     height: auto;
@@ -61,9 +65,8 @@ export const TextContainer = styled.div`
     }
 `;
 
-export const Paragraph = styled.p`
-  border-bottom: 1px solid black;
-  padding-bottom: 2rem;
+export const Paragraphs = styled.p`
+  text-align: justify;
 `;
 
 export const IconsContainer = styled.div`

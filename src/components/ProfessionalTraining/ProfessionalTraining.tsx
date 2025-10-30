@@ -12,7 +12,6 @@ import {
   FormativeSeminars, 
   IndividualSeminar, 
   ModalityContainer, 
-  Paragraph, 
   Seminars, 
   TextContainer,
   CapsuleContent,
@@ -22,7 +21,8 @@ import {
   ModalClose,
   ModalBody,
   ModalCapsules,
-  InnerModalCapsule
+  InnerModalCapsule,
+  Paragraphs
 } from "./styles";
 import RequestInformation from "../RequestInformation/RequestInformation";
 
@@ -101,15 +101,12 @@ function ProfessionalTraining() {
         image="/images/PROFESSIONAL TRAINING.jpg" 
       />
       <TextContainer>
+        <Paragraphs>
+          <p>A través de Programas de Formación y de Talleres de Capacitación y Entrenamiento se combinan conocimientos teóricos, actividades prácticas y experiencias vivenciales. </p>
+          <p>Estas iniciativas se destacan como herramientas clave para el desarrollo de habilidades, facilitando un aprendizaje concreto, permitiendo a cada participante aplicar lo aprendido, ganar confianza y adquirir nuevas competencias que contribuyen a la eficiencia y al crecimiento profesional.</p>
+          <p>La temática y el diseño de los programas se adaptan y personalizan según las características específicas de cada organización, los objetivos establecidos, la cultura organizacional, la dinámica del grupo y otras particularidades relevantes.</p>
+        </Paragraphs>
         <img src="/images/ProfessionalGroup.svg" alt="" />
-        <div>
-          <h2>Subtítulo para Professional Training</h2>
-          <p>A través de Programas de Formación y de Talleres de Capacitación y Entrenamiento se combinan conocimientos teóricos, actividades prácticas y experiencias vivenciales. Estas iniciativas se destacan como herramientas clave para el desarrollo de habilidades, facilitando un aprendizaje concreto, permitiendo a cada participante aplicar lo aprendido, ganar confianza y adquirir nuevas competencias que contribuyen a la eficiencia y al crecimiento profesional.</p>
-        </div>
-        <div>
-          <Paragraph>La temática y el diseño de los programas se adaptan y personalizan según las características específicas de cada organización, los objetivos establecidos, la cultura organizacional, la dinámica del grupo y otras particularidades relevantes.</Paragraph>
-          <button>Solicitá Información</button>
-        </div>
       </TextContainer>
       
       <ModalityContainer expanded={expandedCapsule !== null}>
