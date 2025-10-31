@@ -106,7 +106,7 @@ function ProfessionalTraining() {
           <p>Estas iniciativas se destacan como herramientas clave para el desarrollo de habilidades, facilitando un aprendizaje concreto, permitiendo a cada participante aplicar lo aprendido, ganar confianza y adquirir nuevas competencias que contribuyen a la eficiencia y al crecimiento profesional.</p>
           <p>La temática y el diseño de los programas se adaptan y personalizan según las características específicas de cada organización, los objetivos establecidos, la cultura organizacional, la dinámica del grupo y otras particularidades relevantes.</p>
         </Paragraphs>
-        <img src="/images/ProfessionalGroup.svg" alt="" />
+        <img src="/images/ProfessionalGroup.jpg" alt="" />
       </TextContainer>
       
       <ModalityContainer expanded={expandedCapsule !== null}>

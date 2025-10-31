@@ -684,12 +684,24 @@ export const IconsContainer = styled.div`
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 1.5rem;
     max-width: 300px;
+
+    // Agranda el ícono pequeño solo en mobile
+    img.icon-small {
+      width: 13rem;
+      height: 13rem;
+      position: absolute;
+    }
   }
 
   @media (max-width: 480px) {
     gap: 1rem;
     grid-gap: 1rem;
     max-width: 250px;
+
+    img.icon-small {
+      width: 11rem;
+      height: 11rem;
+    }
   }
 `;
 

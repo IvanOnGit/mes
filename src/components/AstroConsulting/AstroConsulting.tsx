@@ -228,19 +228,19 @@ function AstroConsulting() {
       <ModalityContainer>
               <h2>MODALIDADES</h2>
               <IconsContainer>
-                <div>
-                  <img src="/images/Icono 9.svg" alt="" />
-                </div>
-                <div>
-                  <img src="/images/Icono 10.svg" alt="" />
-                </div>
-                <div>
-                  <img src="/images/Icono 8.svg" alt="" />
-                </div>
-                <div>
-                  <img src="/images/Icono 11.svg" alt="" />
-                </div>
-              </IconsContainer>
+              <div>
+                <img src="/images/Icono 9.svg" alt="" />
+              </div>
+              <div>
+                <img src="/images/Icono 10.svg" alt="" className="icon-small" />
+              </div>
+              <div>
+                <img src="/images/Icono 8.svg" alt="" />
+              </div>
+              <div>
+                <img src="/images/Icono 11.svg" alt="" />
+              </div>
+            </IconsContainer>
       </ModalityContainer>
       <RequestInformation title="¡Deja el Piloto Automático y Comanda tu Vida!" />
       <Contact />
