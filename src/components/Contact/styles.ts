@@ -88,16 +88,23 @@ export const SocialLogos = styled.div`
   display: flex;
   gap: 1rem;
   align-items: center;
+  z-index: 999;
 
-  img {
-    width: 2.5rem;
-    height: 2.5rem;
-    cursor: pointer;
+  a {
+    display: inline-block;
+    line-height: 0;
     transition: transform 0.3s ease;
 
     &:hover {
       transform: scale(1.1);
     }
+  }
+
+  img {
+    width: 2.5rem;
+    height: 2.5rem;
+    cursor: pointer;
+    display: block;
   }
 
   @media (max-width: 768px) {

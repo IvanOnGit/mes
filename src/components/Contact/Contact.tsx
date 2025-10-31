@@ -142,9 +142,13 @@ function Contact() {
           </div>
           <div className="bottom-section">
             <SocialLogos>
-              <img src="/images/Linkedin.png" alt="LinkedIn" />
-              <img src="/images/Instagram.png" alt="Instagram" />
-            </SocialLogos>
+              <a href="https://linkedin.com/in/maría-eugenia-silva-iye" target="_blank" rel="noopener noreferrer">
+                <img src="/images/Linkedin.png" alt="LinkedIn" />
+              </a>
+              <a href="https://www.instagram.com/mariaeugeniasilva.com.ar?utm_source=qr&igsh=cHRyOTc1ZGIxc2N4" target="_blank" rel="noopener noreferrer">
+                <img src="/images/Instagram.png" alt="Instagram" />
+              </a>
+          </SocialLogos>
             <StyledSignature src="/images/Signature.png" alt="Firma" />
           </div>
         </LeftSide>
