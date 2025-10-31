@@ -35,12 +35,12 @@ const modalityData = [
   {
     id: 2,
     title: "DT - Consultor In Company",
-    content: "Contar con un DT o Consultor especialista, permite focalizar y tratar las necesidades sobre lo planeado, invertir, acciones, potenciar talentos, ampliar las posibilidades. Sumar estrategias y acelerar el crecimiento."
+    content: "Contar con un DT o Consultor especialista, permite focalizar y tratar las prioridades sobre lo diario, inyectar acciones, potenciar talentos, ampliar las posibilidades. Sumar estrategias y acelerar el crecimiento."
   },
   {
     id: 3,
     title: "Professional Training",
-    content: "Los procesos de entrenamiento y acompañamiento profesional son aceleradores de las mejores prácticas profesionales. Acortando abruptamente los procesos de inducción y adaptación y aprendizaje laboral o cultural. Sin desetender las responsabilidades de otros colaboradores de la Empresa."
+    content: "Los procesos de entrenamiento y acompañamiento profesional son aceleradores de las mejores prácticas profesionales. Acortando abruptamente los procesos de inducción y adaptación y aprendizaje laboral o cultural. Sin desatender las responsabilidades de otros colaboradores de la Empresa."
   }
 ];
 
@@ -201,7 +201,6 @@ function ProfessionalTraining() {
                   <div>
                       <h3>Transformando los Miedos en Oportunidades</h3>
                       <p>Darle lugar a los miedos, problemas que paralizan y limitan la prosperidad individual y por consiguiente la corporativa. Lo personal siempre impacta en el rendimiento laboral. Darle lugar para fluir y avanzar.</p>
-                      <p><strong>*CONSULTE SOBRE LA SAGA DESINTOXICANDO*</strong></p>
                   </div>
                   <div>
                       <h3>Autogestión</h3>
@@ -246,7 +245,7 @@ function ProfessionalTraining() {
                   </div>
                   <div>
                       <h3>VENDEDORES EXITOSOS, se nace o se hacen?”. Creando los NUEVOS EMBAJADORES CORPORATIVOS.</h3>
-                      <p>Herramienta para encontrar soluciones rápidas, integrativas y sostenibles. RevolucNueva mirada para la organización y entrenamiento transformador para los responsables de generar nuevos clientes, aumentar la facturación, representar a la Empresa.iona tu equipo</p>
+                      <p>Nueva mirada para la organización y entrenamiento transformador para los responsables de generar nuevos clientes, aumentar la facturación, representar a la Empresa.</p>
                   </div>
                 </div>
               )}

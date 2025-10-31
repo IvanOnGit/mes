@@ -17,14 +17,14 @@ function AboutMe() {
 
   const iconsData = [
   { src: "/images/About me Icon 1.svg", alt: "Icon 1", tooltip: "Magister en Dirección de Empresas MBA, EDDE" },
-  { src: "/images/About me Icon 2.svg", alt: "Icon 2", tooltip: "Lic. en Comercialización de UADE (1° promedio Cs. Empresariales)" },
+  { src: "/images/About me Icon 2.svg", alt: "Icon 2", tooltip: "Lic. en Comercialización de UAI (1° promedio Cs. Empresariales)" },
   { src: "/images/About me Icon 3.svg", alt: "Icon 3", tooltip: "Programa de Emprendedores en IAE - NAVES" },
   { src: "/images/About me Icon 4.svg", alt: "Icon 4", tooltip: "Astróloga humanista CASA XI" },
-  { src: "/images/About me Icon 5.svg", alt: "Icon 5", tooltip: "Astróloga humanista, evolutiva, sistémica, transpersonal y empresarial. NUEVA DELPHIOS" },
-  { src: "/images/About me Icon 6.svg", alt: "Icon 6", tooltip: "Consteladora Familiar con orientación al trauma trifocal ICFT" },
+  { src: "/images/About me Icon 5.svg", alt: "Icon 5", tooltip: "Astróloga humanista, evolutiva, sistémica, transpersonal y empresarial. Nueva Delfos" },
+  { src: "/images/About me Icon 6.svg", alt: "Icon 6", tooltip: "Practicante Chamánica FSS" },
   { src: "/images/About me Icon 7.svg", alt: "Icon 7", tooltip: "Consteladora Organizacional y Consultora Sistémica CONGRUENCIA SAC" },
   { src: "/images/About me Icon 8.svg", alt: "Icon 8", tooltip: "Comunicadora Sistémica CLCF" },
-  { src: "/images/About me Icon 9.svg", alt: "Icon 9", tooltip: "Practicante Chamánica FSS" },
+  { src: "/images/About me Icon 9.svg", alt: "Icon 9", tooltip: "Consteladora Familiar con orientación al trauma trifocal ICFT" },
 ];
 
   const openModal = (modalNumber: number) => {
@@ -84,8 +84,8 @@ function AboutMe() {
                   <span className="arrow">⌄</span>
                 </DropdownHeader>
                 <DropdownContent $isOpen={openDropdowns.viajera}>
-                  <p>Interesada en explorar el mundo, los planos espirituales, y las nuevas experiencias. Conectada con el presente, enriqueciéndose de lo que emerge después de abrirse al cambio y a expandir sus horizontes, encontrando belleza y gratitud en cada paso.</p>
-                  <p className="extra-text">— La vida es el viaje</p>
+                  <p>Interesada en explorar el mundo, los planos espirituales, y las nuevas experiencias. Conectada con el presente, enriqueciéndose de lo que emerge dispuesta al cambio y a expandir sus horizontes, encontrando belleza y gratitud en cada paso.</p>
+                  <p className="extra-text">— La vida es El Viaje.</p>
                 </DropdownContent>
               </Dropdown>
 
@@ -118,8 +118,8 @@ function AboutMe() {
                   <span className="arrow">⌄</span>
                 </DropdownHeader>
                 <DropdownContent $isOpen={openDropdowns.creadora}>
-                  <p>Biotrascendencia® como resultado de su visión, propósito, trayectoria, experiencia de vida, formación y motivación. Esta filosofía que nace para aportar sensibilidad, compartir a quienes resuenen con el enfoque evolutivo y su búsqueda.</p>
-                  <p className="extra-text">— Presencia + Conciencia + Sentido</p>
+                  <p>Expresiva, intuitiva, auténtica. Creadora de Biotrascendencia®, filosofía que nació como resultado de sentir la conexión con la unidad y la vida, motivada por la visión, propósito de una vida con sentido, el enfoque evolutivo y habitar nuevos lugares de mayor bienestar y comprensión. Una herramienta poderosa para quienes busquen y se animen a estar mejor.</p>
+                  <p className="extra-text">— Presencia + Consciencia + Sentido</p>
                 </DropdownContent>
               </Dropdown>
 
@@ -135,8 +135,8 @@ function AboutMe() {
                   <span className="arrow">⌄</span>
                 </DropdownHeader>
                 <DropdownContent $isOpen={openDropdowns.agente}>
-                  <p>María Eugenia se caracteriza por llevar a cabo, implementar y dejar huellas en el camino. Inspirar, motivar, sembrar, generar el cambio, mostrarlo. Cada uno es protagonista de su propia vida, el desafío es elegir vivirlo.</p>
-                  <p className="extra-text">— Si quieres vivirlo, ¿qué esperas? Let's go!</p>
+                  <p>Maria Eugenia se caracteriza por impulsar, proponer, llevar a cabo y crear nuevas posibilidades que generen valor. Sembrar, intervenir con acciones de impacto x 5. Promueve que cada uno es protagonista de su propia vida, el verdadero diseñador.</p>
+                  <p className="extra-text">— Si quieres vivirlo, ¿qué esperas?</p>
                 </DropdownContent>
               </Dropdown>
             </div>

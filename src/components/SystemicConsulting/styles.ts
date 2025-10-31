@@ -156,6 +156,13 @@ export const IconsContainer = styled.div`
     object-fit: contain;
   }
 
+  // Agranda el 3er y 7mo ícono
+  div:nth-child(3) img,
+  div:nth-child(7) img {
+    width: 7rem;
+    height: 7rem;
+  }
+
   @media (max-width: 768px) {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -168,6 +175,12 @@ export const IconsContainer = styled.div`
     img {
       width: 4rem;
       height: 4rem;
+    }
+
+    div:nth-child(3) img,
+    div:nth-child(7) img {
+      width: 6rem;
+      height: 6rem;
     }
   }
 `;

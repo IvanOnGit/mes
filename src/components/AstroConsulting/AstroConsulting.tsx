@@ -135,7 +135,7 @@ function AstroConsulting() {
                  La carta natal opera en su completitud, seamos conocedores o no de la misma. El sistema de creencias de cada persona no limita ni evita que la energía opere y se manifieste a través de los sentimientos, comportamientos, sucesos, vínculos y entorno.
                 </p>
                 <p>
-                  Es decir que tomar conocimiento sobre uno mismo, tener contacto con el potencial de posibilidades que traemos y abordarlo con conciencia, permite salir de lo automático, lo reactivo y de la reactivo y de la identidad identidad fija auto-percibida.
+                  Es decir que tomar conocimiento sobre uno mismo, tener contacto con el potencial de posibilidades que traemos y abordarlo con conciencia, permite salir de lo automático, lo reactivo y de la identidad identidad fija auto-percibida.
                 </p>
               </div>
               </div>
