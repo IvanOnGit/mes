@@ -7,7 +7,7 @@ export const FloatingButton = styled.button`
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  background-color: #25D366; /* Color verde de WhatsApp */
+  background-color: transparent;
   border: none;
   cursor: pointer;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
@@ -16,6 +16,7 @@ export const FloatingButton = styled.button`
   justify-content: center;
   z-index: 1000;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 0;
 
   &:hover {
     transform: scale(1.1);
@@ -27,9 +28,9 @@ export const FloatingButton = styled.button`
   }
 
   img {
-    width: 35px;
-    height: 35px;
-    filter: brightness(0) invert(1); /* Hace el ícono blanco */
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
   }
 
   @media (max-width: 768px) {
@@ -37,10 +38,5 @@ export const FloatingButton = styled.button`
     right: 1.5rem;
     width: 55px;
     height: 55px;
-
-    img {
-      width: 30px;
-      height: 30px;
-    }
   }
 `;

@@ -7,6 +7,7 @@ import ProfessionalTraining from './components/ProfessionalTraining/Professional
 import ScrollToTop from './components/ScrollToTop/ScrollToTop';
 import AboutMe from './components/AboutMe/AboutMe';
 import Bio from './components/Bio/Bio';
+import WhatsAppButton from './components/WhatsAppButton/WhatsAppButton';
 
 function App() {
   return (
@@ -15,12 +16,13 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/biotrascendencia" element={<Bio />} />
-        <Route path="/consultoria-sistemica" element={< SystemicConsulting/>} />
-        <Route path="/consultoria-astrologica" element={< AstroConsulting/>} />
-        <Route path="/talent-activation-system" element={< TalentActivationSystem/>} />
-        <Route path="/professional-training" element={< ProfessionalTraining />} />
-        <Route path="/sobre-mi" element={< AboutMe />} />
+        <Route path="/consultoria-sistemica" element={<SystemicConsulting/>} />
+        <Route path="/consultoria-astrologica" element={<AstroConsulting/>} />
+        <Route path="/talent-activation-system" element={<TalentActivationSystem/>} />
+        <Route path="/professional-training" element={<ProfessionalTraining />} />
+        <Route path="/sobre-mi" element={<AboutMe />} />
       </Routes>
+      <WhatsAppButton />
     </Router>
   );
 }
