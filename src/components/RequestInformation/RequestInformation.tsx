@@ -10,7 +10,7 @@ function RequestInformation({ title, subtitle }: RequestInformationProps) {
     <Container>
       <h1>{title}</h1>
       {subtitle && <h2>{subtitle}</h2>}
-      <button>Solicitá Información</button>
+      <button onClick={() => {document.getElementById("contacto")?.scrollIntoView({ behavior: "smooth" })}}>Solicitá Información</button>
     </Container>
   );
 }
