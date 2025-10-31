@@ -49,7 +49,7 @@ function SystemicConsulting() {
             <img src="/images/Icono 2.svg" alt="" />
           </div>
           <div>
-            <img src="/images/Icono 3.svg" alt="" className="icon-small" />
+            <img src="/images/Icono 3.png" alt="" className="icon-small" />
           </div>
           <div>
             <img src="/images/Icono 4.svg" alt="" />
@@ -61,7 +61,7 @@ function SystemicConsulting() {
             <img src="/images/Icono 6.svg" alt="" />
           </div>
           <div>
-            <img src="/images/Icono 7.svg" alt="" className="icon-small" />
+            <img src="/images/Icono 7.png" alt="" className="icon-small" />
           </div>
         </IconsContainer>
       </ModalityContainer>
