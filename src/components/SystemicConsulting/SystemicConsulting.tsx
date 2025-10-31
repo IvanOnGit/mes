@@ -43,7 +43,7 @@ function SystemicConsulting() {
         <h2>MODALIDADES</h2>
         <IconsContainer>
           <div>
-            <img src="/images/Icono 1.svg" alt="" />
+            <img src="/images/Icono 10.png" alt="" />
           </div>
           <div>
             <img src="/images/Icono 2.svg" alt="" />
