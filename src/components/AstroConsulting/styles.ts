@@ -671,6 +671,10 @@ export const IconsContainer = styled.div`
     justify-content: center;
   }
 
+  img.icon-small {
+      width: 6.3rem;
+    }
+
   img {
     @media (max-width: 768px) {
       width: 10rem;
@@ -685,23 +689,16 @@ export const IconsContainer = styled.div`
     grid-gap: 1.5rem;
     max-width: 300px;
 
-    // Agranda el ícono pequeño solo en mobile
     img.icon-small {
-      width: 13rem;
-      height: 13rem;
-      position: absolute;
-    }
+      width: 7rem;}
+    // Agranda el ícono pequeño solo en mobile
+
   }
 
   @media (max-width: 480px) {
     gap: 1rem;
     grid-gap: 1rem;
     max-width: 250px;
-
-    img.icon-small {
-      width: 11rem;
-      height: 11rem;
-    }
   }
 `;
 

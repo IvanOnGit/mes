@@ -232,7 +232,7 @@ function AstroConsulting() {
                 <img src="/images/Icono 9.svg" alt="" />
               </div>
               <div>
-                <img src="/images/Icono 10.svg" alt="" className="icon-small" />
+                <img src="/images/Icono 10.png" alt="" className="icon-small" />
               </div>
               <div>
                 <img src="/images/Icono 8.svg" alt="" />
