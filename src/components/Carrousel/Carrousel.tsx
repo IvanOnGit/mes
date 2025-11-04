@@ -36,6 +36,7 @@ const slides: SlideData[] = [
   },
   {
     src: "/images/Imagen 4.jpg",
+    mobileSrc: "/images/Imagen 5 mobile.jpg",
     text: "En nuevos recursos, nuevas posibilidades, nuevos escenarios"
   },
   {

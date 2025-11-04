@@ -135,10 +135,6 @@ export const MobileSlideContainer = styled.div`
       transform: translateX(-50%); /* Se mueve la mitad porque duplicamos las imágenes */
     }
   }
-  
-  &:hover {
-    animation-play-state: paused; /* Opcional: pausar en hover */
-  }
 `;
 
 export const MobileSlide = styled.div`
