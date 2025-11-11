@@ -36,12 +36,12 @@ const slides: SlideData[] = [
   },
   {
     src: "/images/Imagen 4.jpg",
-    mobileSrc: "/images/Imagen 5 mobile.jpg",
+    mobileSrc: "/images/Imagen 4 mobile.jpg",
     text: "En nuevos recursos, nuevas posibilidades, nuevos escenarios"
   },
   {
     src: "/images/Foto 4 carrusel.jpg",
-    mobileSrc: "/images/Imagen 4 mobile.jpg",
+    mobileSrc: "/images/Imagen 5 mobile.jpg",
     text: "Es otro nivel, lo que requiere este contexto, de adentro hacia afuera"
   }
 ];
