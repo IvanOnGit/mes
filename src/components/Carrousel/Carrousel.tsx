@@ -50,7 +50,7 @@ const Carousel: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
   const [isMobile, setIsMobile] = useState(false);
-  const intervalRef = useRef<number | null>(null);
+  const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   // Filtrar slides que tienen mobileSrc para mobile
   const mobileSlides = slides.filter(slide => slide.mobileSrc);

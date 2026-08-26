@@ -9,9 +9,21 @@ import AboutMe from './components/AboutMe/AboutMe';
 import Bio from './components/Bio/Bio';
 import WhatsAppButton from './components/WhatsAppButton/WhatsAppButton';
 
-function App() {
+// Lista de rutas de la app: la usa tanto el router de cliente como el script
+// de prerender (scripts/prerender.mjs) para saber qué páginas generar.
+export const routePaths = [
+  '/',
+  '/biotrascendencia',
+  '/consultoria-sistemica',
+  '/consultoria-astrologica',
+  '/talent-activation-system',
+  '/professional-training',
+  '/sobre-mi',
+];
+
+export function AppRoutes() {
   return (
-    <Router>
+    <>
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -23,6 +35,14 @@ function App() {
         <Route path="/sobre-mi" element={<AboutMe />} />
       </Routes>
       <WhatsAppButton />
+    </>
+  );
+}
+
+function App() {
+  return (
+    <Router>
+      <AppRoutes />
     </Router>
   );
 }

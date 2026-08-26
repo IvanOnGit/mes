@@ -1,0 +1,10 @@
+{
+  "rewrites": [
+    { "source": "/biotrascendencia", "destination": "/biotrascendencia/index.html" },
+    { "source": "/consultoria-sistemica", "destination": "/consultoria-sistemica/index.html" },
+    { "source": "/consultoria-astrologica", "destination": "/consultoria-astrologica/index.html" },
+    { "source": "/talent-activation-system", "destination": "/talent-activation-system/index.html" },
+    { "source": "/professional-training", "destination": "/professional-training/index.html" },
+    { "source": "/sobre-mi", "destination": "/sobre-mi/index.html" }
+  ]
+}
